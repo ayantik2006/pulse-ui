@@ -1,9 +1,4 @@
-import {
-  IndianRupee,
-  Menu,
-  SquareArrowOutUpRight,
-  X,
-} from "lucide-react";
+import { IndianRupee, Menu, SquareArrowOutUpRight, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -36,7 +31,8 @@ function LandingNavbar() {
           </Link>
           <Link
             className="text-neutral-300 px-4 py-[0.4rem] rounded-lg duration-300 flex gap-2 text-[0.95rem] items-center font-semibold hover:text-white underline-offset-6 underline"
-            href="/"
+            href="https://github.com/ayantik2006/pulse-ui"
+            target="_blank"
           >
             <SquareArrowOutUpRight size={18} className="mb-[0.1rem]" />
             <p>View GitHub</p>
@@ -63,10 +59,14 @@ function LandingNavbar() {
           <IndianRupee size={16} className="mb-[rem]" />
           <p>Pricing</p>
         </div>
-        <div className="hover:bg-neutral-950 py-2 px-3 rounded-lg hover:text-white cursor-pointer flex items-center gap-2 duration-300">
+        <Link
+          className="hover:bg-neutral-950 py-2 px-3 rounded-lg hover:text-white cursor-pointer flex items-center gap-2 duration-300"
+          href="https://github.com/ayantik2006/pulse-ui"
+          target="_blank"
+        >
           <SquareArrowOutUpRight size={16} className="mb-[rem]" />
           <p> View GitHub</p>
-        </div>
+        </Link>
       </div>
     </div>
   );
