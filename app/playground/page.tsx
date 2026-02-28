@@ -75,7 +75,7 @@ function page() {
           className="bg-green-600 border-4 border-black  text-black px-6 py-2 rounded-lg transition-transform duration-300 ease-in-out hover:rotate-10" >wiggly clockwise</button>
           <button
           className="bg-green-600 border-4 border-black text-black px-6 py-2 rounded-lg transition-transform duration-300 ease-in-out hover:-rotate-10" >wiggly anticlockwise</button>
-        
+          
         
         </div>
       </div>
