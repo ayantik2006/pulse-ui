@@ -10,6 +10,9 @@ import Loader7 from "@/pulseui-components/Loaders/Loader7";
 import Loader8 from "@/pulseui-components/Loaders/Loader8";
 import Loader9 from "@/pulseui-components/Loaders/Loader9";
 import Loader10 from "@/pulseui-components/Loaders/Loader10"
+import SingleFileUpload from "@/pulseui-components/File Upload/SingleFileUpload";
+import MultipleFileUpload from "@/pulseui-components/File Upload/MultipleFileUpload";
+
 function page() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -113,6 +116,14 @@ function page() {
         <Loader9/>
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 10</h2>
         <Loader10/>
+      </div>
+      {/* File Upload */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">File Upload</h1>
+        <h2 className="text-neutral-600 font-semibold mb-3">Single File Upload</h2>
+        <SingleFileUpload/>
+        <h2 className="text-neutral-600 font-semibold mb-3 mt-3">Multiple File Upload</h2>
+        <MultipleFileUpload/>
       </div>
     </div>
   );
