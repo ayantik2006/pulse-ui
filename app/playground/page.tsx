@@ -8,7 +8,8 @@ import Loader5 from "@/pulseui-components/Loaders/Loader5";
 import Loader6 from "@/pulseui-components/Loaders/Loader6";
 import Loader7 from "@/pulseui-components/Loaders/Loader7";
 import Loader8 from "@/pulseui-components/Loaders/Loader8";
-
+import Loader9 from "@/pulseui-components/Loaders/Loader9";
+import Loader10 from "@/pulseui-components/Loaders/Loader10"
 function page() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -108,6 +109,10 @@ function page() {
         <Loader7/>
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 8</h2>
         <Loader8/>
+        <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 9</h2>
+        <Loader9/>
+        <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 10</h2>
+        <Loader10/>
       </div>
     </div>
   );
