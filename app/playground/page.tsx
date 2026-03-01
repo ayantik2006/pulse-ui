@@ -7,6 +7,7 @@ import Loader4 from "@/pulseui-components/Loaders/Loader4";
 import Loader5 from "@/pulseui-components/Loaders/Loader5";
 import Loader6 from "@/pulseui-components/Loaders/Loader6";
 import Loader7 from "@/pulseui-components/Loaders/Loader7";
+import Loader8 from "@/pulseui-components/Loaders/Loader8";
 
 function page() {
   return (
@@ -105,6 +106,8 @@ function page() {
         <Loader6/>
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 7</h2>
         <Loader7/>
+        <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 8</h2>
+        <Loader8/>
       </div>
     </div>
   );
