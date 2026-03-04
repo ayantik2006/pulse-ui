@@ -147,7 +147,7 @@ function page() {
           onClick={() =>
             toast({
               message: "Hello!",
-              duration: 30000,
+              duration: 3000,
               type: "success",
             })
           }
