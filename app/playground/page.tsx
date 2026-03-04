@@ -9,11 +9,13 @@ import Loader6 from "@/pulseui-components/Loaders/Loader6";
 import Loader7 from "@/pulseui-components/Loaders/Loader7";
 import Loader8 from "@/pulseui-components/Loaders/Loader8";
 import Loader9 from "@/pulseui-components/Loaders/Loader9";
-import Loader10 from "@/pulseui-components/Loaders/Loader10"
+import Loader10 from "@/pulseui-components/Loaders/Loader10";
 import SingleFileUpload from "@/pulseui-components/File Upload/SingleFileUpload";
 import MultipleFileUpload from "@/pulseui-components/File Upload/MultipleFileUpload";
 import ImageUpload from "@/pulseui-components/File Upload/ImageUpload";
 import Loader11 from "@/pulseui-components/Loaders/Loader11";
+import { Toaster } from "@/pulseui-components/Toast/Toaster";
+import { toast } from "@/pulseui-components/Toast/toast";
 
 function page() {
   return (
@@ -101,35 +103,57 @@ function page() {
         <h2 className="font-semibold text-neutral-600 mb-2">Basic Loader</h2>
         <BasicLoader color={"black"} size={40} thickness={6} />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 2</h2>
-        <Loader2/>
+        <Loader2 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 3</h2>
-        <Loader3/>
+        <Loader3 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 4</h2>
-        <Loader4/>
+        <Loader4 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 5</h2>
-        <Loader5/>
+        <Loader5 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 6</h2>
-        <Loader6/>
+        <Loader6 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 7</h2>
-        <Loader7/>
+        <Loader7 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 8</h2>
-        <Loader8/>
+        <Loader8 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 9</h2>
-        <Loader9/>
+        <Loader9 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 10</h2>
-        <Loader10/>
+        <Loader10 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 11</h2>
-        <Loader11/>
+        <Loader11 />
       </div>
       {/* File Upload */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">File Upload</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3">Single File Upload</h2>
-        <SingleFileUpload/>
-        <h2 className="text-neutral-600 font-semibold mb-3 mt-3">Multiple File Upload</h2>
-        <MultipleFileUpload/>
-        <h2 className="text-neutral-600 font-semibold mb-3 mt-3">Image File Upload</h2>
-        <ImageUpload/>
+        <h2 className="text-neutral-600 font-semibold mb-3">
+          Single File Upload
+        </h2>
+        <SingleFileUpload />
+        <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
+          Multiple File Upload
+        </h2>
+        <MultipleFileUpload />
+        <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
+          Image File Upload
+        </h2>
+        <ImageUpload />
+      </div>
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Toasts</h1>
+        <Toaster position="top-center" />
+        <button
+          className="bg-neutral-800 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+          onClick={() =>
+            toast({
+              message: "Hello!",
+              duration: 30000,
+              type: "success",
+            })
+          }
+        >
+          Get Toast
+        </button>
       </div>
     </div>
   );
