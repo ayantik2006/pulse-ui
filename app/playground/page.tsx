@@ -9,7 +9,7 @@ import Loader6 from "@/pulseui-components/Loaders/Loader6";
 import Loader7 from "@/pulseui-components/Loaders/Loader7";
 import Loader8 from "@/pulseui-components/Loaders/Loader8";
 import Loader9 from "@/pulseui-components/Loaders/Loader9";
-import Loader10 from "@/pulseui-components/Loaders/Loader10";;
+import Loader10 from "@/pulseui-components/Loaders/Loader10";
 import Loader11 from "@/pulseui-components/Loaders/Loader11";
 import Loader12 from "@/pulseui-components/Loaders/Loader12";
 import SingleFileUpload from "@/pulseui-components/File Upload/SingleFileUpload";
@@ -19,8 +19,12 @@ import ImageUpload from "@/pulseui-components/File Upload/ImageUpload";
 import { Toaster } from "@/pulseui-components/Toast/Toaster";
 import { toast } from "@/pulseui-components/Toast/toast";
 import Loader13 from "@/pulseui-components/Loaders/Loader13";
+import { useState } from "react";
 
-function page() {
+function Page() {
+  const [files, setFiles] = useState<File[]>([]);
+  const [file, setFile] = useState<File>();
+
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
       {/* Buttons */}
@@ -126,9 +130,9 @@ function page() {
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 11</h2>
         <Loader11 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 12</h2>
-        <Loader12/>
+        <Loader12 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 13</h2>
-        <Loader13/>
+        <Loader13 />
       </div>
       {/* File Upload */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
@@ -136,16 +140,17 @@ function page() {
         <h2 className="text-neutral-600 font-semibold mb-3">
           Single File Upload
         </h2>
-        <SingleFileUpload />
+        <SingleFileUpload onFileChange={setFile} />
         <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
           Multiple File Upload
         </h2>
-        <MultipleFileUpload />
+        <MultipleFileUpload onFilesChange={setFiles}/>
         <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
           Image File Upload
         </h2>
-        <ImageUpload />
+        <ImageUpload onFilesChange={setFiles} />
       </div>
+      {/* Toaster */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Toasts</h1>
         <Toaster position="top-center" />
@@ -161,10 +166,13 @@ function page() {
         >
           Get Toast
         </button>
-        
+      </div>
+      {/* Date Picker */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
       </div>
     </div>
   );
 }
 
-export default page;
+export default Page;

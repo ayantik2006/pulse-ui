@@ -2,11 +2,15 @@ import { ImageUp, Paperclip, Upload, X } from "lucide-react";
 import { useRef, useState } from "react";
 import Image from "next/image";
 
-function ImageUpload() {
+function ImageUpload({
+  onFilesChange,
+}: {
+  onFilesChange: (files: File[]) => void;
+}) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
-  const [selectedImagePath,setSelectedImagePath]=useState("");
+  const [selectedImagePath, setSelectedImagePath] = useState("");
 
   return (
     <div className="flex flex-col gap-2">
@@ -27,6 +31,7 @@ function ImageUpload() {
           e.preventDefault();
           setIsDragging(false);
           setFiles(Array.from(e.dataTransfer.files));
+          onFilesChange(Array.from(e.dataTransfer.files));
         }}
       >
         <ImageUp
@@ -43,7 +48,10 @@ function ImageUpload() {
           ref={fileInputRef}
           multiple={true}
           onChange={(e) => {
-            if (e.target.files) setFiles(Array.from(e.target.files));
+            if (e.target.files) {
+              setFiles(Array.from(e.target.files));
+              onFilesChange(Array.from(e.target.files));
+            }
           }}
           draggable
         />
@@ -55,9 +63,16 @@ function ImageUpload() {
               className="bg-neutral-100 max-w-[22rem] h-12 rounded flex items-center justify-between gap-2 px-2"
               key={index}
             >
-              <Image src={URL.createObjectURL(file)} width="40" height="40" alt="uploaded image" className="rounded cursor-pointer hover:scale-[1.05] duration-300" onClick={()=>{
-                setSelectedImagePath(URL.createObjectURL(file));
-              }}/>
+              <Image
+                src={URL.createObjectURL(file)}
+                width="40"
+                height="40"
+                alt="uploaded image"
+                className="rounded cursor-pointer hover:scale-[1.05] duration-300"
+                onClick={() => {
+                  setSelectedImagePath(URL.createObjectURL(file));
+                }}
+              />
               <X
                 size={15}
                 className="hover:stroke-red-700 cursor-pointer duration-300"
@@ -73,13 +88,24 @@ function ImageUpload() {
           ))}
         </div>
       )}
-      {selectedImagePath!=="" && <div className="fixed inset-0 w-[100vw] h-[100vh] bg-[#ffffff16] z-80 backdrop-blur-[0.3rem] flex items-center justify-center" onClick={()=>{
-        setSelectedImagePath("");
-      }}>
-        <div className="w-fit h-fit shadow-[0_0_8px_gray] rounded-md bg-white z-100">
-            <Image src={selectedImagePath} height={600} width={600} alt="image selected" className="rounded-md"/>
+      {selectedImagePath !== "" && (
+        <div
+          className="fixed inset-0 w-[100vw] h-[100vh] bg-[#ffffff16] z-80 backdrop-blur-[0.3rem] flex items-center justify-center"
+          onClick={() => {
+            setSelectedImagePath("");
+          }}
+        >
+          <div className="w-fit h-fit shadow-[0_0_8px_gray] rounded-md bg-white z-100">
+            <Image
+              src={selectedImagePath}
+              height={600}
+              width={600}
+              alt="image selected"
+              className="rounded-md"
+            />
+          </div>
         </div>
-      </div>}
+      )}
     </div>
   );
 }

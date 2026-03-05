@@ -1,7 +1,11 @@
 import { Paperclip, Upload, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-function MultipleFileUpload() {
+function MultipleFileUpload({
+  onFilesChange,
+}: {
+  onFilesChange: (files: File[]) => void;
+}) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
@@ -25,6 +29,7 @@ function MultipleFileUpload() {
           e.preventDefault();
           setIsDragging(false);
           setFiles(Array.from(e.dataTransfer.files));
+          onFilesChange(Array.from(e.dataTransfer.files));
         }}
       >
         <Upload
@@ -40,7 +45,10 @@ function MultipleFileUpload() {
           ref={fileInputRef}
           multiple={true}
           onChange={(e) => {
-            if (e.target.files) setFiles(Array.from(e.target.files));
+            if (e.target.files) {
+              setFiles(Array.from(e.target.files));
+              onFilesChange(Array.from(e.target.files));
+            }
           }}
           draggable
         />
@@ -53,16 +61,17 @@ function MultipleFileUpload() {
               key={index}
             >
               <Paperclip size={15} className=" stroke-neutral-600" />
-              <p className="overflow-clip max-w-[16rem] h-7 text-neutral-500">{file.name}</p>
+              <p className="overflow-clip max-w-[16rem] h-7 text-neutral-500">
+                {file.name}
+              </p>
               <X
                 size={15}
                 className="hover:stroke-red-700 cursor-pointer duration-300"
                 onClick={() => {
-                  const newFiles:File[]=[];
-                  files.map((file2,index2)=>{
-                    if(index2!==index)
-                        newFiles.push(file2);
-                  })
+                  const newFiles: File[] = [];
+                  files.map((file2, index2) => {
+                    if (index2 !== index) newFiles.push(file2);
+                  });
                   setFiles(newFiles);
                 }}
               />
