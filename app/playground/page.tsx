@@ -20,10 +20,13 @@ import { Toaster } from "@/pulseui-components/Toast/Toaster";
 import { toast } from "@/pulseui-components/Toast/toast";
 import Loader13 from "@/pulseui-components/Loaders/Loader13";
 import { useState } from "react";
+import DatePicker from "@/pulseui-components/Date Picker/DatePicker";
+import Accordian from "@/pulseui-components/Accordian/Accordian";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
+  const [date, setDate] = useState<Date>();
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -144,7 +147,7 @@ function Page() {
         <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
           Multiple File Upload
         </h2>
-        <MultipleFileUpload onFilesChange={setFiles}/>
+        <MultipleFileUpload onFilesChange={setFiles} />
         <h2 className="text-neutral-600 font-semibold mb-3 mt-3">
           Image File Upload
         </h2>
@@ -170,6 +173,19 @@ function Page() {
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
+        <DatePicker selectedDate={setDate} />
+      </div>
+      {/* Accordian */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Accordian</h1>
+        <div className="max-w-100">
+          <Accordian
+            title={"What is an UI Component?"}
+            body={
+              "A UI (User Interface) component is a modular, reusable element that serves a specific function within a graphical user interface. Examples include buttons, input fields, dropdown menus, sliders."
+            }
+          />
+        </div>
       </div>
     </div>
   );
