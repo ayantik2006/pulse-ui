@@ -21,7 +21,8 @@ import { toast } from "@/pulseui-components/Toast/toast";
 import Loader13 from "@/pulseui-components/Loaders/Loader13";
 import { useState } from "react";
 import DatePicker from "@/pulseui-components/Date Picker/DatePicker";
-import Accordian from "@/pulseui-components/Accordian/Accordian";
+import Accordian1 from "@/pulseui-components/Accordian/Accordian1";
+import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -178,11 +179,21 @@ function Page() {
       {/* Accordian */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Accordian</h1>
+        <h2 className="text-neutral-700 mb-3 font-semibold">Accordian 1</h2>
         <div className="max-w-100">
-          <Accordian
+          <Accordian1
             title={"What is an UI Component?"}
             body={
               "A UI (User Interface) component is a modular, reusable element that serves a specific function within a graphical user interface. Examples include buttons, input fields, dropdown menus, sliders."
+            }
+          />
+        </div>
+        <h2 className="text-neutral-700 my-3 font-semibold">Accordian 2</h2>
+        <div className="max-w-100">
+          <Accordian2
+            title={"Why are components important?"}
+            body={
+              "UI components promote consistency, efficiency, and scalability in software development. They allow developers to reuse code, maintain a consistent look and feel across an application."
             }
           />
         </div>

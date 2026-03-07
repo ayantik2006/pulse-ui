@@ -1,13 +1,13 @@
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-function Accordian({ title, body }: { title: string; body: string }) {
+function Accordian2({ title, body }: { title: string; body: string }) {
   const [isBodyOpen, setIsBodyOpen] = useState(false);
 
   return (
     <div className="w-full h-fit flex flex-col gap-2">
-      <div className="border border-neutral-400 rounded-lg flex flex-col gap-2 hover:shadow-[0_3px_4px_gray] duration-300">
+      <div className="border border-neutral-400 flex flex-col gap-2 hover: shadow-[3px_3px_0px_3px_black] duration-300">
         <div
           className="flex items-center justify-between py-3 px-5 cursor-pointer"
           onClick={() => {
@@ -15,10 +15,8 @@ function Accordian({ title, body }: { title: string; body: string }) {
           }}
         >
           <p className="text-md font-semibold ">{title}</p>
-          <ChevronUp
-            size={20}
-            className={`stroke-1 ${isBodyOpen ? "rotate-180" : ""} duration-300`}
-          />
+          {!isBodyOpen && <Plus className="stroke-1" size={18}/>}
+          {isBodyOpen && <Minus className="stroke-1" size={18}/>}
         </div>
         <AnimatePresence initial={false}>
           {isBodyOpen && (
@@ -38,4 +36,4 @@ function Accordian({ title, body }: { title: string; body: string }) {
   );
 }
 
-export default Accordian;
+export default Accordian2;
