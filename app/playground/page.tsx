@@ -32,6 +32,9 @@ function Page() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
+      <h1 className="text-2xl text-center font-bold mb-5">
+        Playground display of the decided components (Not the final documentation)
+      </h1>
       {/* Buttons */}
       {/* <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold">Buttons</h1>
@@ -159,18 +162,43 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Toasts</h1>
         <Toaster position="top-center" />
-        <button
-          className="bg-neutral-800 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-          onClick={() =>
-            toast({
-              message: "Hello!",
-              duration: 3000,
-              type: "success",
-            })
-          }
-        >
-          Get Toast
-        </button>
+        <div className="flex gap-2 items-center">
+          <button
+            className="bg-green-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "This is a success message!",
+                duration: 3000,
+                type: "success",
+              })
+            }
+          >
+            Get Success
+          </button>
+          <button
+            className="bg-red-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "This is a failure message!",
+                duration: 3000,
+                type: "failure",
+              })
+            }
+          >
+            Get Failure
+          </button>
+          <button
+            className="bg-black px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "This is a normal message!",
+                duration: 3000,
+              })
+            }
+          >
+            Get Default
+          </button>
+        </div>
       </div>
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
