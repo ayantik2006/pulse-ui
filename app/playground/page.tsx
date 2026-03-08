@@ -23,6 +23,7 @@ import { useState } from "react";
 import DatePicker from "@/pulseui-components/Date Picker/DatePicker";
 import Accordian1 from "@/pulseui-components/Accordian/Accordian1";
 import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
+import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -32,7 +33,7 @@ function Page() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
       {/* Buttons */}
-      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+      {/* <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold">Buttons</h1>
         <h2 className="mt-3 font-semibold text-neutral-600">
           Basic Tailwind CSS Buttons
@@ -107,7 +108,7 @@ function Page() {
             Wiggly Anticlockwise
           </button>
         </div>
-      </div>
+      </div> */}
       {/* Loaders */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Loaders</h1>
@@ -197,6 +198,11 @@ function Page() {
             }
           />
         </div>
+      </div>
+      {/* Avatar */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Avatar</h1>
+        <Avatar1 src="/avatar1.png" alt="AS" size={40} className="" />
       </div>
     </div>
   );
