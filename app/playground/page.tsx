@@ -25,6 +25,7 @@ import Accordian1 from "@/pulseui-components/Accordian/Accordian1";
 import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
+import { X } from "lucide-react";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -199,6 +200,32 @@ function Page() {
             }
           >
             Get Default
+          </button>
+          <button
+            className="bg-yellow-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "This is an icon message!",
+                duration: 3000,
+                type:"failure",
+                icon:"😁"
+              })
+            }
+          >
+            Get Icon
+          </button>
+          <button
+            className="bg-orange-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "This is a CSS message!",
+                duration: 3000,
+                type:"failure",
+                className:"bg-yellow-200 text-red-600"                
+              })
+            }
+          >
+            Get Custom CSS
           </button>
         </div>
       </div>

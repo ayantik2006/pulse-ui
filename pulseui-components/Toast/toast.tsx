@@ -4,6 +4,7 @@ interface toastPropsType {
   className?: string;
   id?: string;
   type?: "success" | "failure";
+  icon?: "string" | React.ReactNode;
 }
 
 let toasts: toastPropsType[] = [];
@@ -25,7 +26,7 @@ export function toast(toast: toastPropsType) {
           }
         });
         toasts = newToasts;
-        newToasts=[];
+        newToasts = [];
         listeners.forEach((listener) => {
           listener(toasts);
         });
