@@ -25,13 +25,13 @@ import Accordian1 from "@/pulseui-components/Accordian/Accordian1";
 import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
-import Card1 from "@/pulseui-components/Cards/Card1";import { X } from "lucide-react";
+import Card1 from "@/pulseui-components/Cards/Card1";
+import { X } from "lucide-react";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
   const [date, setDate] = useState<Date>();
-
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -166,7 +166,7 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Toasts</h1>
         <Toaster position="top-center" />
-        <div className="flex gap-2 items-center">
+        <div className="flex flex-wrap gap-2 items-center">
           <button
             className="bg-green-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
             onClick={() =>
@@ -208,8 +208,8 @@ function Page() {
               toast({
                 message: "This is an icon message!",
                 duration: 3000,
-                type:"failure",
-                icon:"😁"
+                type: "failure",
+                icon: "😁",
               })
             }
           >
@@ -220,13 +220,25 @@ function Page() {
             onClick={() =>
               toast({
                 message: "This is a CSS message!",
-                duration: 3000,
-                type:"failure",
-                className:"bg-yellow-200 text-red-600"                
+                duration: 30000,
+                type: "failure",
+                className: "bg-yellow-200 text-red-600",
               })
             }
           >
             Get Custom CSS
+          </button>
+          <button
+            className="bg-pink-700 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "Hi! I have a cross button",
+                duration: 300000,
+                closeButton:true
+              })
+            }
+          >
+            With Cross Button
           </button>
         </div>
       </div>
@@ -261,11 +273,7 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Avatar</h1>
         <h2 className="text-neutral-700 mb-3 font-semibold">Simple Avatar</h2>
-        <Avatar1
-          src="/avatar1.png"
-          fallBackText="AS"
-          size={40}
-        />
+        <Avatar1 src="/avatar1.png" fallBackText="AS" size={40} />
         <h2 className="text-neutral-700 my-3 font-semibold">Avatar 2</h2>
         <Avatar2
           src="/avatar1.png"
@@ -276,9 +284,10 @@ function Page() {
       </div>
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3 text-2xl relative left-6">Card1</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-2xl relative left-6">
+          Card1
+        </h2>
         <Card1>_</Card1>
-        
       </div>
     </div>
   );

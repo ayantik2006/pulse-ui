@@ -5,6 +5,7 @@ interface toastPropsType {
   id?: string;
   type?: "success" | "failure";
   icon?: "string" | React.ReactNode;
+  closeButton?:boolean
 }
 
 let toasts: toastPropsType[] = [];
