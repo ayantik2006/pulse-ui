@@ -298,18 +298,18 @@ function Page() {
           title={"Project Lead"}
         />
       </div>
-      {/* Cards */}
+      {/* Cards
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card1
         </h2>
         <Card1>_</Card1>
-      </div>
+      </div> */}
       {/* Typewriter Effect */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Typewriter Effect</h1>
-        {/* <TypewriterEffect words={["Hello","developers"]} speed={200} className="text-blue-600 font-semibold text-lg"/> */}
+        <TypewriterEffect words={["Hello","developers"]} speed={200} className="text-blue-600 font-semibold text-lg"/>
       </div>
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
