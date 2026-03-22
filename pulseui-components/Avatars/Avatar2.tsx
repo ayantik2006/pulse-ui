@@ -29,13 +29,13 @@ function Avatar2({
       <AnimatePresence>
         {isAvatarHovered && (
           <motion.div
-            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-amber-100 px-2 py-1 rounded text-sm whitespace-nowrap z-50 shadow"
+            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-neutral-700 px-2 py-1 rounded text-sm whitespace-nowrap z-50 shadow text-white font-semibold"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.25 }}
             exit={{ scale: 0 }}
           >
-            {title}
+            <p>{title}</p>
           </motion.div>
         )}
       </AnimatePresence>

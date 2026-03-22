@@ -5,7 +5,8 @@ interface toastPropsType {
   id?: string;
   type?: "success" | "failure";
   icon?: "string" | React.ReactNode;
-  closeButton?:boolean
+  closeButton?: boolean;
+  theme?: "dark" | "default";
 }
 
 let toasts: toastPropsType[] = [];
@@ -13,7 +14,7 @@ let toasts: toastPropsType[] = [];
 let listeners: ((toasts: toastPropsType[]) => void)[] = [];
 
 export function toast(toast: toastPropsType) {
-  toasts = [...toasts, { ...toast, id: crypto.randomUUID() }];
+  toasts = [{ ...toast, id: crypto.randomUUID() }, ...toasts];
   listeners.forEach((listener) => {
     listener(toasts);
   });

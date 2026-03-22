@@ -14,6 +14,7 @@ interface toastPropsType {
   type?: "success" | "failure";
   icon?: "string" | React.ReactNode;
   closeButton?: boolean;
+  theme: "dark" | "default";
 }
 
 export function Toaster({
@@ -54,7 +55,7 @@ export function Toaster({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className={`shadow-[0_2px_6px_gray] px-4 py-2 bg-[#fff] rounded-md ${toast.className} flex w-fit min-w-30 gap-2 items-center max-w-80 text-wrap wrap-anywhere ${deletedToasts.includes(String(toast.id))?"hidden":""}`}
+              className={`shadow-[0_2px_6px_gray] px-4 py-2 bg-[#fff] rounded-md ${toast.theme==="dark"?"text-white":""} ${toast.className} ${toast.theme==="dark"?"bg-neutral-800":""} flex w-fit min-w-30 gap-2 items-center max-w-80 text-wrap wrap-anywhere ${deletedToasts.includes(String(toast.id)) ? "hidden" : ""} `}
               key={index}
             >
               {toast.type === "success" && !toast.icon && (
@@ -77,12 +78,15 @@ export function Toaster({
               <p>{toast.message}</p>
               {toast.closeButton && (
                 <div
-                  className="hover:bg-neutral-200 w-fit ml-5 mt-[0.1rem] p-[0.15rem] rounded duration-300"
+                  className={`hover:bg-neutral-200 w-fit ml-5 mt-[0.1rem] p-[0.15rem] rounded duration-300 ${toast.theme==="dark"?"hover:bg-neutral-700":""}`}
                   onClick={() => {
-                    setDeletedToasts((prev)=>{
-                      const newDeletedToasts:string[]=[...prev,String(toast.id)];
+                    setDeletedToasts((prev) => {
+                      const newDeletedToasts: string[] = [
+                        ...prev,
+                        String(toast.id),
+                      ];
                       return newDeletedToasts;
-                    })
+                    });
                   }}
                 >
                   <X

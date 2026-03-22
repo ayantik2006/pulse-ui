@@ -27,11 +27,14 @@ import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
 import Card1 from "@/pulseui-components/Cards/Card1";
 import { X } from "lucide-react";
+import TypewriterEffect from "@/pulseui-components/Toast/TypewriterEffect";
+import Rating from "@/pulseui-components/Rating/Rating";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
   const [date, setDate] = useState<Date>();
+  const [rating,setRating]=useState(0);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -220,7 +223,7 @@ function Page() {
             onClick={() =>
               toast({
                 message: "This is a CSS message!",
-                duration: 30000,
+                duration: 3000,
                 type: "failure",
                 className: "bg-yellow-200 text-red-600",
               })
@@ -232,13 +235,26 @@ function Page() {
             className="bg-pink-700 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
             onClick={() =>
               toast({
-                message: "Hi! I have a cross button",
-                duration: 300000,
-                closeButton:true
+                message: "Hi! I have a close button",
+                duration: 3000,
+                closeButton: true,
               })
             }
           >
-            With Cross Button
+            With Close Button
+          </button>
+          <button
+            className="bg-neutral-700 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
+            onClick={() =>
+              toast({
+                message: "Hi! I have a dark theme",
+                duration: 3000,
+                closeButton: true,
+                theme: "dark",
+              })
+            }
+          >
+            With Dark Theme
           </button>
         </div>
       </div>
@@ -282,12 +298,23 @@ function Page() {
           title={"Project Lead"}
         />
       </div>
+      {/* Cards */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3 text-2xl relative left-6">
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card1
         </h2>
         <Card1>_</Card1>
+      </div>
+      {/* Typewriter Effect */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Typewriter Effect</h1>
+        {/* <TypewriterEffect words={["Hello","developers"]} speed={200} className="text-blue-600 font-semibold text-lg"/> */}
+      </div>
+      {/* Rating */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Rating</h1>
+        <Rating setRating={setRating}/>
       </div>
     </div>
   );
