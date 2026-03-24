@@ -33,8 +33,10 @@ import Rating from "@/pulseui-components/Rating/Rating";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
-  const [date, setDate] = useState<Date>();
-  const [rating,setRating]=useState(0);
+  const [date, setDate] = useState<number>();
+  const [month, setMonth] = useState<number>();
+  const [year, setYear] = useState<number>();
+  const [rating, setRating] = useState(0);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -258,11 +260,6 @@ function Page() {
           </button>
         </div>
       </div>
-      {/* Date Picker */}
-      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
-        <DatePicker selectedDate={setDate} />
-      </div>
       {/* Accordian */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Accordian</h1>
@@ -314,7 +311,20 @@ function Page() {
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Rating</h1>
-        <Rating setRating={setRating}/>
+        <Rating setRating={setRating} />
+      </div>
+      {/* Date Picker */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex flex-col gap-3">
+        <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
+        <DatePicker
+          selectedDate={setDate}
+          selectedMonth={setMonth}
+          selectedYear={setYear}
+        />
+        <div className="flex gap-2 bg-neutral-200 w-fit p-2 rounded border border-neutral-700 font-semibold">
+          <p>Selected Date:</p>
+          <p>{date + "/" + month + "/" + year}</p>
+        </div>
       </div>
     </div>
   );
