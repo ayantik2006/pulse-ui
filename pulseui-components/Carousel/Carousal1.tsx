@@ -7,7 +7,7 @@ function Carousal1({ images }: { images: Array<string> }) {
   const [displayImageIndex, setDisplayImageIndex] = useState(0);
 
   return (
-    <div className="rounded-lg w-full max-w-md">
+    <div className="rounded-t-lg w-full max-w-md">
       <div className="relative w-full aspect-4/3">
         <AnimatePresence mode="wait">
           <motion.div
@@ -27,7 +27,7 @@ function Carousal1({ images }: { images: Array<string> }) {
               src={images[displayImageIndex]}
               alt="carousel image"
               fill
-              className="object-cover rounded-lg z-0"
+              className="object-cover rounded-t-lg z-0"
             />
           </motion.div>
         </AnimatePresence>
@@ -57,6 +57,11 @@ function Carousal1({ images }: { images: Array<string> }) {
         >
           <ChevronRight />
         </button>
+      </div>
+      <div className="bg-neutral-100 w-full h-7 rounded-b-lg border border-neutral-300 flex items-center-safe justify-center">
+        <p className="text-sm text-neutral-500">
+          {displayImageIndex+1}/{images.length}
+        </p>
       </div>
     </div>
   );
