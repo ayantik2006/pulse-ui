@@ -20,7 +20,6 @@ import { Toaster } from "@/pulseui-components/Toast/Toaster";
 import { toast } from "@/pulseui-components/Toast/toast";
 import Loader13 from "@/pulseui-components/Loaders/Loader13";
 import { useState } from "react";
-import DatePicker from "@/pulseui-components/Date Picker/DatePicker";
 import Accordian1 from "@/pulseui-components/Accordian/Accordian1";
 import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
@@ -29,6 +28,9 @@ import Card1 from "@/pulseui-components/Cards/Card1";
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Toast/TypewriterEffect";
 import Rating from "@/pulseui-components/Rating/Rating";
+import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
+import DatePicker2 from "@/pulseui-components/Date Picker/DatePicker2";
+import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -306,7 +308,11 @@ function Page() {
       {/* Typewriter Effect */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Typewriter Effect</h1>
-        <TypewriterEffect words={["Hello","developers"]} speed={200} className="text-blue-600 font-semibold text-lg"/>
+        <TypewriterEffect
+          words={["Hello", "developers"]}
+          speed={200}
+          className="text-blue-600 font-semibold text-lg"
+        />
       </div>
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
@@ -316,15 +322,34 @@ function Page() {
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex flex-col gap-3">
         <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
-        <DatePicker
-          selectedDate={setDate}
-          selectedMonth={setMonth}
-          selectedYear={setYear}
-        />
+        <div className="flex gap-10 flex-wrap">
+          <DatePicker1
+            selectedDate={setDate}
+            selectedMonth={setMonth}
+            selectedYear={setYear}
+          />
+          {/* <DatePicker2
+            selectedDate={setDate}
+            selectedMonth={setMonth}
+            selectedYear={setYear}
+          /> */}
+        </div>
         <div className="flex gap-2 bg-neutral-200 w-fit p-2 rounded border border-neutral-700 font-semibold">
           <p>Selected Date:</p>
           <p>{date + "/" + month + "/" + year}</p>
         </div>
+      </div>
+      {/* Carousal */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">Carousal</h1>
+        <h2 className="text-neutral-700 mb-3 font-semibold">Carousal 1</h2>
+        <Carousal1
+          images={[
+            "https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/10/04/48/animal-4917802_640.jpg",
+            "https://a-z-animals.com/media/tiger_laying_hero_background.jpg",
+          ]}
+        />
       </div>
     </div>
   );

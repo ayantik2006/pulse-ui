@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
-function DatePicker({
+function DatePicker1({
   selectedDate,
   selectedMonth,
   selectedYear,
@@ -126,4 +126,4 @@ function DatePicker({
   );
 }
 
-export default DatePicker;
+export default DatePicker1;
