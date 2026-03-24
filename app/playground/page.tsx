@@ -26,7 +26,7 @@ import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
 import Card1 from "@/pulseui-components/Cards/Card1";
 import { X } from "lucide-react";
-import TypewriterEffect from "@/pulseui-components/Toast/TypewriterEffect";
+import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect";
 import Rating from "@/pulseui-components/Rating/Rating";
 import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
 import DatePicker2 from "@/pulseui-components/Date Picker/DatePicker2";

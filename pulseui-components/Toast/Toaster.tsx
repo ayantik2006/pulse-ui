@@ -14,7 +14,7 @@ interface toastPropsType {
   type?: "success" | "failure";
   icon?: "string" | React.ReactNode;
   closeButton?: boolean;
-  theme: "dark" | "default";
+  theme?: "dark" | "default";
 }
 
 export function Toaster({
