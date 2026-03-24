@@ -31,6 +31,12 @@ import Rating from "@/pulseui-components/Rating/Rating";
 import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
 import DatePicker2 from "@/pulseui-components/Date Picker/DatePicker2";
 import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
+import SuccessBadge from "@/pulseui-components/Badges/SuccessBadge";
+import FailureBadge from "@/pulseui-components/Badges/FailureBadge";
+import LightBadge from "@/pulseui-components/Badges/LightBadge";
+import DarkBadge from "@/pulseui-components/Badges/DarkBadge";
+import OutlineBadge from "@/pulseui-components/Badges/OutlineBadge";
+import NumberBadge from "@/pulseui-components/Badges/NumberBadge";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -125,7 +131,7 @@ function Page() {
       </div> */}
       {/* Loaders */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Loaders</h1>
+        <h1 className="text-3xl font-bold mb-5">1) Loaders</h1>
         <h2 className="font-semibold text-neutral-600 mb-2">Basic Loader</h2>
         <BasicLoader color={"black"} size={40} thickness={6} />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 2</h2>
@@ -155,7 +161,7 @@ function Page() {
       </div>
       {/* File Upload */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">File Upload</h1>
+        <h1 className="text-3xl font-bold mb-5">2) File Upload</h1>
         <h2 className="text-neutral-600 font-semibold mb-3">
           Single File Upload
         </h2>
@@ -171,7 +177,7 @@ function Page() {
       </div>
       {/* Toaster */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Toasts</h1>
+        <h1 className="text-3xl font-bold mb-5">3) Toasts</h1>
         <Toaster position="top-center" />
         <div className="flex flex-wrap gap-2 items-center">
           <button
@@ -264,7 +270,7 @@ function Page() {
       </div>
       {/* Accordian */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Accordian</h1>
+        <h1 className="text-3xl font-bold mb-5">4) Accordian</h1>
         <h2 className="text-neutral-700 mb-3 font-semibold">Accordian 1</h2>
         <div className="max-w-100">
           <Accordian1
@@ -286,7 +292,7 @@ function Page() {
       </div>
       {/* Avatar */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Avatar</h1>
+        <h1 className="text-3xl font-bold mb-5">5) Avatar</h1>
         <h2 className="text-neutral-700 mb-3 font-semibold">Simple Avatar</h2>
         <Avatar1 src="/avatar1.png" fallBackText="AS" size={40} />
         <h2 className="text-neutral-700 my-3 font-semibold">Avatar 2</h2>
@@ -307,7 +313,7 @@ function Page() {
       </div> */}
       {/* Typewriter Effect */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Typewriter Effect</h1>
+        <h1 className="text-3xl font-bold mb-5">6) Typewriter Effect</h1>
         <TypewriterEffect
           words={["Hello", "developers"]}
           speed={200}
@@ -316,12 +322,12 @@ function Page() {
       </div>
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Rating</h1>
+        <h1 className="text-3xl font-bold mb-5">7) Rating</h1>
         <Rating setRating={setRating} />
       </div>
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex flex-col gap-3">
-        <h1 className="text-3xl font-bold mb-5">Date Picker</h1>
+        <h1 className="text-3xl font-bold mb-5">8) Date Picker</h1>
         <div className="flex gap-10 flex-wrap">
           <DatePicker1
             selectedDate={setDate}
@@ -341,7 +347,7 @@ function Page() {
       </div>
       {/* Carousal */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">Carousal</h1>
+        <h1 className="text-3xl font-bold mb-5">9) Carousal</h1>
         <h2 className="text-neutral-700 mb-3 font-semibold">Carousal 1</h2>
         <Carousal1
           images={[
@@ -350,6 +356,18 @@ function Page() {
             "https://a-z-animals.com/media/tiger_laying_hero_background.jpg",
           ]}
         />
+      </div>
+      {/* Badges */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
+        <div className="flex gap-3 items-center flex-wrap">
+          <SuccessBadge/>
+          <FailureBadge/>
+          <LightBadge/>
+          <DarkBadge/>
+          <OutlineBadge/>
+          <NumberBadge number={10}/>
+        </div>
       </div>
     </div>
   );
