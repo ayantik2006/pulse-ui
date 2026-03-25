@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
 
 function Hero() {
   return (
-    <div className="text-white w-full flex flex-col gap-10 items-center justify-center">
+    <div className="text-white w-full h-screen flex flex-col gap-10 items-center justify-center">
       <div className="flex flex-col items-center gap-6 text-center">
         <div className={`${playfair.className} text-6xl font-bold [@media(max-width:793px)]:text-4xl shine-text flex underline underline-offset-3`}>
           <p>Ship Beautiful UIs Faster</p>
