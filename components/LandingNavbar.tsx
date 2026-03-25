@@ -8,7 +8,7 @@ function LandingNavbar() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
 
   return (
-    <div className="text-white fixed top-0 w-full h-20 flex items-center justify-between  shadow-[0_0_20px_gray] backdrop-blur-lg">
+    <div className="text-white fixed top-0 w-full h-20 flex items-center justify-between  shadow-[0_0_20px_gray] backdrop-blur-lg z-80">
       <div className="flex gap-1 items-center pl-20 [@media(max-width:655px)]:pl-10 ">
         <Image src="/logo.png" height={38} width={38} alt="logo" />
         <p className="italic font-semibold text-2xl">ulse</p>
@@ -18,7 +18,7 @@ function LandingNavbar() {
         <Link href={""} className="font-semibold hover:text-neutral-300">
           Documentation
         </Link>
-        <Link href={""} className="font-semibold hover:text-neutral-300">
+        <Link href={"#examples"} className="font-semibold hover:text-neutral-300">
           Examples
         </Link>
         <Link

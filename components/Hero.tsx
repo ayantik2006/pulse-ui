@@ -1,8 +1,8 @@
 "use client";
 import { CirclePlay, Code, ExternalLink, Package, Sparkles, Star, University } from "lucide-react";
-import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
+import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

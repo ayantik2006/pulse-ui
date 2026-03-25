@@ -1,9 +1,9 @@
 "use client";
 
 import Examples from "@/components/Examples";
-import Experience from "@/components/Experience";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
+import LandingFooter from "@/components/LandingFooter";
 import LandingNavbar from "@/components/LandingNavbar";
 
 export default function Home() {
@@ -13,8 +13,9 @@ export default function Home() {
       <Hero/>
       <div className="w-full bg-neutral-950 h-1 shadow-[0_4px_25px_gray] mb-20"/>
       <Features/>
+      <div className="w-full bg-neutral-950 h-1 shadow-[0_4px_25px_gray] mb-20"/>
       <Examples/>
-      <Experience/>
+      <LandingFooter/>
     </div>
   );
 }
