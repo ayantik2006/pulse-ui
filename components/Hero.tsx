@@ -1,5 +1,5 @@
 "use client";
-import { CirclePlay, ExternalLink, Star } from "lucide-react";
+import { CirclePlay, Code, ExternalLink, Package, Sparkles, Star, University } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,9 +14,9 @@ function Hero() {
   return (
     <div className="text-white w-full flex flex-col gap-10 items-center justify-center">
       <div className="flex flex-col items-center gap-6 text-center">
-        <h1 className={`${playfair.className} text-6xl font-bold [@media(max-width:793px)]:text-4xl`}>
-          Build Beautiful UIs Faster
-        </h1>
+        <div className={`${playfair.className} text-6xl font-bold [@media(max-width:793px)]:text-4xl shine-text flex underline underline-offset-3`}>
+          <p>Ship Beautiful UIs Faster</p>
+        </div>
         <h2 className={`${playfair.className} text-3xl text-neutral-300 [@media(max-width:793px)]:text-2xl`}>
           Without the Headache
         </h2>
@@ -35,6 +35,20 @@ function Hero() {
         <ExternalLink size={17} className="mt-[0.1rem] stroke-[2px]"/>
         <p>Visit Playground</p>
       </Link>
+      <div className="flex flex-wrap mx-5 items-center justify-center gap-3">
+        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
+          <University size={15} className="stroke-white" />
+          <p className="text-sm">Used by developers at NITs</p>
+        </div>
+        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
+          <Package size={15} className="stroke-white" />
+          <p className="text-sm">Open Source</p>
+        </div>
+        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
+          <Code size={15} className="stroke-white" />
+          <p className="text-sm">Built for modern web apps</p>
+        </div>
+      </div>
     </div>
   );
 }

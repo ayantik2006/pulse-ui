@@ -1,3 +1,29 @@
+.shine-text {
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #b5adad 40%,
+    #979b9f 50%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
