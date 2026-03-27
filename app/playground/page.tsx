@@ -25,6 +25,7 @@ import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
 import Card1 from "@/pulseui-components/Cards/Card1";
+import Card2 from "@/pulseui-components/Cards/Card2"
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect";
 import Rating from "@/pulseui-components/Rating/Rating";
@@ -37,7 +38,6 @@ import LightBadge from "@/pulseui-components/Badges/LightBadge";
 import DarkBadge from "@/pulseui-components/Badges/DarkBadge";
 import OutlineBadge from "@/pulseui-components/Badges/OutlineBadge";
 import NumberBadge from "@/pulseui-components/Badges/NumberBadge";
-
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -303,17 +303,19 @@ function Page() {
           title={"Project Lead"}
         />
       </div>
-      {/* Cards
+      Cards
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card1
         </h2>
-        <Card1>_</Card1>
-      </div> */}
+        <Card1>Card1</Card1>
+     
+        <Card2></Card2>
+      </div>
       {/* Typewriter Effect */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">6) Typewriter Effect</h1>
+        <h1 className="text-3xl font-bold mb-5">6 Typewriter Effect</h1>
         <TypewriterEffect
           words={["Hello", "developers"]}
           speed={200}
