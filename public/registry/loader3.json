@@ -1,0 +1,11 @@
+{
+  "name": "loader23",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "import { motion } from 'framer-motion';export function Loader3({color}:{color?:string}) {  return ( <div className='flex items-center gap-2 h-[2.5rem]'> <motion.div animate={{height:['2.5rem','1rem','2.5rem']}} transition={{duration:1, repeat:Infinity, ease:'easeInOut'}} className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:'black'}`}></motion.div> <motion.div animate={{height:['1rem','2.5rem','1rem']}} transition={{duration:1,  repeat:Infinity, ease:'easeInOut'}} className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:'black'}`}></motion.div> <motion.div animate={{height:['2.5rem','1rem','2.5rem']}} transition={{duration:1, repeat:Infinity, ease:'easeInOut'}} className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:'black'}`}></motion.div> <motion.div animate={{height:['1rem','2.5rem','1rem']}} transition={{duration:1, repeat:Infinity, ease:'easeInOut'}} className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:'black'}`}></motion.div> </div> ); }",
+      "type": "registry:component"
+    }
+  ]
+}

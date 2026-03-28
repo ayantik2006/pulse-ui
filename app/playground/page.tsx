@@ -135,7 +135,7 @@ function Page() {
         <h2 className="font-semibold text-neutral-600 mb-2">Basic Loader</h2>
         <BasicLoader color={"black"} size={40} thickness={6} />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 2</h2>
-        <Loader2 />
+        <Loader2 color="red" />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 3</h2>
         <Loader3 />
         <h2 className="font-semibold text-neutral-600 mb-2 mt-5">Loader 4</h2>

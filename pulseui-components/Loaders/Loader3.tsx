@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
 
-function Loader3() {
+function Loader3({color}:{color?:string}) {
   return (
     <div className="flex items-center gap-2 h-[2.5rem]">
       <motion.div
         animate={{height:["2.5rem","1rem","2.5rem"]}} 
         transition={{duration:1, repeat:Infinity, ease:"easeInOut"}}
-        className="bg-neutral-700 w-[5px] h-10 rounded-t-lg rounded-b-lg"></motion.div>
+        className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:"black"}`}></motion.div>
       <motion.div
         animate={{height:["1rem","2.5rem","1rem"]}} 
         transition={{duration:1, repeat:Infinity, ease:"easeInOut"}}
-        className="bg-neutral-700 w-[5px] h-10 rounded-t-lg rounded-b-lg"></motion.div>
+        className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:"black"}`}></motion.div>
       <motion.div
         animate={{height:["2.5rem","1rem","2.5rem"]}} 
         transition={{duration:1, repeat:Infinity, ease:"easeInOut"}}
-        className="bg-neutral-700 w-[5px] h-10 rounded-t-lg rounded-b-lg"></motion.div>
+        className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:"black"}`}></motion.div>
       <motion.div
         animate={{height:["1rem","2.5rem","1rem"]}} 
         transition={{duration:1, repeat:Infinity, ease:"easeInOut"}}
-        className="bg-neutral-700 w-[5px] h-10 rounded-t-lg rounded-b-lg"></motion.div>
+        className={`w-[5px] h-10 rounded-t-lg rounded-b-lg ${color?`bg-[${color}]`:"black"}`}></motion.div>
     </div>
   );
 }
