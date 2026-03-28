@@ -38,6 +38,7 @@ import LightBadge from "@/pulseui-components/Badges/LightBadge";
 import DarkBadge from "@/pulseui-components/Badges/DarkBadge";
 import OutlineBadge from "@/pulseui-components/Badges/OutlineBadge";
 import NumberBadge from "@/pulseui-components/Badges/NumberBadge";
+import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -368,6 +369,11 @@ function Page() {
           <OutlineBadge />
           <NumberBadge number={10} />
         </div>
+      </div>
+      {/* ScratchCard */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">11) ScratchCard</h1>
+        <ScratchCard height={300} width={400} src="https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg"/>
       </div>
     </div>
   );
