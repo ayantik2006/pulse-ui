@@ -3,6 +3,7 @@ import { CirclePlay, Code, ExternalLink, Package, Sparkles, Star, University } f
 import Link from "next/link";
 import { useState } from "react";
 import { Playfair_Display } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -11,6 +12,8 @@ const playfair = Playfair_Display({
 });
 
 function Hero() {
+  const router=useRouter();
+
   return (
     <div className="text-white w-full h-screen flex flex-col gap-10 items-center justify-center">
       <div className="flex flex-col items-center gap-6 text-center">
@@ -22,7 +25,9 @@ function Hero() {
         </h2>
       </div>
       <div className="flex gap-5">
-        <button className="bg-neutral-200 text-black px-3 py-2 rounded-lg shadow-[0_0_15px_gray] font-semibold flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-300">
+        <button className="bg-neutral-200 text-black px-3 py-2 rounded-lg shadow-[0_0_15px_gray] font-semibold flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-300" onClick={()=>{
+          router.push("/buttons");
+        }}>
           <CirclePlay size={20} className="mt-[0.1rem] stroke-[2px]"/>
           <p>Get Started</p>
         </button>

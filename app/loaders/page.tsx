@@ -2,7 +2,15 @@
 
 import ComponentNavbar from "@/components/ComponentNavbar";
 import BasicLoader from "@/pulseui-components/Loaders/BasicLoader";
-import { Copy } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 function page() {
   return (
@@ -19,24 +27,119 @@ function page() {
           <div className="flex flex-col gap-5 mt-5">
             <div className="w-full bg-neutral-900 border border-neutral-700 py-6 px-6 rounded flex flex-col gap-5">
               <h1 className="text-xl font-semibold text-neutral-200">
-                Basic Loader
+                BasicLoader
               </h1>
-              <BasicLoader/>
-              <div className="mb-[-1rem] text-neutral-300 bg-neutral-950 w-fit px-2 border border-neutral-600 rounded font-semibold">
-                <p>Install</p>
+              <BasicLoader />
+              <div className="mb-[-0.5rem]">
+                <p className="font-semibold">Installation</p>
               </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-1">
-                <p className="text-neutral-400 text-sm">npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json</p>
-                <button className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]" onClick={async (e)=>{
-                  const el=e.currentTarget;
-                  await navigator.clipboard.writeText("npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json");
-                  el.innerText="copied!"
-                  setTimeout(() => {
-                    el.innerText="copy"
-                  }, 3000);
-                }}>
+              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
+                <p className="text-neutral-400 text-sm">
+                  npx shadcn@latest add
+                  https://pulseui-henna.vercel.app/registry/basic-loader.json
+                </p>
+                <button
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
+                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json",
+                    );
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
                   copy
                 </button>
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="font-semibold">
+                  Props
+                </h1>
+                <Table className="border border-neutral-700">
+                  <TableHeader className="">
+                    <TableRow className="hover:bg-neutral-900">
+                      <TableHead className="w-[100px] text-white text-center">
+                        Prop
+                      </TableHead>
+                      <TableHead className="text-white text-center">Type</TableHead>
+                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Description
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow className="hover:bg-black">
+                      <TableCell className="font-medium mr-100">
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>color</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>string</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>black</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-right ">
+                        <div className="flex items-center justify-center p-1 rounded">
+                          <p>Color of the loader</p>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-black">
+                      <TableCell className="font-medium mr-100">
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>size</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>number</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>40</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-right ">
+                        <div className="flex items-center justify-center p-1 rounded">
+                          <p>The size of the loader in pixels</p>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-black">
+                      <TableCell className="font-medium mr-100">
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>thickness</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>number</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>6</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-right ">
+                        <div className="flex items-center justify-center p-1 rounded">
+                          <p>The thickness of the loader in pixels</p>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
               </div>
             </div>
           </div>
