@@ -9,17 +9,29 @@ function LandingNavbar() {
 
   return (
     <div className="text-white fixed top-0 w-full h-20 flex items-center justify-between  shadow-[0_0_20px_gray] backdrop-blur-lg z-80">
-      <div className="flex gap-1 items-center pl-20 [@media(max-width:655px)]:pl-10 ">
+      <Link href={"/"} className="flex gap-1 items-center pl-20 [@media(max-width:780px)]:pl-10 ">
         <Image src="/logo.png" height={38} width={38} alt="logo" />
         <p className="italic font-semibold text-2xl">ulse</p>
         <p className="italic font-semibold text-2xl ml-1">UI</p>
-      </div>
-      <div className="flex gap-10 items-center [@media(max-width:655px)]:hidden pr-20 [@media(max-width:655px)]:pr-10">
-        <Link href={""} className="font-semibold hover:text-neutral-300">
+      </Link>
+      <div className="flex gap-10 items-center [@media(max-width:780px)]:hidden pr-20 [@media(max-width:780px)]:pr-10">
+        <Link
+          href={"/buttons"}
+          className="font-semibold hover:text-neutral-300"
+        >
           Documentation
         </Link>
-        <Link href={"#examples"} className="font-semibold hover:text-neutral-300">
+        <Link
+          href={"#examples"}
+          className="font-semibold hover:text-neutral-300"
+        >
           Examples
+        </Link>
+        <Link
+          href={""}
+          className="font-semibold hover:text-neutral-300"
+        >
+          Feedback
         </Link>
         <Link
           href={"https://github.com/ayantik2006/pulse-ui"}
@@ -30,7 +42,7 @@ function LandingNavbar() {
         </Link>
       </div>
       <div
-        className="[@media(min-width:655px)]:hidden pr-10 cursor-pointer"
+        className="[@media(min-width:780px)]:hidden pr-10 cursor-pointer"
         onClick={() => setIsHamburgerActive((prev) => !prev)}
       >
         {!isHamburgerActive && (
@@ -39,13 +51,11 @@ function LandingNavbar() {
             <div className="h-[0.1rem] w-5 bg-white " />
           </div>
         )}
-        {
-            isHamburgerActive && (
-                <div>
-                    <X/>
-                </div>
-            )
-        }
+        {isHamburgerActive && (
+          <div>
+            <X />
+          </div>
+        )}
       </div>
       <AnimatePresence>
         {isHamburgerActive && (
@@ -57,13 +67,20 @@ function LandingNavbar() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              <Link href={""} className="font-semibold hover:text-neutral-300">
+              <Link href={"/buttons"} className="font-semibold hover:text-neutral-300">
                 Documentation
               </Link>
-              <Link href={""} className="font-semibold hover:text-neutral-300">
+              <Link href={"#examples"} className="font-semibold hover:text-neutral-300">
                 Examples
               </Link>
-              <Link href={"https://github.com/ayantik2006/pulse-ui"} className="font-semibold hover:text-neutral-300">
+              <Link href={""} className="font-semibold hover:text-neutral-300">
+                Feedback
+              </Link>
+              <Link
+                href={"https://github.com/ayantik2006/pulse-ui"}
+                target="_blank"
+                className="font-semibold hover:text-neutral-300"
+              >
                 GitHub
               </Link>
             </motion.div>

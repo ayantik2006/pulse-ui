@@ -25,7 +25,7 @@ import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
 import Card1 from "@/pulseui-components/Cards/Card1";
-import Card2 from "@/pulseui-components/Cards/Card2"
+import Card2 from "@/pulseui-components/Cards/Card2";
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect";
 import Rating from "@/pulseui-components/Rating/Rating";
@@ -53,7 +53,7 @@ function Page() {
         documentation)
       </h1>
       {/* Buttons */}
-      {/* <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold">Buttons</h1>
         <h2 className="mt-3 font-semibold text-neutral-600">
           Basic Tailwind CSS Buttons
@@ -128,7 +128,7 @@ function Page() {
             Wiggly Anticlockwise
           </button>
         </div>
-      </div> */}
+      </div>
       {/* Loaders */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">1) Loaders</h1>
@@ -306,11 +306,9 @@ function Page() {
       Cards
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
-          Card1
-        </h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card1</h2>
         <Card1>Card1</Card1>
-     
+
         <Card2></Card2>
       </div>
       {/* Typewriter Effect */}
@@ -363,12 +361,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <SuccessBadge/>
-          <FailureBadge/>
-          <LightBadge/>
-          <DarkBadge/>
-          <OutlineBadge/>
-          <NumberBadge number={10}/>
+          <SuccessBadge />
+          <FailureBadge />
+          <LightBadge />
+          <DarkBadge />
+          <OutlineBadge />
+          <NumberBadge number={10} />
         </div>
       </div>
     </div>

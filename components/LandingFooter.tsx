@@ -6,10 +6,10 @@ function LandingFooter() {
     <footer className="bg-neutral-950 border-t border-[#1F2937] text-gray-400 mt-20 w-full">
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div className="flex items-center gap-2">
+          <Link href={"/"} className="flex items-center gap-2">
             <Image src="/logo.png" height={38} width={38} alt="logo" />
             <h2 className="text-white text-xl font-semibold">Pulse UI</h2>
-          </div>
+          </Link>
 
           <p className="mt-2 text-sm text-gray-500">
             Build modern interfaces faster with clean and reusable components.

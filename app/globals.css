@@ -24,6 +24,34 @@
   }
 }
 
+.component-list-scrollbar {
+  overflow-y: auto;
+}
+
+/* Webkit browsers */
+.component-list-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.component-list-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.component-list-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #9333ea);
+  border-radius: 9999px;
+}
+
+.component-list-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #57585b, #7e22ce);
+}
+
+/* Firefox */
+.component-list-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #47494b transparent;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
