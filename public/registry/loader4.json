@@ -1,0 +1,11 @@
+{
+  "name": "loader23",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion } from \"framer-motion\";\r\n\r\nfunction Loader4() {\r\n  return (\r\n    <div className=\"flex gap-2\">\r\n      <motion.div\r\n        className=\"rounded-full w-4 h-4\"\r\n        animate={{\r\n          backgroundColor: [\r\n            \"#3b82f6\",\r\n            \"#ef4444\",\r\n            \"#eab308\",\r\n            \"#22c55e\",\r\n            \"#3b82f6\",\r\n          ],\r\n        }}\r\n        transition={{\r\n          duration: 2,\r\n          repeat: Infinity,\r\n        }}\r\n      />\r\n      <motion.div\r\n        className=\"rounded-full w-4 h-4\"\r\n        animate={{\r\n          backgroundColor: [\r\n            \"#ef4444\",\r\n            \"#eab308\",\r\n            \"#22c55e\",\r\n            \"#3b82f6\",\r\n            \"#ef4444\",\r\n          ],\r\n        }}\r\n        transition={{\r\n          duration: 2,\r\n          repeat: Infinity,\r\n        //   ease: \"linear\",\r\n        }}\r\n      />\r\n      <motion.div\r\n        className=\"rounded-full w-4 h-4\"\r\n        animate={{\r\n          backgroundColor: [\r\n            \"#eab308\",\r\n            \"#22c55e\",\r\n            \"#3b82f6\",\r\n            \"#ef4444\",\r\n            \"#eab308\",\r\n          ],\r\n        }}\r\n        transition={{\r\n          duration: 2,\r\n          repeat: Infinity,\r\n        //   ease: \"linear\",\r\n        }}\r\n      />\r\n      <motion.div\r\n        className=\"rounded-full w-4 h-4\"\r\n        animate={{\r\n          backgroundColor: [\r\n            \"#22c55e\",\r\n            \"#3b82f6\",\r\n            \"#ef4444\",\r\n            \"#eab308\",\r\n            \"#22c55e\",\r\n          ],\r\n        }}\r\n        transition={{\r\n          duration: 2,\r\n          repeat: Infinity,\r\n        }}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Loader4;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

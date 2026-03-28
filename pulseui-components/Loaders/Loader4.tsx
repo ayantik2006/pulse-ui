@@ -19,7 +19,6 @@ function Loader4() {
         transition={{
           duration: 2,
           repeat: Infinity,
-        //   ease: "linear",
         }}
       />
       <motion.div
@@ -70,7 +69,6 @@ function Loader4() {
         transition={{
           duration: 2,
           repeat: Infinity,
-        //   ease: "linear",
         }}
       />
     </div>
