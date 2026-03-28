@@ -55,7 +55,7 @@ function ComponentNavbar() {
 
   return (
     <div
-      className={`${isFloatingNavbarVisible && !isComponentNavbarVisible ? "fixed top-0 left-0 h-full" : ""} ${isComponentNavbarVisible ? "sticky top-0 bottom-0" : ""}`}
+      className={`z-80 ${isFloatingNavbarVisible && !isComponentNavbarVisible ? "fixed top-0 left-0 h-full" : ""} ${isComponentNavbarVisible ? "sticky top-0 bottom-0" : ""}`}
     >
       <div
         className={`relative left-0 h-full p-4 pr-0 ${!isComponentNavbarVisible ? "hidden" : ""}`}
@@ -150,13 +150,13 @@ function ComponentNavbar() {
       <AnimatePresence>
         {isFloatingNavbarVisible && (
           <motion.div
-            className={`bg-neutral-900 w-65 h-full border border-neutral-800 p-4 flex flex-col absolute left-0 top-0`}
+            className={`bg-neutral-900 w-65 h-full border border-neutral-800 p-4 flex flex-col absolute left-0 top-0 `}
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 ">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-neutral-400">COMPONENTS</h1>
                 <div className="flex items-center justify-center bg-neutral-950 px-2 py-1 rounded text-sm text-neutral-400">
@@ -196,7 +196,20 @@ function ComponentNavbar() {
             </div>
             <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar">
               {visibleComponents.map((componentName, index) => (
-                <div key={index} className="cursor-pointer">
+                <div
+                  key={index}
+                  className="cursor-pointer"
+                  onClick={() => {
+                    switch (componentName) {
+                      case "Buttons":
+                        router.push("/buttons");
+                        break;
+                      case "Loaders":
+                        router.push("/loaders");
+                        break;
+                    }
+                  }}
+                >
                   <p>{componentName}</p>
                 </div>
               ))}
