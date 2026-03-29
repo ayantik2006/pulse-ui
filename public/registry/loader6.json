@@ -1,0 +1,11 @@
+{
+  "name": "loader23",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "function Loader6({color}:{color?:string}) {\r\n  return (\r\n    <div className=\"w-10 h-10 border-4 border-black rounded-full border-dashed animate-spin\"\r\n    style={{\r\n      borderColor:color\r\n    }}>      \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Loader6",
+      "type": "registry:component"
+    }
+  ]
+}

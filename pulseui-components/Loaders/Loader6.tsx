@@ -1,6 +1,9 @@
-function Loader6() {
+function Loader6({color}:{color?:string}) {
   return (
-    <div className="w-10 h-10 border-4 border-neutral-800 rounded-full border-dashed animate-spin">      
+    <div className="w-10 h-10 border-4 border-black rounded-full border-dashed animate-spin"
+    style={{
+      borderColor:color
+    }}>      
     </div>
   )
 }
