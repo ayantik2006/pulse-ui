@@ -14,15 +14,15 @@ function ComponentNavbar() {
   const allComponents = [
     "Buttons",
     "Loaders",
-    "File Upload",
-    "Toasts",
-    "Accordian",
-    "Avatar",
-    "Typewriter Effect",
-    "Rating",
-    "Date Picker",
-    "Carousal",
-    "Badges",
+    // "File Upload",
+    // "Toasts",
+    // "Accordian",
+    // "Avatar",
+    // "Typewriter Effect",
+    // "Rating",
+    // "Date Picker",
+    // "Carousal",
+    // "Badges",
   ];
   const [visibleComponents, setVisibleComponents] = useState(allComponents);
   const [width, setWidth] = useState<number>();
