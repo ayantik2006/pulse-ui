@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Playfair_Display } from "next/font/google";
 import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect";
+import Link from "next/link";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -48,7 +49,7 @@ function Examples() {
             className={`text-orange-600 text-2xl font-semibold `}
           />
         </div>
-        <button className="flex items-center gap-2 bg-neutral-900 text-white px-3 py-2 rounded shadow-[0_0_4px_gray] cursor-pointer font-semibold mt-10 hover:shadow-[0_0_10px_gray] duration-300">View more</button>
+        <Link href={"/buttons"} className="flex items-center gap-2 bg-neutral-900 text-white px-3 py-2 rounded shadow-[0_0_4px_gray] cursor-pointer font-semibold mt-10 hover:shadow-[0_0_10px_gray] duration-300">View more</Link>
       </div>
     </div>
   );

@@ -21,12 +21,7 @@ function LandingFooter() {
           <h3 className="text-white font-medium mb-3">Resources</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#" className="hover:text-white transition">
-                Docs
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-white transition">
+              <Link href="/buttons" className="hover:text-white transition">
                 Components
               </Link>
             </li>
@@ -48,11 +43,6 @@ function LandingFooter() {
             </li>
             <li>
               <Link href="#" className="hover:text-white transition">
-                Contribute
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-white transition">
                 Contact
               </Link>
             </li>
@@ -60,9 +50,8 @@ function LandingFooter() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-[#1F2937] text-center text-sm py-4 text-gray-500">
-        © {new Date().getFullYear()} Pulse UI. Built by DSC NIT Rourkela
+        &copy; {new Date().getFullYear()} Pulse UI. Built by Ayantik Sarkar and Shuvam Satapathi
       </div>
     </footer>
   );
