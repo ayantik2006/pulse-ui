@@ -18,9 +18,9 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center bg-black min-h-screen">
       <LandingNavbar/>
       <Hero/>
-      <div className="w-full bg-neutral-950 h-1 shadow-[0_4px_25px_gray] mb-20"/>
+      <div className="w-full bg-neutral-950 h-1 mb-20"/>
       <Features/>
-      <div className="w-full bg-neutral-950 h-1 shadow-[0_4px_25px_gray] mb-20"/>
+      <div className="w-full bg-neutral-950 h-1 mb-20"/>
       {/* <Examples/> */}
       <div>
         <p className={`text-black text-9xl text-shadow-[0_0_2px_white] my-[-2rem] font-bold tracking-[2rem] ${playfair.className} text-4xl sm:text-5xl md:text-6xl lg:text-9xl [@media(max-width:640px)]:text-3xl`}>PULSE UI</p>

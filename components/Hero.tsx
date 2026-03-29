@@ -33,8 +33,8 @@ function Hero() {
           Without the Headache
         </h2>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-5">
-        <div className="p-1 bg-yellow-500 rounded bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center group">
+      <div className="flex flex-wrap items-center justify-center gap-5 mx-3">
+        <div className="p-1 bg-yellow-500 rounded bg-linear-to-r from-pink-500 to-purple-500 flex items-center justify-center group">
           <button
             className="px-20 text-sm py-[0.5rem] rounded bg-black text-white cursor-pointer font-semibold flex items-center gap-2"
             onClick={() => {

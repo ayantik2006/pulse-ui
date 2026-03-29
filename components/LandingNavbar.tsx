@@ -20,19 +20,25 @@ function LandingNavbar() {
       </Link>
       <div className="flex gap-10 items-center [@media(max-width:780px)]:hidden pr-20 [@media(max-width:780px)]:pr-10">
         <Link
+          href={"/"}
+          className="font-semibold hover:text-neutral-300 text-[0.9rem]"
+        >
+          Home
+        </Link>
+        <Link
           href={"/buttons"}
           className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Documentation
         </Link>
-        <Link
+        {/* <Link
           href={"#examples"}
           className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Examples
-        </Link>
+        </Link> */}
         <Link
-          href={""}
+          href={"/feedback"}
           className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Feedback
@@ -80,18 +86,24 @@ function LandingNavbar() {
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
               <Link
+                href={"/"}
+                className="font-semibold hover:text-neutral-300"
+              >
+                Home
+              </Link>
+              <Link
                 href={"/buttons"}
                 className="font-semibold hover:text-neutral-300"
               >
                 Documentation
               </Link>
-              <Link
+              {/* <Link
                 href={"#examples"}
                 className="font-semibold hover:text-neutral-300"
               >
                 Examples
-              </Link>
-              <Link href={""} className="font-semibold hover:text-neutral-300">
+              </Link> */}
+              <Link href={"/feedback"} className="font-semibold hover:text-neutral-300">
                 Feedback
               </Link>
               <Link
