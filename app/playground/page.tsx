@@ -38,6 +38,8 @@ import LightBadge from "@/pulseui-components/Badges/LightBadge";
 import DarkBadge from "@/pulseui-components/Badges/DarkBadge";
 import OutlineBadge from "@/pulseui-components/Badges/OutlineBadge";
 import NumberBadge from "@/pulseui-components/Badges/NumberBadge";
+import { useMouseCursor } from "@/context/MouseCursorContext";
+
 import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -46,6 +48,7 @@ function Page() {
   const [month, setMonth] = useState<number>();
   const [year, setYear] = useState<number>();
   const [rating, setRating] = useState(0);
+  const { setType } = useMouseCursor();
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -304,7 +307,7 @@ function Page() {
           title={"Project Lead"}
         />
       </div>
-      Cards
+      {/* Cards */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card1</h2>
@@ -362,17 +365,49 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <SuccessBadge />
-          <FailureBadge />
-          <LightBadge />
-          <DarkBadge />
-          <OutlineBadge />
-          <NumberBadge number={10} />
+          <SuccessBadge  />
+          <FailureBadge  />
+          <LightBadge  />
+          <DarkBadge  />
+          <OutlineBadge  />
+          <NumberBadge number={10}  />
+        </div>
+      </div>
+      {/* Cursors */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">11) Cursors</h1>
+        <div className="flex gap-3 items-center flex-wrap">
+          <div>
+            <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+              Cursors
+            </h2>
+          <div className="flex gap-4">
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("default")}
+            >
+              Default
+            </button>
+
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("dot")}
+            >
+              Dot Cursor
+            </button>
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("ring")}
+            >
+              Ring Cursor
+            </button>
+          </div>
+          </div>
         </div>
       </div>
       {/* ScratchCard */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">11) ScratchCard</h1>
+        <h1 className="text-3xl font-bold mb-5">12) ScratchCard</h1>
         <ScratchCard height={300} width={400} src="https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg"/>
       </div>
     </div>

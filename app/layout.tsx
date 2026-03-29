@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeContextProvider } from "@/context/ThemeContext";
+import { MouseCursorProvider } from "@/context/MouseCursorContext";
+import Cursor from "@/pulseui-components/mouse-cursor/mouseCursor/Cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner"
 
@@ -38,7 +40,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TooltipProvider>
+           <MouseCursorProvider>
+            <Cursor />
           <ThemeContextProvider>{children}</ThemeContextProvider>
+              </MouseCursorProvider>
         </TooltipProvider>
         <Toaster />
       </body>
