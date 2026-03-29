@@ -94,10 +94,15 @@ function ComponentNavbar() {
             </InputGroup>
           </div>
           <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar">
+            {visibleComponents.length == 0 && (
+              <div>
+                <p className="text-sm text-neutral-500">No components</p>
+              </div>
+            )}
             {visibleComponents.map((componentName, index) => (
               <div
                 key={index}
-                className="cursor-pointer"
+                className="cursor-pointer text-sm hover:text-neutral-400"
                 onClick={() => {
                   switch (componentName) {
                     case "Buttons":
@@ -113,22 +118,26 @@ function ComponentNavbar() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded">
+          <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded text-sm duration-300">
             <Link
               href={"/"}
               className="text-neutral-500 hover:text-neutral-400"
             >
               Home
             </Link>
-            <Link href={""} className="text-neutral-500 hover:text-neutral-400">
+            <Link
+              href={"/feedback"}
+              className="text-neutral-500 hover:text-neutral-400"
+            >
               Feedback
             </Link>
             <Link
               href={"https://github.com/ayantik2006/pulse-ui"}
-              className="text-neutral-500 hover:text-neutral-400"
+              className="font-semibold text-neutral-400 text-[0.9rem] rounded flex items-center gap-2 duration-300"
               target="_blank"
             >
-              GitHub
+              <i className="devicon-github-original" />
+              <p className="text-[0.8rem] mt-[0.1rem]">GitHub</p>
             </Link>
           </div>
         </div>
@@ -195,10 +204,15 @@ function ComponentNavbar() {
               </InputGroup>
             </div>
             <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar">
+              {visibleComponents.length == 0 && (
+                <div>
+                  <p className="text-sm text-neutral-500">No components</p>
+                </div>
+              )}
               {visibleComponents.map((componentName, index) => (
                 <div
                   key={index}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-sm hover:text-neutral-400"
                   onClick={() => {
                     switch (componentName) {
                       case "Buttons":
@@ -214,7 +228,7 @@ function ComponentNavbar() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded">
+            <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded text-sm">
               <Link
                 href={"/"}
                 className="text-neutral-500 hover:text-neutral-400"
@@ -229,10 +243,11 @@ function ComponentNavbar() {
               </Link>
               <Link
                 href={"https://github.com/ayantik2006/pulse-ui"}
-                className="text-neutral-500 hover:text-neutral-400"
+                className="font-semibold text-neutral-400 text-[0.9rem] rounded flex items-center gap-2 duration-300"
                 target="_blank"
               >
-                GitHub
+                <i className="devicon-github-original" />
+                <p className="text-[0.8rem] mt-[0.1rem]">GitHub</p>
               </Link>
             </div>
           </motion.div>

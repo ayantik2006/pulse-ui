@@ -33,7 +33,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 BasicLoader
               </h1>
-              <BasicLoader />
+              <BasicLoader color="orange" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -152,7 +152,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader2
               </h1>
-              <Loader2 color="white"/>
+              <Loader2 color="blue"/>
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -271,7 +271,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader3
               </h1>
-              <Loader3 color="red"/>
+              <Loader3 color="green"/>
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
