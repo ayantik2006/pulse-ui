@@ -20,7 +20,7 @@ function Examples() {
       <h1 className={`text-white ${playfair.className} text-3xl font-bold`}>
         Some of our components
       </h1>
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-co items-center gap-10">
         <h1 className="mb-[-2rem] font-semibold text-neutral-300">
           Date Picker
         </h1>

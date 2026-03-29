@@ -3,43 +3,61 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 function LandingNavbar() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
 
   return (
-    <div className="text-white fixed top-0 w-full h-20 flex items-center justify-between  shadow-[0_0_20px_gray] backdrop-blur-lg z-80">
-      <Link href={"/"} className="flex gap-1 items-center pl-20 [@media(max-width:780px)]:pl-10 ">
+    <div className="text-white fixed top-0 w-full h-20 flex items-center justify-between backdrop-blur-lg z-80">
+      <Link
+        href={"/"}
+        className="flex gap-1 items-center pl-20 [@media(max-width:780px)]:pl-10 "
+      >
         <Image src="/logo.png" height={38} width={38} alt="logo" />
         <p className="italic font-semibold text-2xl">ulse</p>
         <p className="italic font-semibold text-2xl ml-1">UI</p>
       </Link>
       <div className="flex gap-10 items-center [@media(max-width:780px)]:hidden pr-20 [@media(max-width:780px)]:pr-10">
         <Link
+          href={"/"}
+          className="font-semibold hover:text-neutral-300 text-[0.9rem]"
+        >
+          Home
+        </Link>
+        <Link
           href={"/buttons"}
-          className="font-semibold hover:text-neutral-300"
+          className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Documentation
         </Link>
-        <Link
+        {/* <Link
           href={"#examples"}
-          className="font-semibold hover:text-neutral-300"
+          className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Examples
-        </Link>
+        </Link> */}
         <Link
-          href={""}
-          className="font-semibold hover:text-neutral-300"
+          href={"/feedback"}
+          className="font-semibold hover:text-neutral-300 text-[0.9rem]"
         >
           Feedback
         </Link>
-        <Link
-          href={"https://github.com/ayantik2006/pulse-ui"}
-          className="font-semibold hover:text-neutral-300"
-          target="_blank"
-        >
-          GitHub
-        </Link>
+        <Tooltip>
+          <TooltipTrigger className="z-81">
+            <Link
+              href={"https://github.com/ayantik2006/pulse-ui"}
+              className="font-semibold hover:text-neutral-300 text-[0.9rem] hover:bg-neutral-900 p-[0.4rem] px-2 rounded flex items-center gap-2 duration-300"
+              target="_blank"
+            >
+              <i className="devicon-github-original"/>
+              <p className="text-[0.8rem]">GitHub</p>
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent className="z-90" side="top">
+            <p>View in GitHub</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
       <div
         className="[@media(min-width:780px)]:hidden pr-10 cursor-pointer"
@@ -67,13 +85,25 @@ function LandingNavbar() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              <Link href={"/buttons"} className="font-semibold hover:text-neutral-300">
+              <Link
+                href={"/"}
+                className="font-semibold hover:text-neutral-300"
+              >
+                Home
+              </Link>
+              <Link
+                href={"/buttons"}
+                className="font-semibold hover:text-neutral-300"
+              >
                 Documentation
               </Link>
-              <Link href={"#examples"} className="font-semibold hover:text-neutral-300">
+              {/* <Link
+                href={"#examples"}
+                className="font-semibold hover:text-neutral-300"
+              >
                 Examples
-              </Link>
-              <Link href={""} className="font-semibold hover:text-neutral-300">
+              </Link> */}
+              <Link href={"/feedback"} className="font-semibold hover:text-neutral-300">
                 Feedback
               </Link>
               <Link

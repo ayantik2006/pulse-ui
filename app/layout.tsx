@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import { MouseCursorProvider } from "@/context/MouseCursorContext";
 import Cursor from "@/pulseui-components/mouse-cursor/mouseCursor/Cursor";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +28,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeContextProvider>
-          <MouseCursorProvider>
+        <TooltipProvider>
+           <MouseCursorProvider>
             <Cursor />
-            {children}
-          </MouseCursorProvider>
-        </ThemeContextProvider>
+          <ThemeContextProvider>{children}</ThemeContextProvider>
+              </MouseCursorProvider>
+        </TooltipProvider>
+        <Toaster />
       </body>
     </html>
   );

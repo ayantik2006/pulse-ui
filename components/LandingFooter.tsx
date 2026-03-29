@@ -26,7 +26,7 @@ function LandingFooter() {
               </Link>
             </li>
             <li>
-              <Link href="https://github.com/ayantik2006/pulse-ui" className="hover:text-white transition">
+              <Link href="https://github.com/ayantik2006/pulse-ui" className="hover:text-white transition" target="_blank">
                 GitHub
               </Link>
             </li>
@@ -37,13 +37,13 @@ function LandingFooter() {
           <h3 className="text-white font-medium mb-3">More</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#" className="hover:text-white transition">
+              <Link href="https://github.com/ayantik2006/pulse-ui/blob/main/LICENSE" className="hover:text-white transition" target="_blank">
                 License
               </Link>
             </li>
             <li>
               <Link href="#" className="hover:text-white transition">
-                Contact
+                Feedback
               </Link>
             </li>
           </ul>
