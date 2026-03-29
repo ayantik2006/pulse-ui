@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function Loader8({color}:{color:string}) {
+function Loader8({color}:{color?:string}) {
   return (
     <div className="h-6 w-62 border-3 p-1 border-black rounded flex gap-1 overflow-hidden">
       <motion.div

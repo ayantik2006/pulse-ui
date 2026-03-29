@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Loader9({ color }: { color: string }) {
+export default function Loader9({ color }: { color?: string }) {
   return (
     <div className="flex flex-col relative gap-1">
       <motion.div

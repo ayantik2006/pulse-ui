@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 function Loader12() {
   return (
