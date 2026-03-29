@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function Loader5({ color }: { color: string }) {
+function Loader5({ color }: { color?: string }) {
   return (
     <div className="flex gap-2">
       <motion.div
