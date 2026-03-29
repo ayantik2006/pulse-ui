@@ -1,0 +1,11 @@
+{
+  "name": "loader7",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion } from \"framer-motion\";\r\n\r\nfunction Loader7() {\r\n  return (\r\n    <div className=\"flex\">\r\n      <motion.div\r\n        className=\"w-8 h-8 border-4 rounded-full border-black\"\r\n        initial={{ backgroundColor: \"black\" }}\r\n        animate={{ backgroundColor: [\"#000\", \"#fff\", \"#000\"] }}\r\n        transition={{ repeat: Infinity, duration: 1 }}\r\n      />\r\n      <motion.div\r\n        className=\"w-8 h-8 border-4 rounded-full border-black -translate-x-2\"\r\n        initial={{ backgroundColor: \"black\" }}\r\n        animate={{ backgroundColor: [\"#fff\", \"#000\", \"#fff\"] }}\r\n        transition={{ repeat: Infinity, duration: 1 }}\r\n      />\r\n      <motion.div\r\n        className=\"w-8 h-8 border-4 rounded-full border-black -translate-x-4\"\r\n        initial={{ backgroundColor: \"black\" }}\r\n        animate={{ backgroundColor: [\"#000\", \"#fff\", \"#000\"] }}\r\n        transition={{ repeat: Infinity, duration: 1 }}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Loader7;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
