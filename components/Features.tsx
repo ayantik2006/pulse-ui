@@ -12,7 +12,7 @@ function Features() {
       <div className="p-2 border-2 border-neutral-500 rounded-3xl">
         <div className="flex flex-col gap-4 justify-center p-6 max-w-60 duration-200 bg-neutral-900/60 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
           <div className="flex gap-3 items-center">
-            <Zap className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80" />
+            <Zap className="group-hover:scale-130 group-hover:rotate-360 duration-300 w-5 h-5 text-white/80" />
             <h1 className="text-lg font-semibold">Lightning Fast</h1>
           </div>
           <p className="text-neutral-300 text-sm">
@@ -23,7 +23,7 @@ function Features() {
       <div className="p-2 border-2 border-neutral-500 rounded-3xl">
         <div className="flex flex-col gap-4 justify-center p-6 max-w-64 duration-200 bg-neutral-900/60 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5">
           <div className="flex gap-3 items-center">
-            <FilePenLine className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80" />
+            <FilePenLine className="group-hover:scale-130 group-hover:rotate-360 duration-300 w-5 h-5 text-white/80" />
             <h1 className="text-lg font-semibold">Fully Customizable</h1>
           </div>
           <p className="text-neutral-300 text-sm">
@@ -34,7 +34,7 @@ function Features() {
       <div className="p-2 border-2 border-neutral-500 rounded-3xl">
         <div className="flex flex-col gap-4 justify-center p-6 max-w-64 duration-200 bg-neutral-900/60 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5">
           <div className="flex gap-3 items-center">
-            <TvMinimalPlay className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80" />
+            <TvMinimalPlay className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
             <h1 className="text-lg font-semibold">Plug & Play</h1>
           </div>
           <p className="text-neutral-300 text-sm">
@@ -45,7 +45,7 @@ function Features() {
       <div className="p-2 border-2 border-neutral-500 rounded-3xl">
         <div className="flex flex-col gap-4 justify-center p-6 max-w-73 h-34 duration-200 bg-neutral-900/60 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5">
           <div className="flex gap-3 items-center">
-            <TabletSmartphone className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80" />
+            <TabletSmartphone className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
             <h1 className="text-lg font-semibold">Responsive by Default</h1>
           </div>
           <p className="text-neutral-300 text-sm">
@@ -56,7 +56,7 @@ function Features() {
       <div className="p-2 border-2 border-neutral-500 rounded-3xl">
         <div className="flex flex-col gap-4 justify-center p-6 max-w-73 duration-200 bg-neutral-900/60 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5">
           <div className="flex gap-3 items-center">
-            <Bolt className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80" />
+            <Bolt className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
             <h1 className="text-lg font-semibold">Developer Friendly</h1>
           </div>
           <p className="text-neutral-300 text-sm">

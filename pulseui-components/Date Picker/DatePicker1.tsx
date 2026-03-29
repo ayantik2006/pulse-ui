@@ -53,7 +53,7 @@ function DatePicker1({
   },[]);
 
   return (
-    <div className="p-1 border-2 rounded border-neutral-700 shadow-[0_0_4px_gray] w-fit">
+    <div className="p-1 border-2 rounded border-neutral-700 shadow-[0_0_4px_gray] w-fit dark:bg-white dark:text-black">
       <div className="flex flex-col gap-1 items-center px-4 py-4 border-2 rounded border-neutral-300">
         <div className="flex items-center justify-between gap-15 mb-4">
           <button
