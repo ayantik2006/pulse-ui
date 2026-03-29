@@ -773,6 +773,45 @@ function page() {
               </div>
             </div>
           </div>
+          <div className="flex flex-col gap-5 mt-5">
+            <div className="w-full bg-neutral-900 border border-neutral-700 py-6 px-6 rounded flex flex-col gap-5">
+              <h1 className="text-xl font-semibold text-neutral-200">
+                Loader10
+              </h1>
+              <Loader7/>
+              <div className="mb-[-0.5rem]">
+                <p className="font-semibold">Installation</p>
+              </div>
+              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
+                <p className="text-neutral-400 text-sm">
+                  npx shadcn@latest add
+                  https://pulseui-henna.vercel.app/registry/loader10.json
+                </p>
+                <button
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
+                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader10.json",
+                    );
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="font-semibold">
+                  Usage
+                </h1>
+                <CodeBlock code='import Loader10 from "@/components/loader10";'/>
+                <CodeBlock code='<Loader10/>'/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

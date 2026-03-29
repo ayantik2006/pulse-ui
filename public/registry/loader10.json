@@ -1,0 +1,11 @@
+{
+  "name": "loader10",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "import { motion } from \"framer-motion\";\r\n\r\nexport default function Loader10() {\r\n  return (\r\n    <div className=\"relative w-24 h-24\">\r\n      <motion.div\r\n        className=\"absolute top-3 left-8 w-8  h-8 rounded-full  border-black\"\r\n        style={{ transform: \"translateX(-50%) rotate(45deg)\" }}\r\n        animate={{ backgroundColor: [\"#fff\", \"#000\", \"#fff\"] }}\r\n        transition={{ duration: 0.6, repeat: Infinity, ease: \"linear\" }}\r\n      />\r\n      <motion.div\r\n        className=\"absolute right-7 top-12 w-8  h-8 rounded-full  border-black\"\r\n        style={{ transform: \"translateY(-50%) rotate(45deg)\" }}\r\n        animate={{ backgroundColor: [\"#000\", \"#fff\", \"#000\"] }}\r\n        transition={{\r\n          duration: 0.6,\r\n          repeat: Infinity,\r\n          ease: \"linear\",\r\n          delay: 0.15,\r\n        }}\r\n      />\r\n      <motion.div\r\n        className=\"absolute bottom-4 left-8.5 w-8  h-8 rounded-full  border-black\"\r\n        style={{ transform: \"translateX(-50%) rotate(45deg)\" }}\r\n        animate={{ backgroundColor: [\"#fff\", \"#000\", \"#fff\"] }}\r\n        transition={{\r\n          duration: 0.6,\r\n          repeat: Infinity,\r\n          ease: \"linear\",\r\n          delay: 0.3,\r\n        }}\r\n      />\r\n      <motion.div\r\n        className=\"absolute left-0 top-1/2 w-8  h-8 rounded-full  border-black\"\r\n        style={{ transform: \"translateY(-50%) rotate(45deg)\" }}\r\n        animate={{ backgroundColor: [\"#000\", \"#fff\", \"#000\"] }}\r\n        transition={{\r\n          duration: 0.6,\r\n          repeat: Infinity,\r\n          ease: \"linear\",\r\n          delay: 0.45,\r\n        }}\r\n      />\r\n    </div>\r\n  );\r\n}",
+      "type": "registry:component"
+    }
+  ]
+}
