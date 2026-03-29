@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function Loader8() {
+function Loader8({color}:{color:string}) {
   return (
     <div className="h-6 w-62 border-3 p-1 border-black rounded flex gap-1 overflow-hidden">
       <motion.div
@@ -9,11 +9,15 @@ function Loader8() {
         transition={{ repeat: Infinity, duration: 3, ease:"linear" }}
       >
         {[...Array(10)].map((_, i) => (
-          <div key={i} className="h-3 w-5 bg-neutral-700" />
+          <div key={i} className="h-3 w-5 bg-black" style={{
+            backgroundColor:color
+          }} />
         ))}
 
         {[...Array(10)].map((_, i) => (
-          <div key={`dup-${i}`} className="h-3 w-5 bg-neutral-700" />
+          <div key={`dup-${i}`} className="h-3 w-5 bg-black" style={{
+            backgroundColor:color
+          }} />
         ))}
       </motion.div>
     </div>

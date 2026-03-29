@@ -1,0 +1,11 @@
+{
+  "name": "loader8",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/loader3.tsx",
+      "content": "import { motion } from \"framer-motion\";\r\n\r\nfunction Loader8({color}:{color:string}) {\r\n  return (\r\n    <div className=\"h-6 w-62 border-3 p-1 border-black rounded flex gap-1 overflow-hidden\">\r\n      <motion.div\r\n        className=\"flex gap-1 px-1\"\r\n        animate={{ x: [\"0%\",\"-50%\"] }}\r\n        transition={{ repeat: Infinity, duration: 3, ease:\"linear\" }}\r\n      >\r\n        {[...Array(10)].map((_, i) => (\r\n          <div key={i} className=\"h-3 w-5 bg-black\" style={{\r\n            backgroundColor:color\r\n          }} />\r\n        ))}\r\n\r\n        {[...Array(10)].map((_, i) => (\r\n          <div key={`dup-${i}`} className=\"h-3 w-5 bg-black\" style={{\r\n            backgroundColor:color\r\n          }} />\r\n        ))}\r\n      </motion.div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Loader8;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
