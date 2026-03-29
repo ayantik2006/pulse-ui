@@ -14,7 +14,7 @@ function ComponentNavbar() {
   const allComponents = [
     "Buttons",
     "Loaders",
-    // "File Upload",
+    "File Upload",
     // "Toasts",
     // "Accordian",
     // "Avatar",
@@ -110,6 +110,9 @@ function ComponentNavbar() {
                       break;
                     case "Loaders":
                       router.push("/loaders");
+                      break;
+                    case "File Upload":
+                      router.push("/file-upload");
                       break;
                   }
                 }}
@@ -220,6 +223,9 @@ function ComponentNavbar() {
                         break;
                       case "Loaders":
                         router.push("/loaders");
+                        break;
+                      case "File Upload":
+                        router.push("/file-upload");
                         break;
                     }
                   }}

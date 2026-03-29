@@ -35,7 +35,7 @@ export default function CodeInline({
     <div className="flex items-center justify-between gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-white/[0.06] to-white/[0.02] border border-white/10 backdrop-blur-md">
 
       <div className="flex items-center gap-4 overflow-x-auto">
-        <span className="text-gray-500 text-sm select-none">1</span>
+        {/* <span className="text-gray-500 text-sm select-none">1</span> */}
 
         <div
           className="text-sm font-mono whitespace-nowrap [&_code]:bg-transparent"

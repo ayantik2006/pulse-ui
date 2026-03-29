@@ -13,7 +13,7 @@ function SingleFileUpload({
   return (
     <div className="flex flex-col gap-2">
       <div
-        className={`max-w-[20rem] h-[7rem] border-2 border-neutral-300 rounded-lg border-dashed flex flex-col items-center justify-center cursor-pointer duration-300 hover:bg-neutral-100 gap-2 ${isDragging ? "border-neutral-800 bg-neutral-100" : ""}`}
+        className={`max-w-[20rem] h-[7rem] border-2 border-neutral-300 rounded-lg border-dashed flex flex-col items-center justify-center cursor-pointer duration-300 hover:bg-neutral-100 gap-2 dark:bg-neutral-800 dark:border-neutral-500 dark:hover:bg-neutral-900 ${isDragging ? "border-neutral-800 bg-neutral-100" : ""}`}
         onClick={() => {
           fileInputRef.current?.click();
         }}
@@ -51,14 +51,14 @@ function SingleFileUpload({
         />
       </div>
       {fileName !== "" && (
-        <div className="bg-neutral-100 max-w-[20rem] h-8 rounded flex items-center justify-between gap-2 px-2">
+        <div className="bg-neutral-100 max-w-[20rem] h-8 rounded flex items-center justify-between gap-2 px-2 dark:bg-neutral-800">
           <Paperclip size={15} className=" stroke-neutral-600" />
-          <p className="overflow-clip max-w-[16rem] h-7 text-neutral-500 ">
+          <p className="overflow-clip max-w-[16rem] h-7 text-neutral-500 text-sm mt-[0.4rem]">
             {fileName}
           </p>
           <X
             size={15}
-            className="hover:stroke-red-700 cursor-pointer duration-300"
+            className="hover:stroke-red-700 cursor-pointer duration-300 dark:stroke-neutral-500 dark:hover:stroke-red-700"
             onClick={() => {
               if (fileInputRef.current) {
                 fileInputRef.current.value = "";
