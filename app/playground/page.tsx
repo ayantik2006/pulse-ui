@@ -41,6 +41,7 @@ import NumberBadge from "@/pulseui-components/Badges/NumberBadge";
 import { useMouseCursor } from "@/context/MouseCursorContext";
 
 import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
+import Password1 from "@/pulseui-components/Password/Password1";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -49,6 +50,7 @@ function Page() {
   const [year, setYear] = useState<number>();
   const [rating, setRating] = useState(0);
   const { setType } = useMouseCursor();
+  const [password, setPassword] = useState("");
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -365,12 +367,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <SuccessBadge  />
-          <FailureBadge  />
-          <LightBadge  />
-          <DarkBadge  />
-          <OutlineBadge  />
-          <NumberBadge number={10}  />
+          <SuccessBadge />
+          <FailureBadge />
+          <LightBadge />
+          <DarkBadge />
+          <OutlineBadge />
+          <NumberBadge number={10} />
         </div>
       </div>
       {/* Cursors */}
@@ -381,34 +383,46 @@ function Page() {
             <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
               Cursors
             </h2>
-          <div className="flex gap-4">
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("default")}
-            >
-              Default
-            </button>
+            <div className="flex gap-4">
+              <button
+                className="bg-black text-white px-4 py-2 rounded-xl"
+                onClick={() => setType("default")}
+              >
+                Default
+              </button>
 
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("dot")}
-            >
-              Dot Cursor
-            </button>
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("ring")}
-            >
-              Ring Cursor
-            </button>
-          </div>
+              <button
+                className="bg-black text-white px-4 py-2 rounded-xl"
+                onClick={() => setType("dot")}
+              >
+                Dot Cursor
+              </button>
+              <button
+                className="bg-black text-white px-4 py-2 rounded-xl"
+                onClick={() => setType("ring")}
+              >
+                Ring Cursor
+              </button>
+            </div>
           </div>
         </div>
       </div>
       {/* ScratchCard */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">12) ScratchCard</h1>
-        <ScratchCard height={300} width={400} src="https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg"/>
+        <ScratchCard
+          height={300}
+          width={400}
+          src="https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg"
+        />
+      </div>
+      {/* Password */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">13) Password</h1>
+        {/* <h2 className="font-semibold text-neutral-600 mb-3">Password1</h2> */}
+        <div className="w-90">
+          <Password1 onPasswordChange={setPassword} />
+        </div>
       </div>
     </div>
   );
