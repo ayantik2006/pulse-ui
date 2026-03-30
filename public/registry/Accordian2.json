@@ -1,0 +1,11 @@
+{
+  "name": "Accordian2",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Accordian2.tsx",
+      "content": "import { ChevronUp, Minus, Plus } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { AnimatePresence, motion } from \"framer-motion\";\r\n\r\nfunction Accordian2({ title, body }: { title: string; body: string }) {\r\n  const [isBodyOpen, setIsBodyOpen] = useState(false);\r\n\r\n  return (\r\n    <div className=\"w-full h-fit flex flex-col gap-2\">\r\n      <div className=\"border border-neutral-400 flex flex-col gap-2 shadow-[3px_3px_0px_3px_black] duration-300 dark:bg-neutral-900 dark:hover:shadow-[0_3px_4px_black] dark:border-neutral-700\">\r\n        <div\r\n          className=\"flex items-center justify-between py-3 px-5 cursor-pointer\"\r\n          onClick={() => {\r\n            setIsBodyOpen((prev) => !prev);\r\n          }}\r\n        >\r\n          <p className=\"text-md font-semibold \">{title}</p>\r\n          {!isBodyOpen && <Plus className=\"stroke-1\" size={18}/>}\r\n          {isBodyOpen && <Minus className=\"stroke-1\" size={18}/>}\r\n        </div>\r\n        <AnimatePresence initial={false}>\r\n          {isBodyOpen && (\r\n            <motion.div\r\n              initial={{ height: 0, opacity: 0 }}\r\n              animate={{ height: \"auto\", opacity: 1 }}\r\n              exit={{ height: 0, opacity: 0 }}\r\n              transition={{ duration: 0.2, ease: \"easeInOut\" }}\r\n              className=\"bg-neutral-100 overflow-hidden dark:bg-neutral-800\"\r\n            >\r\n              <p className=\"py-3 px-5\">{body}</p>\r\n            </motion.div>\r\n          )}\r\n        </AnimatePresence>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Accordian2;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

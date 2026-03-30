@@ -7,7 +7,7 @@ function Accordian2({ title, body }: { title: string; body: string }) {
 
   return (
     <div className="w-full h-fit flex flex-col gap-2">
-      <div className="border border-neutral-400 flex flex-col gap-2 hover: shadow-[3px_3px_0px_3px_black] duration-300">
+      <div className="border border-neutral-400 flex flex-col gap-2 shadow-[3px_3px_0px_3px_black] duration-300 dark:bg-neutral-900 dark:hover:shadow-[0_3px_4px_black] dark:border-neutral-700">
         <div
           className="flex items-center justify-between py-3 px-5 cursor-pointer"
           onClick={() => {
@@ -25,7 +25,7 @@ function Accordian2({ title, body }: { title: string; body: string }) {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="bg-neutral-100 rounded-b-lg overflow-hidden"
+              className="bg-neutral-100 overflow-hidden dark:bg-neutral-800"
             >
               <p className="py-3 px-5">{body}</p>
             </motion.div>

@@ -16,7 +16,7 @@ function ComponentNavbar() {
     "Loaders",
     "File Upload",
     "Toasts",
-    // "Accordian",
+    "Accordian",
     // "Avatar",
     // "Typewriter Effect",
     // "Rating",
@@ -116,6 +116,9 @@ function ComponentNavbar() {
                       break;
                     case "Toasts":
                       router.push("/toasts");
+                      break;
+                    case "Accordian":
+                      router.push("/accordians");
                       break;
                   }
                 }}
@@ -232,6 +235,9 @@ function ComponentNavbar() {
                         break;
                       case "Toasts":
                         router.push("/toasts");
+                        break;
+                      case "Accordian":
+                        router.push("/accordians");
                         break;
                     }
                   }}
