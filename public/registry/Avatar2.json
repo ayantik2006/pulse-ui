@@ -1,0 +1,11 @@
+{
+  "name": "Avatar2",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Avatar2.tsx",
+      "content": "\"use client\";\r\n\r\nimport { AnimatePresence, motion } from \"framer-motion\";\r\nimport Image from \"next/image\";\r\nimport { useState } from \"react\";\r\n\r\nfunction Avatar2({\r\n  src,\r\n  fallBackText,\r\n  className = \"\",\r\n  size,\r\n  title,\r\n}: {\r\n  src: string;\r\n  fallBackText: string;\r\n  className?: string;\r\n  size: number;\r\n  title: string;\r\n}) {\r\n  const [isImageExisting, setIsImageExisting] = useState(true);\r\n  const [isAvatarHovered, setIsAvatarHovered] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className=\"relative w-fit\"\r\n      onMouseEnter={() => setIsAvatarHovered(true)}\r\n      onMouseLeave={() => setIsAvatarHovered(false)}\r\n    >\r\n      <AnimatePresence>\r\n        {isAvatarHovered && (\r\n          <motion.div\r\n            className=\"absolute -top-10 left-1/2 -translate-x-1/2 bg-neutral-700 px-2 py-1 rounded text-sm whitespace-nowrap z-50 shadow text-white font-semibold dark:bg-white dark:text-black\"\r\n            initial={{ scale: 0 }}\r\n            animate={{ scale: 1 }}\r\n            transition={{ duration: 0.25 }}\r\n            exit={{ scale: 0 }}\r\n          >\r\n            <p>{title}</p>\r\n          </motion.div>\r\n        )}\r\n      </AnimatePresence>\r\n\r\n      {isImageExisting ? (\r\n        <div className=\"rounded-full border-2 border-neutral-900 dark:border-neutral-400\">\r\n          <Image\r\n            className=\"rounded-full\"\r\n            src={src}\r\n            height={size}\r\n            width={size}\r\n            alt=\"\"\r\n            onError={() => setIsImageExisting(false)}\r\n          />\r\n        </div>\r\n      ) : (\r\n        <div\r\n          style={{\r\n            height: `${size}px`,\r\n            width: `${size}px`,\r\n            fontSize: `${size / 2.2}px`,\r\n            userSelect: \"none\",\r\n          }}\r\n          className={`rounded-full flex items-center justify-center bg-black font-semibold text-white ${className}`}\r\n        >\r\n          {fallBackText}\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Avatar2;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

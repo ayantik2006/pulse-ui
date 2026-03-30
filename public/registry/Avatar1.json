@@ -1,0 +1,11 @@
+{
+  "name": "Avatar1",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Avatar1.tsx",
+      "content": "\"use client\";\r\n\r\nimport Image from \"next/image\";\r\nimport { useState } from \"react\";\r\n\r\nfunction Avatar1({\r\n  src,\r\n  fallBackText,\r\n  className = \"\",\r\n  size,\r\n}: {\r\n  src: string;\r\n  fallBackText: string;\r\n  className?: string;\r\n  size: number;\r\n}) {\r\n  const [isImageExisting, setIsImageExisting] = useState(true);\r\n\r\n  return (\r\n    <div className={``}>\r\n      {isImageExisting && (\r\n        <Image\r\n          className=\"rounded-full\"\r\n          src={src}\r\n          height={size}\r\n          width={size}\r\n          alt={\"\"}\r\n          onError={() => {\r\n            setIsImageExisting(false);\r\n          }}\r\n        />\r\n      )}\r\n      {!isImageExisting && (\r\n        <div\r\n          style={{\r\n            height: `${size}px`,\r\n            width: `${size}px`,\r\n            fontSize: `${size / 2.2}px`,\r\n            cursor:\"default\",\r\n            userSelect:\"none\"\r\n          }}\r\n          className={`rounded-full flex items-center justify-center bg-black font-semibold text-[#fff] ${className}`}\r\n        >\r\n          <p>{fallBackText}</p>\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Avatar1;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

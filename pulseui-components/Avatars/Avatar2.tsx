@@ -29,7 +29,7 @@ function Avatar2({
       <AnimatePresence>
         {isAvatarHovered && (
           <motion.div
-            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-neutral-700 px-2 py-1 rounded text-sm whitespace-nowrap z-50 shadow text-white font-semibold"
+            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-neutral-700 px-2 py-1 rounded text-sm whitespace-nowrap z-50 shadow text-white font-semibold dark:bg-white dark:text-black"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.25 }}
@@ -41,7 +41,7 @@ function Avatar2({
       </AnimatePresence>
 
       {isImageExisting ? (
-        <div className="rounded-full border-2 border-neutral-900">
+        <div className="rounded-full border-2 border-neutral-900 dark:border-neutral-400">
           <Image
             className="rounded-full"
             src={src}
