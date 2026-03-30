@@ -1,4 +1,4 @@
-import { ImageUp, Paperclip, Upload, X } from "lucide-react";
+import { ImageUp, X } from "lucide-react";
 import { useRef, useState } from "react";
 import Image from "next/image";
 
