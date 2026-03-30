@@ -1,0 +1,11 @@
+{
+  "name": "toast",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Toast/toast.tsx",
+      "content": "interface toastPropsType {\r\n  message: string;\r\n  duration?: number;\r\n  className?: string;\r\n  id?: string;\r\n  type?: \"success\" | \"failure\";\r\n  icon?: \"string\" | React.ReactNode;\r\n  closeButton?: boolean;\r\n  theme?: \"dark\" | \"default\";\r\n}\r\n\r\nlet toasts: toastPropsType[] = [];\r\n\r\nlet listeners: ((toasts: toastPropsType[]) => void)[] = [];\r\n\r\nexport function toast(toast: toastPropsType) {\r\n  toasts = [{ ...toast, id: crypto.randomUUID() }, ...toasts];\r\n  listeners.forEach((listener) => {\r\n    listener(toasts);\r\n  });\r\n  let newToasts: toastPropsType[] = [];\r\n  toasts.map((toast, index) => {\r\n    setTimeout(\r\n      () => {\r\n        toasts.map((toast2, index2) => {\r\n          if (toast2.id !== toast.id) {\r\n            newToasts.push(toast2);\r\n          }\r\n        });\r\n        toasts = newToasts;\r\n        newToasts = [];\r\n        listeners.forEach((listener) => {\r\n          listener(toasts);\r\n        });\r\n      },\r\n      toast.duration ? toast.duration : 3000,\r\n    );\r\n  });\r\n}\r\n\r\nexport function subscribe(listener: (toasts: toastPropsType[]) => void) {\r\n  listeners.push(listener);\r\n  listener(toasts);\r\n\r\n  return () => {\r\n    listeners = listeners.filter((l) => l !== listener);\r\n  };\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
