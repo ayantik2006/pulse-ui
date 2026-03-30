@@ -42,7 +42,7 @@ function LandingFooter() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white transition">
+              <Link href="/feedback" className="hover:text-white transition">
                 Feedback
               </Link>
             </li>
@@ -51,7 +51,7 @@ function LandingFooter() {
       </div>
 
       <div className="border-t border-[#1F2937] text-center text-sm py-4 text-gray-500">
-        &copy; {new Date().getFullYear()} Pulse UI. Built by Ayantik Sarkar and Shuvam Satapathi
+        &copy; {new Date().getFullYear()} Pulse UI. Built by Ayantik Sarkar
       </div>
     </footer>
   );

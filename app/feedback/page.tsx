@@ -15,7 +15,7 @@ function page() {
           Please share Your valuable feedback
         </h1>
         <form
-          className="flex flex-col w-full gap-5 bg-neutral-800 p-8 rounded border border-neutral-600"
+          className="flex flex-col w-full gap-5 bg-neutral-900 p-8 rounded border border-neutral-700"
           action="https://api.staticforms.dev/submit"
           method="POST"
           onSubmit={() => {
