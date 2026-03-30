@@ -15,7 +15,7 @@ function ComponentNavbar() {
     "Buttons",
     "Loaders",
     "File Upload",
-    // "Toasts",
+    "Toasts",
     // "Accordian",
     // "Avatar",
     // "Typewriter Effect",
@@ -113,6 +113,9 @@ function ComponentNavbar() {
                       break;
                     case "File Upload":
                       router.push("/file-upload");
+                      break;
+                    case "Toasts":
+                      router.push("/toasts");
                       break;
                   }
                 }}
@@ -226,6 +229,9 @@ function ComponentNavbar() {
                         break;
                       case "File Upload":
                         router.push("/file-upload");
+                        break;
+                      case "Toasts":
+                        router.push("/toasts");
                         break;
                     }
                   }}
