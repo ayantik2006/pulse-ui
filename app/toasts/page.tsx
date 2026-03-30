@@ -186,8 +186,8 @@ function Page() {
               <div className="">
                 <p className="font-semibold">Usage</p>
               </div>
-              <CodeBlock code='import Toast from "@/components/Toast/Toaster";' />
-              <CodeBlock code='import toast from "@/components/Toast/toast";' />
+              <CodeBlock code='import Toast from "@/components/Toaster";' />
+              <CodeBlock code='import toast from "@/components/toast";' />
               <div className="">
                 <p className="text-sm text-neutral-400">
                   Add the below code to top of file inside return()
