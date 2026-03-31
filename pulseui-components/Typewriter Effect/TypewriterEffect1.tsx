@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function TypewriterEffect({
+function TypewriterEffect1({
   words,
   className,
   speed,
@@ -39,15 +39,15 @@ function TypewriterEffect({
       if (charIndex === 0) {
         setIsErasing(false);
       }
-    }, speed);
+    }, speed?speed:200);
   }, [charIndex, isErasing, wordIndex]);
 
   return (
     <div className={`${className} flex `}>
       <span>{display}</span>
-      <span className=" text-black bg-black w-[0.15rem] ml-[0.1rem] text-[1.1rem]"></span>
+      <span className=" text-black bg-black dark:bg-neutral-300 w-[0.15rem] ml-[0.1rem] text-[1.1rem]"></span>
     </div>
   );
 }
 
-export default TypewriterEffect;
+export default TypewriterEffect1;

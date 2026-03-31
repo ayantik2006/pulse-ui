@@ -2,7 +2,7 @@ import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
 import { useState } from "react";
 import { Playfair_Display } from "next/font/google";
 import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
-import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect";
+import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
 import Link from "next/link";
 
 const playfair = Playfair_Display({

@@ -1,0 +1,11 @@
+{
+  "name": "TypewriterEffect1",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/TypewriterEffect1.tsx",
+      "content": "import { useEffect, useState } from \"react\";\r\n\r\nfunction TypewriterEffect1({\r\n  words,\r\n  className,\r\n  speed,\r\n}: {\r\n  words: Array<string>;\r\n  className?: string;\r\n  speed?: number;\r\n}) {\r\n  const [display, setDisplay] = useState(\"\");\r\n  const [wordIndex, setWordIndex] = useState(0);\r\n  const [charIndex, setCharIndex] = useState(0);\r\n  const [isErasing, setIsErasing] = useState(false);\r\n\r\n  useEffect(() => {\r\n    setTimeout(() => {\r\n      if (!isErasing) {\r\n        setDisplay((prev) => prev.concat(words[wordIndex].charAt(charIndex)));\r\n        setCharIndex((prev) => prev + 1);\r\n        if (charIndex === words[wordIndex].length - 1) {\r\n          setCharIndex((prev) => prev - 1);\r\n          setIsErasing(true);\r\n        }\r\n      }\r\n      if (isErasing) {\r\n        setDisplay((prev) => prev.slice(0, charIndex));\r\n        setCharIndex((prev) => prev - 1);\r\n        if (charIndex == 0) {\r\n          setIsErasing(false);\r\n          setWordIndex((prev) => prev + 1);\r\n          if (wordIndex === words.length - 1) {\r\n            setWordIndex(0);\r\n          }\r\n        }\r\n      }\r\n\r\n      if (charIndex === 0) {\r\n        setIsErasing(false);\r\n      }\r\n    }, speed?speed:200);\r\n  }, [charIndex, isErasing, wordIndex]);\r\n\r\n  return (\r\n    <div className={`${className} flex `}>\r\n      <span>{display}</span>\r\n      <span className=\" text-black bg-black dark:bg-neutral-300 w-[0.15rem] ml-[0.1rem] text-[1.1rem]\"></span>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default TypewriterEffect1;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
