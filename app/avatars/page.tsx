@@ -143,9 +143,7 @@ function Page() {
                         </TableCell>
                         <TableCell className="text-right ">
                           <div className="flex items-center justify-center p-1 rounded">
-                            <p>
-                              The size of the avatar
-                            </p>
+                            <p>The size of the avatar</p>
                           </div>
                         </TableCell>
                       </TableRow>
@@ -168,13 +166,19 @@ function Page() {
                         <TableCell className="text-right ">
                           <div className="flex items-center justify-center p-1 rounded">
                             <p>
-                              Optional prop; Tailwind classes applied when src url is invalid
+                              Optional prop; Tailwind classes applied when src
+                              url is invalid
                             </p>
                           </div>
                         </TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h1 className="font-semibold">Usage</h1>
+                  <CodeBlock code='import Avatar1 from "@/components/Avatar1";' />
+                  <CodeBlock code='<Avatar1 src="/avatar1.png" fallBackText="AS" size={40} />' />
                 </div>
               </div>
             </div>
@@ -183,7 +187,12 @@ function Page() {
                 <h1 className="text-xl font-semibold text-neutral-200">
                   Avatar2
                 </h1>
-                <Avatar2 src="/avatar1.png" fallBackText="AS" size={40} title="Project Lead" />
+                <Avatar2
+                  src="/avatar1.png"
+                  fallBackText="AS"
+                  size={40}
+                  title="Project Lead"
+                />
                 <div className="mb-[-0.5rem]">
                   <p className="font-semibold">Installation</p>
                 </div>
@@ -292,9 +301,7 @@ function Page() {
                         </TableCell>
                         <TableCell className="text-right ">
                           <div className="flex items-center justify-center p-1 rounded">
-                            <p>
-                              The size of the avatar
-                            </p>
+                            <p>The size of the avatar</p>
                           </div>
                         </TableCell>
                       </TableRow>
@@ -317,7 +324,8 @@ function Page() {
                         <TableCell className="text-right ">
                           <div className="flex items-center justify-center p-1 rounded">
                             <p>
-                              Optional prop; Tailwind classes applied when src url is invalid
+                              Optional prop; Tailwind classes applied when src
+                              url is invalid
                             </p>
                           </div>
                         </TableCell>
@@ -340,14 +348,17 @@ function Page() {
                         </TableCell>
                         <TableCell className="text-right ">
                           <div className="flex items-center justify-center p-1 rounded">
-                            <p>
-                              The text displayed on hover
-                            </p>
+                            <p>The text displayed on hover</p>
                           </div>
                         </TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h1 className="font-semibold">Usage</h1>
+                  <CodeBlock code='import Avatar2 from "@/components/Avatar2";' />
+                  <CodeBlock code='<Avatar2 src="/avatar1.png" fallBackText="AS" size={40} title="Project Lead" />' />
                 </div>
               </div>
             </div>
