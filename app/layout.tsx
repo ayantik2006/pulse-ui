@@ -5,7 +5,8 @@ import { ThemeContextProvider } from "@/context/ThemeContext";
 import { MouseCursorProvider } from "@/context/MouseCursorContext";
 import Cursor from "@/pulseui-components/mouse-cursor/mouseCursor/Cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,15 +36,27 @@ export default function RootLayout({
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-BQSX5JHVMB`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BQSX5JHVMB');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TooltipProvider>
-           <MouseCursorProvider>
+          <MouseCursorProvider>
             <Cursor />
-          <ThemeContextProvider>{children}</ThemeContextProvider>
-              </MouseCursorProvider>
+            <ThemeContextProvider>{children}</ThemeContextProvider>
+          </MouseCursorProvider>
         </TooltipProvider>
         <Toaster />
       </body>
