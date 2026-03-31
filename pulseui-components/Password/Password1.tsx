@@ -59,7 +59,7 @@ function Password1({
           </InputGroupAddon>
         </InputGroup>
         <div className="flex flex-col gap-">
-          <h1 className="text-sm font-semibold text-neutral-600">Must Contain:</h1>
+          <h1 className="text-sm font-semibold text-neutral-600 dark:text-neutral-300">Must Contain:</h1>
           <div className="flex flex-col pl-1">
             <div className="flex items-center gap-1">
                 <div>

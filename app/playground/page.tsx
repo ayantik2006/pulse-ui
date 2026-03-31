@@ -42,6 +42,7 @@ import { useMouseCursor } from "@/context/MouseCursorContext";
 
 import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 import Password1 from "@/pulseui-components/Password/Password1";
+import Password2 from "@/pulseui-components/Password/Password2";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -422,6 +423,9 @@ function Page() {
         {/* <h2 className="font-semibold text-neutral-600 mb-3">Password1</h2> */}
         <div className="w-90">
           <Password1 onPasswordChange={setPassword} />
+        </div>
+        <div className="w-90 mt-20">
+          <Password2 onPasswordChange={setPassword} />
         </div>
       </div>
     </div>
