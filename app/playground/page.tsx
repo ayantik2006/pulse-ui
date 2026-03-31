@@ -43,6 +43,7 @@ import { useMouseCursor } from "@/context/MouseCursorContext";
 import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 import Password1 from "@/pulseui-components/Password/Password1";
 import Password2 from "@/pulseui-components/Password/Password2";
+import Switch from "@/pulseui-components/Switch/Switch";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -52,6 +53,7 @@ function Page() {
   const [rating, setRating] = useState(0);
   const { setType } = useMouseCursor();
   const [password, setPassword] = useState("");
+  const [isOn, setIsOn] = useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -426,6 +428,14 @@ function Page() {
         </div>
         <div className="w-90 mt-20">
           <Password2 onPasswordChange={setPassword} />
+        </div>
+      </div>
+      {/* Switch */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">14) Switch</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold">
+          <Switch onOnOff={setIsOn} />
+          <p>{isOn ? "ON" : "OFF"}</p>
         </div>
       </div>
     </div>
