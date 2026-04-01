@@ -25,7 +25,7 @@ import Accordian2 from "@/pulseui-components/Accordian/Accordian2";
 import Avatar1 from "@/pulseui-components/Avatars/Avatar1";
 import Avatar2 from "@/pulseui-components/Avatars/Avatar2";
 import Card1 from "@/pulseui-components/Cards/Card1";
-import Card2 from "@/pulseui-components/Cards/Card2";
+import Card4 from "@/pulseui-components/Cards/Card4";
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
 import Rating from "@/pulseui-components/Rating/Rating";
@@ -44,6 +44,7 @@ import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 import Password1 from "@/pulseui-components/Password/Password1";
 import Password2 from "@/pulseui-components/Password/Password2";
 import Switch from "@/pulseui-components/Switch/Switch";
+import Card3 from "@/pulseui-components/Cards/Card3";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -313,12 +314,16 @@ function Page() {
         />
       </div>
       {/* Cards */}
-      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col gap-5">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card1</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card1 - Normal Card</h2>
         <Card1>Card1</Card1>
 
-        <Card2></Card2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card2 -- Selfie Card</h2>
+
+        <Card4></Card4>
+        {/* <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card3 -- Accordian Card</h2>
+        <Card3></Card3> */}
       </div>
       {/* Typewriter Effect */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">

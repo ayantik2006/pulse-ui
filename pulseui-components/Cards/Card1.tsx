@@ -63,7 +63,7 @@ export default function Card1({ className, ...motionProps }: CardProps) {
           rounded-2xl
           shadow-2xl
           text-white
-          hover:scale-105 ease-in-out duration-300
+          ease-in-out duration-300
           ${className || ""}
           `}
           style={{ transformStyle: "preserve-3d" }}
