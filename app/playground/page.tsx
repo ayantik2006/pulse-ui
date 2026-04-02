@@ -28,7 +28,6 @@ import Card1 from "@/pulseui-components/Cards/Card1";
 import Card4 from "@/pulseui-components/Cards/Card4";
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
-import Rating from "@/pulseui-components/Rating/Rating1";
 import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
 import DatePicker2 from "@/pulseui-components/Date Picker/DatePicker2";
 import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
@@ -338,7 +337,7 @@ function Page() {
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">7) Rating</h1>
-        <Rating1 setRating={setRating} />
+        <Rating1 setRating={setRating} initial={4} />
       </div>
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex flex-col gap-3">
