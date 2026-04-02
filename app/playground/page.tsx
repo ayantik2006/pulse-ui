@@ -44,7 +44,7 @@ import ScratchCard from "@/pulseui-components/ScratchCard/ScratchCard";
 import Password1 from "@/pulseui-components/Password/Password1";
 import Password2 from "@/pulseui-components/Password/Password2";
 import Switch from "@/pulseui-components/Switch/Switch";
-import Card3 from "@/pulseui-components/Cards/Card3";
+// import Card3 from "@/pulseui-components/Cards/Card3";
 import Rating1 from "@/pulseui-components/Rating/Rating1";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
