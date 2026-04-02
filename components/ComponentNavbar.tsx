@@ -19,7 +19,7 @@ function ComponentNavbar() {
     "Accordian",
     "Avatar",
     "Typewriter Effect",
-    // "Rating",
+    "Rating",
     // "Date Picker",
     // "Carousal",
     // "Badges",
@@ -125,6 +125,9 @@ function ComponentNavbar() {
                       break;
                     case "Typewriter Effect":
                       router.push("/typewriter-effects");
+                      break;
+                    case "Rating":
+                      router.push("/ratings");
                       break;
                   }
                 }}
@@ -250,6 +253,9 @@ function ComponentNavbar() {
                         break;
                       case "Typewriter Effect":
                         router.push("/typewriter-effects");
+                        break;  
+                      case "Rating":
+                        router.push("/ratings");
                         break;  
                     }
                   }}

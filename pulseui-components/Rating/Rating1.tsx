@@ -1,12 +1,14 @@
 import { Star } from "lucide-react";
 import { useState } from "react";
 
-function Rating({
+function Rating1({
   setRating,
+  initial
 }: {
   setRating: React.Dispatch<React.SetStateAction<number>>;
+  initial:number
 }) {
-  const [rating, setRatingThis] = useState(0);
+  const [rating, setRatingThis] = useState(initial);
 
   return (
     <div className="flex items-center gap-2">
@@ -74,4 +76,4 @@ function Rating({
   );
 }
 
-export default Rating;
+export default Rating1;
