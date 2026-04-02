@@ -20,6 +20,7 @@ function ComponentNavbar() {
     "Avatar",
     "Typewriter Effect",
     "Rating",
+    "Wheel Picker",
     // "Date Picker",
     // "Carousal",
     // "Badges",
@@ -128,6 +129,9 @@ function ComponentNavbar() {
                       break;
                     case "Rating":
                       router.push("/ratings");
+                      break;
+                    case "Wheel Picker":
+                      router.push("/wheel-pickers");
                       break;
                   }
                 }}
@@ -253,10 +257,13 @@ function ComponentNavbar() {
                         break;
                       case "Typewriter Effect":
                         router.push("/typewriter-effects");
-                        break;  
+                        break;
                       case "Rating":
                         router.push("/ratings");
-                        break;  
+                        break;
+                      case "Wheel Picker":
+                        router.push("/wheel-pickers");
+                        break;
                     }
                   }}
                 >

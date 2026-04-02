@@ -10,8 +10,6 @@ function WheelPicker1({
   const parentDivRef = useRef<HTMLDivElement | null>(null);
   const childDivRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [closestIndex, setClosestIndex] = useState(0);
-  const [parentCenter, setParentCenter] = useState(0);
-  const [childCenter, setChildCenter] = useState(0);
 
   return (
     <div className="w-full bg-neutral-900 border border-neutral-700 rounded-md py-4">
