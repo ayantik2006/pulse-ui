@@ -29,7 +29,6 @@ import Card2 from "@/pulseui-components/Cards/Card2";
 import Card4 from "@/pulseui-components/Cards/Card4";
 import { X } from "lucide-react";
 import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
-import Rating from "@/pulseui-components/Rating/Rating";
 import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
 import DatePicker2 from "@/pulseui-components/Date Picker/DatePicker2";
 import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
@@ -49,6 +48,9 @@ import Card3 from "@/pulseui-components/Cards/Card3";
 import Card5 from "@/pulseui-components/Cards/Card5";
 import Card6 from "@/pulseui-components/Cards/Card6";
 import Card7 from "@/pulseui-components/Cards/Card7";
+// import Card3 from "@/pulseui-components/Cards/Card3";
+import Rating1 from "@/pulseui-components/Rating/Rating1";
+import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -59,6 +61,7 @@ function Page() {
   const { setType } = useMouseCursor();
   const [password, setPassword] = useState("");
   const [isOn, setIsOn] = useState(false);
+  const [wheelValue,setWheelValue]=useState("");
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -353,7 +356,7 @@ function Page() {
       {/* Rating */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">7) Rating</h1>
-        <Rating setRating={setRating} />
+        <Rating1 setRating={setRating} initial={4} />
       </div>
       {/* Date Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex flex-col gap-3">
@@ -457,6 +460,13 @@ function Page() {
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold">
           <Switch onOnOff={setIsOn} />
           <p>{isOn ? "ON" : "OFF"}</p>
+        </div>
+      </div>
+      {/* Wheel Picker */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">15) Wheel Picker</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <WheelPicker1 options={["React","Angular","Vue","Svelte","Java","CPP","TypeScript","Golang","PHP","Framer Motion","GSAP"]} onChange={setWheelValue}/>
         </div>
       </div>
     </div>
