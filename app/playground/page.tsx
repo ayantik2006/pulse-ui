@@ -46,6 +46,7 @@ import Switch from "@/pulseui-components/Switch/Switch";
 // import Card3 from "@/pulseui-components/Cards/Card3";
 import Rating1 from "@/pulseui-components/Rating/Rating1";
 import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
+import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -450,6 +451,13 @@ function Page() {
         <h1 className="text-3xl font-bold mb-5">15) Wheel Picker</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
           <WheelPicker1 options={["React","Angular","Vue","Svelte","Java","CPP","TypeScript","Golang","PHP","Framer Motion","GSAP"]} onChange={setWheelValue}/>
+        </div>
+      </div>
+      {/* Copy Button */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">16) CopyButton</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <CopyButton text="Hello World!"/>
         </div>
       </div>
     </div>
