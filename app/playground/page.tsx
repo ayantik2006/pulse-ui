@@ -47,7 +47,6 @@ import Switch from "@/pulseui-components/Switch/Switch";
 import Card3 from "@/pulseui-components/Cards/Card3";
 import Card5 from "@/pulseui-components/Cards/Card5";
 import Card6 from "@/pulseui-components/Cards/Card6";
-import Card7 from "@/pulseui-components/Cards/Card7";
 // import Card3 from "@/pulseui-components/Cards/Card3";
 import Rating1 from "@/pulseui-components/Rating/Rating1";
 import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
