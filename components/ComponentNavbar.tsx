@@ -21,6 +21,7 @@ function ComponentNavbar() {
     "Typewriter Effect",
     "Rating",
     "Wheel Picker",
+    "Copy Button",
     // "Date Picker",
     // "Carousal",
     // "Badges",
@@ -132,6 +133,9 @@ function ComponentNavbar() {
                       break;
                     case "Wheel Picker":
                       router.push("/wheel-pickers");
+                      break;
+                    case "Copy Button":
+                      router.push("copy-button");
                       break;
                   }
                 }}
@@ -263,6 +267,9 @@ function ComponentNavbar() {
                         break;
                       case "Wheel Picker":
                         router.push("/wheel-pickers");
+                        break;
+                      case "Copy Button":
+                        router.push("copy-button");
                         break;
                     }
                   }}

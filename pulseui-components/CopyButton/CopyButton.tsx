@@ -8,7 +8,7 @@ function CopyButton({ size, text }: { size?: number; text: string }) {
 
   return (
     <div
-      className="bg-neutral-200 dark:bg-neutral-800 p-2 rounded group"
+      className="bg-neutral-200 w-fit h-fit dark:bg-neutral-800 p-2 rounded group"
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -25,13 +25,13 @@ function CopyButton({ size, text }: { size?: number; text: string }) {
     >
       {!isCopied && (
         <Copy
-          size={size?size:15}
+          size={size ? size : 15}
           className={`duration-300 stroke-neutral-500 dark:stroke-neutral-500 ${isHovered ? "stroke-neutral-700 dark:stroke-white" : ""}`}
         />
       )}
       {isCopied && (
         <Check
-          size={size?size:15}
+          size={size ? size : 15}
           className={`duration-300 stroke-neutral-500 dark:stroke-neutral-500 ${isHovered ? "stroke-neutral-700 dark:stroke-white" : ""}`}
         />
       )}

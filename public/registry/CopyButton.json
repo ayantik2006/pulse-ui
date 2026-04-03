@@ -1,0 +1,11 @@
+{
+  "name": "CopyButton",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/CopyButton.tsx",
+      "content": "import { Copy } from \"lucide-react\";\r\nimport { Check } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nfunction CopyButton({ size, text }: { size?: number; text: string }) {\r\n  const [isHovered, setIsHovered] = useState(false);\r\n  const [isCopied, setIsCopied] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className=\"bg-neutral-200 w-fit h-fit dark:bg-neutral-800 p-2 rounded group\"\r\n      onMouseEnter={() => {\r\n        setIsHovered(true);\r\n      }}\r\n      onMouseLeave={() => {\r\n        setIsHovered(false);\r\n      }}\r\n      onClick={() => {\r\n        setIsCopied(true);\r\n        navigator.clipboard.writeText(text);\r\n        setTimeout(() => {\r\n          setIsCopied(false);\r\n        }, 3000);\r\n      }}\r\n    >\r\n      {!isCopied && (\r\n        <Copy\r\n          size={size ? size : 15}\r\n          className={`duration-300 stroke-neutral-500 dark:stroke-neutral-500 ${isHovered ? \"stroke-neutral-700 dark:stroke-white\" : \"\"}`}\r\n        />\r\n      )}\r\n      {isCopied && (\r\n        <Check\r\n          size={size ? size : 15}\r\n          className={`duration-300 stroke-neutral-500 dark:stroke-neutral-500 ${isHovered ? \"stroke-neutral-700 dark:stroke-white\" : \"\"}`}\r\n        />\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default CopyButton;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
