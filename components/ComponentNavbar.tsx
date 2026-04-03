@@ -22,6 +22,7 @@ function ComponentNavbar() {
     "Rating",
     "Wheel Picker",
     "Copy Button",
+    "Switch"
     // "Date Picker",
     // "Carousal",
     // "Badges",
@@ -135,7 +136,10 @@ function ComponentNavbar() {
                       router.push("/wheel-pickers");
                       break;
                     case "Copy Button":
-                      router.push("copy-button");
+                      router.push("/copy-button");
+                      break;
+                    case "Switch":
+                      router.push("/switch");
                       break;
                   }
                 }}
@@ -269,7 +273,10 @@ function ComponentNavbar() {
                         router.push("/wheel-pickers");
                         break;
                       case "Copy Button":
-                        router.push("copy-button");
+                        router.push("/copy-button");
+                        break;
+                      case "Switch":
+                        router.push("/switch");
                         break;
                     }
                   }}

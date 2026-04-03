@@ -1,0 +1,11 @@
+{
+  "name": "Switch",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Switch.tsx",
+      "content": "import { useState } from \"react\";\r\n\r\nfunction Switch({ onOnOff }: { onOnOff: (val: boolean) => void }) {\r\n  const [isOn,setIsOn]=useState(false);\r\n\r\n  return(\r\n    <div className={`w-9 h-5 rounded-[1rem] border dark:border-neutral-700 flex px-[0.1rem] items-center cursor-pointer ${isOn?\"dark:bg-white bg-black\":\"dark:bg-neutral-800 bg-neutral-300\"}`} onClick={()=>{\r\n        setIsOn((prev)=>!prev);\r\n        onOnOff(!isOn);\r\n    }}>\r\n        <div className={`rounded-full w-4 h-4 ${isOn?\"translate-x-[0.95rem] dark:bg-neutral-800 bg-white\":\"dark:bg-white bg-white\"} duration-300`}></div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Switch;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
