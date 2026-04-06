@@ -45,7 +45,6 @@ function ComponentNavbar() {
     setIsFloatingNavbarVisible(false);
     window.addEventListener("resize", handleResize);
     if (Number(width) <= 767) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsComponentNavbarVisible(false);
     } else {
       setIsComponentNavbarVisible(true);
@@ -55,6 +54,47 @@ function ComponentNavbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, [width]);
+
+  async function handleComponentLinkClick(componentName: string) {
+    switch (componentName) {
+      case "Buttons":
+        router.push("/buttons");
+        break;
+      case "Loaders":
+        router.push("/loaders");
+        break;
+      case "File Upload":
+        router.push("/file-upload");
+        break;
+      case "Toasts":
+        router.push("/toasts");
+        break;
+      case "Accordian":
+        router.push("/accordians");
+        break;
+      case "Avatar":
+        router.push("/avatars");
+        break;
+      case "Typewriter Effect":
+        router.push("/typewriter-effects");
+        break;
+      case "Rating":
+        router.push("/ratings");
+        break;
+      case "Wheel Picker":
+        router.push("/wheel-pickers");
+        break;
+      case "Copy Button":
+        router.push("/copy-button");
+        break;
+      case "Switch":
+        router.push("/switch");
+        break;
+      case "Date Picker":
+        router.push("/date-picker");
+        break;
+    }
+  }
 
   return (
     <div
@@ -107,44 +147,7 @@ function ComponentNavbar() {
                 key={index}
                 className="cursor-pointer text-sm hover:text-neutral-400"
                 onClick={() => {
-                  switch (componentName) {
-                    case "Buttons":
-                      router.push("/buttons");
-                      break;
-                    case "Loaders":
-                      router.push("/loaders");
-                      break;
-                    case "File Upload":
-                      router.push("/file-upload");
-                      break;
-                    case "Toasts":
-                      router.push("/toasts");
-                      break;
-                    case "Accordian":
-                      router.push("/accordians");
-                      break;
-                    case "Avatar":
-                      router.push("/avatars");
-                      break;
-                    case "Typewriter Effect":
-                      router.push("/typewriter-effects");
-                      break;
-                    case "Rating":
-                      router.push("/ratings");
-                      break;
-                    case "Wheel Picker":
-                      router.push("/wheel-pickers");
-                      break;
-                    case "Copy Button":
-                      router.push("/copy-button");
-                      break;
-                    case "Switch":
-                      router.push("/switch");
-                      break;
-                    case "Date Picker":
-                      router.push("/date-picker");
-                      break;
-                  }
+                  handleComponentLinkClick(componentName);
                 }}
               >
                 <p>{componentName}</p>
@@ -247,44 +250,7 @@ function ComponentNavbar() {
                   key={index}
                   className="cursor-pointer text-sm hover:text-neutral-400"
                   onClick={() => {
-                    switch (componentName) {
-                      case "Buttons":
-                        router.push("/buttons");
-                        break;
-                      case "Loaders":
-                        router.push("/loaders");
-                        break;
-                      case "File Upload":
-                        router.push("/file-upload");
-                        break;
-                      case "Toasts":
-                        router.push("/toasts");
-                        break;
-                      case "Accordian":
-                        router.push("/accordians");
-                        break;
-                      case "Avatar":
-                        router.push("/avatars");
-                        break;
-                      case "Typewriter Effect":
-                        router.push("/typewriter-effects");
-                        break;
-                      case "Rating":
-                        router.push("/ratings");
-                        break;
-                      case "Wheel Picker":
-                        router.push("/wheel-pickers");
-                        break;
-                      case "Copy Button":
-                        router.push("/copy-button");
-                        break;
-                      case "Switch":
-                        router.push("/switch");
-                        break;
-                      case "Date Picker":
-                        router.push("/date-picker");
-                        break;
-                    }
+                    handleComponentLinkClick(componentName);
                   }}
                 >
                   <p>{componentName}</p>
