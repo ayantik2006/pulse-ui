@@ -22,8 +22,8 @@ function ComponentNavbar() {
     "Rating",
     "Wheel Picker",
     "Copy Button",
-    "Switch"
-    // "Date Picker",
+    "Switch",
+    "Date Picker",
     // "Carousal",
     // "Badges",
   ];
@@ -140,6 +140,9 @@ function ComponentNavbar() {
                       break;
                     case "Switch":
                       router.push("/switch");
+                      break;
+                    case "Date Picker":
+                      router.push("/date-picker");
                       break;
                   }
                 }}
@@ -277,6 +280,9 @@ function ComponentNavbar() {
                         break;
                       case "Switch":
                         router.push("/switch");
+                        break;
+                      case "Date Picker":
+                        router.push("/date-picker");
                         break;
                     }
                   }}

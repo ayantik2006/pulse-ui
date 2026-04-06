@@ -46,18 +46,18 @@ function DatePicker1({
     setDays(newDays);
   }, [currentMonth, currentYear, noOfDays, startingDay]);
 
-  useEffect(()=>{
+  useEffect(() => {
     selectedDate(new Date().getDate());
-    selectedMonth(new Date().getMonth()+1);
+    selectedMonth(new Date().getMonth() + 1);
     selectedYear(new Date().getFullYear());
-  },[]);
+  }, []);
 
   return (
-    <div className="p-1 border-2 rounded border-neutral-700 shadow-[0_0_4px_gray] w-fit dark:bg-white dark:text-black">
-      <div className="flex flex-col gap-1 items-center px-4 py-4 border-2 rounded border-neutral-300">
-        <div className="flex items-center justify-between gap-15 mb-4">
+    <div className="p-1 border-2 rounded dark:border-neutral-700 w-fit dark:bg-neutral-900 dark:text-neutral-100">
+      <div className="flex flex-col gap-1 items-center px-4 py-4 border-2 rounded border-neutral-300 dark:border-neutral-700">
+        <div className="flex items-center justify-between gap-18 mb-4">
           <button
-            className="cursor-pointer bg-neutral-200 ml-3 rounded-full p-2 hover:bg-neutral-300 duration-300"
+            className="cursor-pointer bg-neutral-200 ml-3 rounded-full p-2 hover:bg-neutral-300 duration-300 dark:bg-neutral-800 dark:hover:opacity-90"
             onClick={() => {
               if (currentMonth === 1) {
                 setCurrentMonth(12);
@@ -77,7 +77,7 @@ function DatePicker1({
             {months[currentMonth] + " " + currentYear}
           </p>
           <button
-            className="cursor-pointer bg-neutral-200 hover:bg-neutral-300 duration-300 mr-3 rounded-full p-2"
+            className="cursor-pointer bg-neutral-200 hover:bg-neutral-300 duration-300 mr-3 rounded-full p-2 dark:bg-neutral-800 dark:hover:opacity-90"
             onClick={() => {
               if (currentMonth === 12) {
                 setCurrentMonth(1);
@@ -107,7 +107,7 @@ function DatePicker1({
           {days.map((day, index) => (
             <div
               key={index}
-              className={`p-2 text-center rounded cursor-pointer ${day === tempSelectedDate && day !== currentDate ? "bg-neutral-400" : ""} ${day === currentDate && currentMonth === new Date().getMonth() + 1 ? "bg-blue-500 text-white font-semibold" : "hover:bg-neutral-200 duration-300"}`}
+              className={`flex items-center justify-center p-1 w-9 h-9 text-center rounded cursor-pointer ${day === tempSelectedDate && day !== currentDate ? "bg-neutral-300 dark:bg-neutral-950" : ""} ${day === currentDate && currentMonth === new Date().getMonth() + 1 ? "bg-blue-900 text-white font-semibold" : "duration-300 "} ${day !== tempSelectedDate && day!==currentDate ? "hover:bg-neutral-200 dark:hover:bg-neutral-800" : ""}`}
               onClick={() => {
                 setTempSelectedDate(Number(day) || 0);
                 selectedDate(Number(day) || 0);
