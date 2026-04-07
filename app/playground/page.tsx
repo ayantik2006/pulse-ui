@@ -51,6 +51,7 @@ import Card6 from "@/pulseui-components/Cards/Card6";
 import Rating1 from "@/pulseui-components/Rating/Rating1";
 import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
 import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
+import TimePicker from "@/pulseui-components/TimePicker/TimePicker";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -62,6 +63,9 @@ function Page() {
   const [password, setPassword] = useState("");
   const [isOn, setIsOn] = useState(false);
   const [wheelValue,setWheelValue]=useState("");
+  const [hr, setHr] = useState(10);
+  const [min, setMin] = useState(10);
+  const [amOrPm, setAmOrPm] = useState<"AM" | "PM">("AM");
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -474,6 +478,13 @@ function Page() {
         <h1 className="text-3xl font-bold mb-5">16) CopyButton</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
           <CopyButton text="Hello World!"/>
+        </div>
+      </div>
+      {/* Time Picker */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">17) TimePicker</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <TimePicker onHrChange={setHr} onMinChange={setMin} onAmPmChange={setAmOrPm} />
         </div>
       </div>
     </div>
