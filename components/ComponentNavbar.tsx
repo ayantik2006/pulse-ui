@@ -24,6 +24,7 @@ function ComponentNavbar() {
     "Copy Button",
     "Switch",
     "Date Picker",
+    "Time Picker"
     // "Carousal",
     // "Badges",
   ];
@@ -92,6 +93,9 @@ function ComponentNavbar() {
         break;
       case "Date Picker":
         router.push("/date-picker");
+        break;
+      case "Time Picker":
+        router.push("/time-picker");
         break;
     }
   }
