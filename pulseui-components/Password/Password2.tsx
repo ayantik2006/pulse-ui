@@ -5,12 +5,14 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { Check, Eye, EyeOff, LockKeyhole, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Password2({
   onPasswordChange,
+  passwordValid,
 }: {
   onPasswordChange: (password: string) => void;
+  passwordValid: (isValid: boolean) => void;
 }) {
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -18,13 +20,27 @@ function Password2({
   const [isCond2True, setIsCond2True] = useState(false);
   const [isCond3True, setIsCond3True] = useState(false);
   const [isCond4True, setIsCond4True] = useState(false);
-  const [percentDisplay,setPercentDisplay] = useState(0);
+  const [percentDisplay, setPercentDisplay] = useState(0);
+
+  useEffect(() => {
+    let successValue = 0;
+    if (isCond1True) successValue++;
+    if (isCond2True) successValue++;
+    if (isCond3True) successValue++;
+    if (isCond4True) successValue++;
+    if (successValue === 4) passwordValid(true);
+    else passwordValid(false);
+  }, [isCond1True, isCond2True, isCond3True, isCond4True, passwordValid]);
 
   return (
     <div className="w-full">
       <div className="flex flex-col gap-6">
-        <div className={`duration-300 rotate-45 w-25 h-25 bg-transparent border-8 rounded-full mx-auto flex items-center justify-center ${percentDisplay==1?"dark:border-t-white border-t-neutral-800":""} ${percentDisplay==2?"dark:border-t-white dark:border-r-white border-t-neutral-800 border-r-neutral-800":""} ${percentDisplay==3?"dark:border-t-white dark:border-r-white dark:border-b-white border-t-neutral-800 border-r-neutral-800 border-b-neutral-800":""} ${percentDisplay==4?"dark:border-t-white dark:border-r-white dark:border-b-white dark:border-l-white border-t-neutral-800 border-r-neutral-800 border-b-neutral-800 border-l-neutral-800":""}`}>
-            <p className="text-2xl dark:text-neutral-300 -rotate-45 font-semibold text-neutral-800">{(percentDisplay*100)/4}%</p>
+        <div
+          className={`duration-300 rotate-45 w-25 h-25 bg-transparent border-8 rounded-full mx-auto flex items-center justify-center ${percentDisplay == 1 ? "dark:border-t-white border-t-neutral-800" : ""} ${percentDisplay == 2 ? "dark:border-t-white dark:border-r-white border-t-neutral-800 border-r-neutral-800" : ""} ${percentDisplay == 3 ? "dark:border-t-white dark:border-r-white dark:border-b-white border-t-neutral-800 border-r-neutral-800 border-b-neutral-800" : ""} ${percentDisplay == 4 ? "dark:border-t-white dark:border-r-white dark:border-b-white dark:border-l-white border-t-neutral-800 border-r-neutral-800 border-b-neutral-800 border-l-neutral-800" : ""}`}
+        >
+          <p className="text-2xl dark:text-neutral-300 -rotate-45 font-semibold text-neutral-800">
+            {(percentDisplay * 100) / 4}%
+          </p>
         </div>
         <div className="flex flex-col gap-5">
           <InputGroup className="w-full border-2 border-neutral-400">
@@ -56,10 +72,10 @@ function Password2({
                 setIsCond3True(c3);
                 setIsCond4True(c4);
                 setPercentDisplay(0);
-                if(c1) setPercentDisplay((prev)=>prev+1);
-                if(c2) setPercentDisplay((prev)=>prev+1);
-                if(c3) setPercentDisplay((prev)=>prev+1);
-                if(c4) setPercentDisplay((prev)=>prev+1);
+                if (c1) setPercentDisplay((prev) => prev + 1);
+                if (c2) setPercentDisplay((prev) => prev + 1);
+                if (c3) setPercentDisplay((prev) => prev + 1);
+                if (c4) setPercentDisplay((prev) => prev + 1);
               }}
             />
             <InputGroupAddon>

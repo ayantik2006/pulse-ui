@@ -62,10 +62,11 @@ function Page() {
   const { setType } = useMouseCursor();
   const [password, setPassword] = useState("");
   const [isOn, setIsOn] = useState(false);
-  const [wheelValue,setWheelValue]=useState("");
+  const [wheelValue, setWheelValue] = useState("");
   const [hr, setHr] = useState(10);
   const [min, setMin] = useState(10);
   const [amOrPm, setAmOrPm] = useState<"AM" | "PM">("AM");
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -327,24 +328,36 @@ function Page() {
       {/* Cards */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col gap-5">
         <h1 className="text-3xl font-bold mb-5">Cards</h1>
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card1 - Normal Card</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card1 - Normal Card
+        </h2>
         <Card1 />
 
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card2 -- Job Card</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card2 -- Job Card
+        </h2>
         <Card2 />
 
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card3 -- Accordian Card</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card3 -- Accordian Card
+        </h2>
         <Card3 />
 
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card4 -- Selfie Card</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card4 -- Selfie Card
+        </h2>
         <Card4 />
 
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card5 -- Profile Card </h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card5 -- Profile Card{" "}
+        </h2>
         <Card5 />
 
-        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card6 -- Shopping Card</h2>
+        <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+          Card6 -- Shopping Card
+        </h2>
         <Card6 />
-{/* 
+        {/* 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card7 -- Fold Card</h2>
         <Card7 /> */}
       </div>
@@ -452,11 +465,20 @@ function Page() {
         <h1 className="text-3xl font-bold mb-5">13) Password</h1>
         {/* <h2 className="font-semibold text-neutral-600 mb-3">Password1</h2> */}
         <div className="w-90">
-          <Password1 onPasswordChange={setPassword} />
+          <Password1
+            onPasswordChange={setPassword}
+            passwordValid={setIsPasswordValid}
+          />
         </div>
         <div className="w-90 mt-20">
-          <Password2 onPasswordChange={setPassword} />
+          <Password2
+            onPasswordChange={setPassword}
+            passwordValid={setIsPasswordValid}
+          />
         </div>
+        <button className={`mt-5 ml-1 bg-black dark:bg-white text-white dark:text-black text-sm p-2 px-3 font-semibold rounded-md cursor-pointer hover:opacity-90 duration-300 ${isPasswordValid?"":"pointer-events-none opacity-80"}`}>
+          Submit
+        </button>
       </div>
       {/* Switch */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
@@ -470,21 +492,40 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">15) Wheel Picker</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
-          <WheelPicker1 options={["React","Angular","Vue","Svelte","Java","CPP","TypeScript","Golang","PHP","Framer Motion","GSAP"]} onChange={setWheelValue}/>
+          <WheelPicker1
+            options={[
+              "React",
+              "Angular",
+              "Vue",
+              "Svelte",
+              "Java",
+              "CPP",
+              "TypeScript",
+              "Golang",
+              "PHP",
+              "Framer Motion",
+              "GSAP",
+            ]}
+            onChange={setWheelValue}
+          />
         </div>
       </div>
       {/* Copy Button */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">16) CopyButton</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
-          <CopyButton text="Hello World!"/>
+          <CopyButton text="Hello World!" />
         </div>
       </div>
       {/* Time Picker */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">17) TimePicker</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
-          <TimePicker onHrChange={setHr} onMinChange={setMin} onAmPmChange={setAmOrPm} />
+          <TimePicker
+            onHrChange={setHr}
+            onMinChange={setMin}
+            onAmPmChange={setAmOrPm}
+          />
         </div>
       </div>
     </div>
