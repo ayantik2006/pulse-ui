@@ -101,6 +101,28 @@ function Page() {
                         </div>
                       </TableCell>
                     </TableRow>
+                    <TableRow className="hover:bg-black">
+                      <TableCell className="font-medium mr-100">
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>defaultValue</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>boolean</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <pre>false</pre>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-right ">
+                        <div className="flex items-center justify-center p-1 rounded">
+                          <p>sets the default on or off state</p>
+                        </div>
+                      </TableCell>
+                    </TableRow>
                   </TableBody>
                 </Table>
               </div>

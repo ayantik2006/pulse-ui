@@ -484,7 +484,7 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">14) Switch</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold">
-          <Switch onOnOff={setIsOn} />
+          <Switch onOnOff={setIsOn} defaultValue={isOn} />
           <p>{isOn ? "ON" : "OFF"}</p>
         </div>
       </div>
