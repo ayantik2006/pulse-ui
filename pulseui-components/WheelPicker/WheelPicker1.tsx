@@ -12,9 +12,9 @@ function WheelPicker1({
   const [closestIndex, setClosestIndex] = useState(0);
 
   return (
-    <div className="w-full bg-neutral-900 border border-neutral-700 rounded-md py-4">
+    <div className="w-full dark:bg-neutral-900 border dark:border-neutral-700 border-neutral-300 rounded-md py-4">
       <div
-        className="w-full max-h-40 h-fit flex flex-col gap-2 items-center overflow-y-auto px-2 snap-y snap-mandatory scroll-smooth"
+        className="w-full max-h-40 h-fit flex flex-col gap-2 items-center overflow-y-auto px-2 snap-y snap-mandatory scroll-smooth overflow-x-hidden"
         onScroll={() => {
           if (!parentDivRef.current) return;
 
@@ -58,11 +58,11 @@ function WheelPicker1({
               childDivRefs.current[index] = el;
             }}
             className={`flex w-full items-center justify-center py-1 mx-1 rounded duration-300 ${
-              index === closestIndex ? "bg-[#222121]" : ""
+              index === closestIndex ? "dark:bg-[#222121] bg-neutral-300 " : ""
             }`}
           >
             <p
-              className={`relative duration-300 cursor-default  ${index === closestIndex ? "text-white text-[1.05rem]" : "text-neutral-500"}`}
+              className={`relative duration-300 cursor-default  ${index === closestIndex ? "dark:text-white text-neutral-500 text-[1.05rem]" : "dark:text-neutral-500"}`}
             >
               {option}
             </p>
