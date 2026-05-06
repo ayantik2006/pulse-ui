@@ -105,7 +105,7 @@ function ElasticSlider({
       </div>
       <div>
         <p
-          className={`text-sm ${isMainBoxHovered ? "dark:text-white text-neutral-700" : "dark:text-neutral-400 text-neutral-500"}`}
+          className={`text-sm tabular-nums ${isMainBoxHovered ? "dark:text-white text-neutral-700" : "dark:text-neutral-400 text-neutral-500"}`}
         >
           {value}
           {unit}
