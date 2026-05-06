@@ -81,7 +81,7 @@ function ElasticSlider({
 
   return (
     <div
-      className="flex items-center justify-between w-full max-w-50 dark:bg-neutral-800 py-2 pr-3 rounded-md cursor-pointer z-10 select-none"
+      className="flex items-center justify-between w-full max-w-50 dark:bg-neutral-800 bg-neutral-400/15 py-2 pr-3 rounded-md cursor-pointer z-10 select-none"
       onMouseEnter={() => setIsMainBoxHovered(true)}
       onMouseLeave={() => setIsMainBoxHovered(false)}
       onClick={(e) => {
@@ -101,18 +101,18 @@ function ElasticSlider({
       ref={mainBoxRef}
     >
       <div className="">
-        <p className="text-neutral-400 text-sm pl-3">{label}</p>
+        <p className="dark:text-neutral-400 text-neutral-700 text-sm pl-3">{label}</p>
       </div>
       <div>
         <p
-          className={`text-sm ${isMainBoxHovered ? "text-white" : "text-neutral-400"}`}
+          className={`text-sm ${isMainBoxHovered ? "dark:text-white text-neutral-700" : "dark:text-neutral-400 text-neutral-500"}`}
         >
           {value}
           {unit}
         </p>
       </div>
       <div
-        className={`absolute ${!isSliderHeld ? "duration-300" : ""} z-0 bg-neutral-600/40 h-9 left-[${mainBoxDim?.left ? mainBoxDim.left : 0 + 2}] rounded-l-md ${value == max ? "rounded-r-md" : ""} ${value / max <= 0.06 ? "rounded-l-lg" : ""}`}
+        className={`absolute ${!isSliderHeld ? "duration-300" : ""} z-0 dark:bg-neutral-600/40 bg-neutral-400/25 h-9 left-[${mainBoxDim?.left ? mainBoxDim.left : 0 + 2}] rounded-l-md ${value == max ? "rounded-r-md" : ""} ${value / max <= 0.06 ? "rounded-l-lg" : ""}`}
         style={{
           width: sliderWidth,
         }}
