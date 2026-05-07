@@ -36,8 +36,8 @@ function Page() {
                 SlideToUnlock
               </h1>
               <div className="duration-300">
-                <SlideToUnlock onUnlock={setIsLocked} />
               </div>
+                <SlideToUnlock onUnlock={setIsLocked} />
               {/* <SlideToUnlock onUnlock={setIsLocked}/> */}
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>

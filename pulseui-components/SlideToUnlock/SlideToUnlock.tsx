@@ -22,10 +22,12 @@ function SlideToUnlock({ onUnlock }: { onUnlock: (val: boolean) => void }) {
     function handleMouseUp() {
       setIsGrabbed(false);
       setIsGrabMoving(false);
-      if (
-        Number(lockDivRef.current?.getBoundingClientRect().left) >=
-        Number(mainDivRef.current?.getBoundingClientRect().width) - 5
-      ) {
+      const max =
+        Number(mainDivRef.current?.getBoundingClientRect().left) +
+        Number(Number(mainDivRef.current?.getBoundingClientRect().width)) -
+        Number(lockDivRef.current?.getBoundingClientRect().width) -
+        6;
+      if (Number(lockDivRef.current?.getBoundingClientRect().left) >= max) {
         setTranslateVal(170);
         if (isLocked === true) {
           setLocked(false);
