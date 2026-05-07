@@ -29,7 +29,7 @@ function Page() {
           <div className="flex flex-col gap-3 justify-self-start">
             <h1 className="text-4xl font-semibold">Elastic Slider</h1>
             <h2 className="text-neutral-400">
-              Below is a ready made copy button component
+              Below is an elatic slider component, better than the native html range input
             </h2>
           </div>
           <div className="flex flex-col gap-5">

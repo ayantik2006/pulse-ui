@@ -26,7 +26,8 @@ function ComponentNavbar() {
     "Date Picker",
     "Time Picker",
     "Password",
-    "Elastic Slider"
+    "Elastic Slider",
+    "Slide To Unlock"
     // "Carousal",
     // "Badges",
   ];
@@ -104,6 +105,9 @@ function ComponentNavbar() {
         break;
       case "Elastic Slider":
         router.push("/elastic-slider");
+        break;
+      case "Slide To Unlock":
+        router.push("/slide-to-unlock");
         break;
     }
   }

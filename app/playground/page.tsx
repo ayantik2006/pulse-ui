@@ -53,6 +53,7 @@ import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
 import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import TimePicker from "@/pulseui-components/TimePicker/TimePicker";
 import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
+import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -68,6 +69,7 @@ function Page() {
   const [min, setMin] = useState(10);
   const [amOrPm, setAmOrPm] = useState<"AM" | "PM">("AM");
   const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isLocked, setLocked] = useState(true);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -534,6 +536,13 @@ function Page() {
         <h1 className="text-3xl font-bold mb-5">18) Elastic Slider</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
           {/* <ElasticSlider min={1} max={5} step={0.01} label="Volume" defaultValue={4} unit="px"/> */}
+        </div>
+      </div>
+      {/* Slide To Unlock */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">19) Slide To Unlock</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <SlideToUnlock onUnlock={setLocked}/>
         </div>
       </div>
     </div>
