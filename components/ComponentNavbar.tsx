@@ -26,7 +26,8 @@ function ComponentNavbar() {
     "Date Picker",
     "Time Picker",
     "Password",
-    "Elastic Slider"
+    "Elastic Slider",
+    "Cards",
     // "Carousal",
     // "Badges",
   ];
@@ -105,6 +106,9 @@ function ComponentNavbar() {
       case "Elastic Slider":
         router.push("/elastic-slider");
         break;
+      case "Cards":
+        router.push("/cards");
+        break;
     }
   }
 
@@ -121,7 +125,7 @@ function ComponentNavbar() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <h1 className="font-semibold text-neutral-400">COMPONENTS</h1>
-              <div className="flex items-center justify-center bg-neutral-950 px-2 py-1 rounded text-sm text-neutral-400">
+              <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
                 <p>{visibleComponents.length}</p>
               </div>
             </div>
@@ -157,7 +161,7 @@ function ComponentNavbar() {
             {visibleComponents.map((componentName, index) => (
               <div
                 key={index}
-                className="cursor-pointer text-sm hover:text-neutral-400"
+                className="text-sm cursor-pointer hover:text-neutral-400"
                 onClick={() => {
                   handleComponentLinkClick(componentName);
                 }}
@@ -166,7 +170,7 @@ function ComponentNavbar() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded text-sm duration-300">
+          <div className="flex flex-col gap-3 p-4 mt-10 text-sm duration-300 rounded bg-neutral-950">
             <Link
               href={"/"}
               className="text-neutral-500 hover:text-neutral-400"
@@ -216,11 +220,11 @@ function ComponentNavbar() {
             <div className="flex flex-col gap-3 ">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-neutral-400">COMPONENTS</h1>
-                <div className="flex items-center justify-center bg-neutral-950 px-2 py-1 rounded text-sm text-neutral-400">
+                <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
                   <p>{visibleComponents.length}</p>
                 </div>
                 <div
-                  className="hover:bg-neutral-950 p-1 rounded cursor-pointer"
+                  className="p-1 rounded cursor-pointer hover:bg-neutral-950"
                   onClick={() => {
                     setIsFloatingNavbarVisible(false);
                   }}
@@ -260,7 +264,7 @@ function ComponentNavbar() {
               {visibleComponents.map((componentName, index) => (
                 <div
                   key={index}
-                  className="cursor-pointer text-sm hover:text-neutral-400"
+                  className="text-sm cursor-pointer hover:text-neutral-400"
                   onClick={() => {
                     handleComponentLinkClick(componentName);
                   }}
@@ -269,7 +273,7 @@ function ComponentNavbar() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col gap-3 p-4 mt-10 bg-neutral-950 rounded text-sm">
+            <div className="flex flex-col gap-3 p-4 mt-10 text-sm rounded bg-neutral-950">
               <Link
                 href={"/"}
                 className="text-neutral-500 hover:text-neutral-400"
