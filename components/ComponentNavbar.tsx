@@ -27,7 +27,8 @@ function ComponentNavbar() {
     "Time Picker",
     "Password",
     "Elastic Slider",
-    "Slide To Unlock"
+    "Slide To Unlock",
+    "OTP Input"
     // "Carousal",
     // "Badges",
   ];
@@ -108,6 +109,9 @@ function ComponentNavbar() {
         break;
       case "Slide To Unlock":
         router.push("/slide-to-unlock");
+        break;
+      case "OTP Input":
+        router.push("/otp-input");
         break;
     }
   }

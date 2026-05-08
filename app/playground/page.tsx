@@ -54,6 +54,7 @@ import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import TimePicker from "@/pulseui-components/TimePicker/TimePicker";
 import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
 import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
+import OTPInput from "@/pulseui-components/OTPInput/OTPInput";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -70,6 +71,7 @@ function Page() {
   const [amOrPm, setAmOrPm] = useState<"AM" | "PM">("AM");
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isLocked, setLocked] = useState(true);
+  const [otp,setOtp]=useState(0);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -543,6 +545,13 @@ function Page() {
         <h1 className="text-3xl font-bold mb-5">19) Slide To Unlock</h1>
         <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
           <SlideToUnlock onUnlock={setLocked}/>
+        </div>
+      </div>
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">20) OTP Input</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <OTPInput digits={4} setOtp={setOtp}/>
+          {otp}
         </div>
       </div>
     </div>
