@@ -20,7 +20,7 @@ function Page() {
   return (
     <div className="bg-black text-white min-h-screen flex justify-center">
       <ComponentNavbar />
-      <div className="w-full h-full p-4 py-10 pl-15">
+      <div className="w-full h-full max-w-310 p-4 py-10 pl-15">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3 justify-self-start">
             <h1 className="text-4xl font-semibold">Hold To Confirm</h1>
