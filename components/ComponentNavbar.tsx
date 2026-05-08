@@ -28,7 +28,8 @@ function ComponentNavbar() {
     "Password",
     "Elastic Slider",
     "Slide To Unlock",
-    "OTP Input"
+    "OTP Input",
+    "Hold To Confirm Button"
     // "Carousal",
     // "Badges",
   ];
@@ -112,6 +113,9 @@ function ComponentNavbar() {
         break;
       case "OTP Input":
         router.push("/otp-input");
+        break;
+      case "Hold To Confirm Button":
+        router.push("/hold-to-confirm");
         break;
     }
   }
