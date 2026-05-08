@@ -59,6 +59,12 @@ function OTPInput({
                   e.preventDefault();
                   inputRefs.current[index - 1]?.focus();
                 }
+                if(key==="ArrowRight" && value!==digits){
+                    inputRefs.current[index + 1]?.focus();
+                }
+                if(key==="ArrowLeft" && value!==1){
+                    inputRefs.current[index - 1]?.focus();
+                }
               }}
               onInput={(e) => {
                 if (
