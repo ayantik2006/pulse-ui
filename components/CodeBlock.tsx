@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { codeToHtml } from "shiki"
+import CopyButton from "./CopyButton"
 
 export default function CodeInline({
   code,
@@ -10,14 +11,7 @@ export default function CodeInline({
   code: string
   lang?: string
 }) {
-  const [copied, setCopied] = useState(false)
   const [html, setHtml] = useState("")
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 3000)
-  }
 
   useEffect(() => {
     const load = async () => {
@@ -43,12 +37,7 @@ export default function CodeInline({
         />
       </div>
 
-      <button
-        onClick={handleCopy}
-        className="text-gray-400 hover:bg-neutral-950 rounded cursor-pointer p-1 transition text-sm"
-      >
-        {copied?"copied!":"copy"}
-      </button>
+      <CopyButton text={code} size={13} />
     </div>
   )
 }
