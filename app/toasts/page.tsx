@@ -15,12 +15,12 @@ import { Toaster } from "@/pulseui-components/Toast/Toaster";
 
 function Page() {
   return (
-    <div className="bg-black text-white min-h-screen flex justify-center">
+    <div className="bg-black text-white min-h-screen flex">
       <ComponentNavbar />
 
-      <div className="w-full h-full p-4 py-10 pl-15">
+      <div className="flex-1 min-w-0 p-4 py-10 pl-16">
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-3 justify-self-start">
+          <div className="flex flex-col gap-3">
             <h1 className="text-4xl font-semibold">Toasts</h1>
 
             <h2 className="text-neutral-400">
@@ -30,7 +30,7 @@ function Page() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="flex flex-col bg-neutral-900 rounded p-5 w-full h-fit items-center border border-neutral-700">
+            <div className="flex flex-col bg-neutral-900 rounded p-5 w-full h-fit items-center border border-neutral-700 overflow-hidden">
               <Toaster position="top-center" />
 
               <div className="flex flex-wrap gap-2 items-center">
@@ -129,23 +129,23 @@ function Page() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
+            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700 overflow-hidden">
               <p className="font-semibold">Installation</p>
 
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <div className="flex gap-2 items-center">
-                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400">
+              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
+                <div className="flex gap-2 items-center min-w-0">
+                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400 shrink-0">
                     <p>1</p>
                   </div>
 
-                  <p className="text-neutral-400 text-sm">
+                  <p className="text-neutral-400 text-sm truncate">
                     npx shadcn@latest add
                     https://pulseui-henna.vercel.app/registry/Toaster.json
                   </p>
                 </div>
 
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
                   onClick={async (e) => {
                     const el = e.currentTarget;
 
@@ -164,20 +164,20 @@ function Page() {
                 </button>
               </div>
 
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <div className="flex gap-2 items-center">
-                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400">
+              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
+                <div className="flex gap-2 items-center min-w-0">
+                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400 shrink-0">
                     <p>2</p>
                   </div>
 
-                  <p className="text-neutral-400 text-sm">
+                  <p className="text-neutral-400 text-sm truncate">
                     npx shadcn@latest add
                     https://pulseui-henna.vercel.app/registry/toast.json
                   </p>
                 </div>
 
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
                   onClick={async (e) => {
                     const el = e.currentTarget;
 
@@ -197,7 +197,7 @@ function Page() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
+            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700 overflow-hidden">
               <p className="font-semibold">Usage</p>
 
               <CodeBlock code='import Toast from "@/components/Toaster";' />
@@ -217,7 +217,7 @@ function Page() {
               <CodeBlock code='toast({ message:"Hello Developer" })' />
             </div>
 
-            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
+            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700 overflow-hidden">
               <p className="font-semibold">Props</p>
 
               <p className="text-sm text-neutral-400">Toaster</p>
@@ -278,7 +278,7 @@ function Page() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
+            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700 overflow-hidden">
               <p className="font-semibold">
                 Description of toast function
               </p>
