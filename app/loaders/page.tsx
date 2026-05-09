@@ -48,33 +48,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/basic-loader.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
-              <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
-                <Table className="border border-neutral-700">
+              <div className="flex flex-col gap-3 overflow-x-auto">
+                <h1 className="font-semibold">Props</h1>
+                <Table className="border border-neutral-700 min-w-[700px]">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
-                      <TableHead className="w-[100px] text-white text-center">
+                      <TableHead className=" text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -151,11 +153,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import BasicLoader from "@/components/basic-loader";'/>
-                <CodeBlock code='<BasicLoader color="yellow" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import BasicLoader from "@/components/basic-loader";' />
+                <CodeBlock code='<BasicLoader color="yellow" />' />
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader2
               </h1>
-              <Loader2 color="blue"/>
+              <Loader2 color="blue" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -174,33 +174,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader2.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader2.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -277,11 +279,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader2 from "@/components/loader2";'/>
-                <CodeBlock code='<Loader2 color="blue" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader2 from "@/components/loader2";' />
+                <CodeBlock code='<Loader2 color="blue" />' />
               </div>
             </div>
           </div>
@@ -290,7 +290,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader3
               </h1>
-              <Loader3 color="green"/>
+              <Loader3 color="green" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -300,33 +300,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader3.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader3.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -359,11 +361,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader3 from "@/components/loader3";'/>
-                <CodeBlock code='<Loader3 color="green" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader3 from "@/components/loader3";' />
+                <CodeBlock code='<Loader3 color="green" />' />
               </div>
             </div>
           </div>
@@ -372,7 +372,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader4
               </h1>
-              <Loader4/>
+              <Loader4 />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -382,27 +382,25 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader4.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader3.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader4 from "@/components/loader4";'/>
-                <CodeBlock code='<Loader4 />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader4 from "@/components/loader4";' />
+                <CodeBlock code="<Loader4 />" />
               </div>
             </div>
           </div>
@@ -411,7 +409,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader5
               </h1>
-              <Loader5 color="pink"/>
+              <Loader5 color="pink" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -421,33 +419,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader5.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader5.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -480,11 +480,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader5 from "@/components/loader5";'/>
-                <CodeBlock code='<Loader5 color="pink" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader5 from "@/components/loader5";' />
+                <CodeBlock code='<Loader5 color="pink" />' />
               </div>
             </div>
           </div>
@@ -493,7 +491,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader6
               </h1>
-              <Loader6 color="yellow"/>
+              <Loader6 color="yellow" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -503,33 +501,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader6.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader6.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -562,11 +562,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader6 from "@/components/loader6";'/>
-                <CodeBlock code='<Loader6 color="yellow" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader6 from "@/components/loader6";' />
+                <CodeBlock code='<Loader6 color="yellow" />' />
               </div>
             </div>
           </div>
@@ -575,7 +573,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader7
               </h1>
-              <Loader7/>
+              <Loader7 />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -585,27 +583,25 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader7.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader7.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader6 from "@/components/loader7";'/>
-                <CodeBlock code='<Loader7/>'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader6 from "@/components/loader7";' />
+                <CodeBlock code="<Loader7/>" />
               </div>
             </div>
           </div>
@@ -614,7 +610,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader8
               </h1>
-              <Loader8 color="white"/>
+              <Loader8 color="white" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -624,33 +620,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader8.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader8.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -683,11 +681,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader8 from "@/components/loader8";'/>
-                <CodeBlock code='<Loader8 color="white" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader8 from "@/components/loader8";' />
+                <CodeBlock code='<Loader8 color="white" />' />
               </div>
             </div>
           </div>
@@ -696,7 +692,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader9
               </h1>
-              <Loader9 color="#5f95ec"/>
+              <Loader9 color="#5f95ec" />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -706,33 +702,35 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader9.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader9.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Props
-                </h1>
+                <h1 className="font-semibold">Props</h1>
                 <Table className="border border-neutral-700">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
                       <TableHead className="w-[100px] text-white text-center">
                         Prop
                       </TableHead>
-                      <TableHead className="text-white text-center">Type</TableHead>
-                      <TableHead className="text-white text-center">Default</TableHead>
+                      <TableHead className="text-white text-center">
+                        Type
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Default
+                      </TableHead>
                       <TableHead className="text-white text-center">
                         Description
                       </TableHead>
@@ -765,11 +763,9 @@ function page() {
                 </Table>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader9 from "@/components/loader9";'/>
-                <CodeBlock code='<Loader9 color="#5f95ec" />'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader9 from "@/components/loader9";' />
+                <CodeBlock code='<Loader9 color="#5f95ec" />' />
               </div>
             </div>
           </div>
@@ -778,7 +774,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader10
               </h1>
-              <Loader7/>
+              <Loader7 />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -788,27 +784,25 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader10.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader10.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader10 from "@/components/loader10";'/>
-                <CodeBlock code='<Loader10/>'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader10 from "@/components/loader10";' />
+                <CodeBlock code="<Loader10/>" />
               </div>
             </div>
           </div>
@@ -817,7 +811,7 @@ function page() {
               <h1 className="text-xl font-semibold text-neutral-200">
                 Loader11
               </h1>
-              <Loader11/>
+              <Loader11 />
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
@@ -827,27 +821,25 @@ function page() {
                   https://pulseui-henna.vercel.app/registry/loader11.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/loader11.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="flex flex-col gap-3">
-                <h1 className="font-semibold">
-                  Usage
-                </h1>
-                <CodeBlock code='import Loader11 from "@/components/loader11";'/>
-                <CodeBlock code='<Loader11/>'/>
+                <h1 className="font-semibold">Usage</h1>
+                <CodeBlock code='import Loader11 from "@/components/loader11";' />
+                <CodeBlock code="<Loader11/>" />
               </div>
             </div>
           </div>
@@ -858,8 +850,3 @@ function page() {
 }
 
 export default page;
-
-
-
-
-

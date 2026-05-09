@@ -83,9 +83,9 @@ function Page() {
                       </TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody className="overflow-auto">
+                  <TableBody className="">
                     <TableRow className="hover:bg-black ">
-                      <TableCell className="font-medium mr-100">
+                      <TableCell className="font-medium mr-100 ">
                         <div className="bg-black flex items-center justify-center p-1 rounded">
                           <pre>children</pre>
                         </div>

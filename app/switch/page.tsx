@@ -32,7 +32,9 @@ function Page() {
               <h1 className="text-xl font-semibold text-neutral-200">Switch</h1>
               <div className="flex gap-2">
                 <Switch onOnOff={setOnOff} />
-                <p className="text-sm text-neutral-500">{onOff?"ON":"OFF"}</p>
+                <p className="text-sm text-neutral-500">
+                  {onOff ? "ON" : "OFF"}
+                </p>
               </div>
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
@@ -43,27 +45,27 @@ function Page() {
                   https://pulseui-henna.vercel.app/registry/Switch.json
                 </p>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Switch.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 overflow-x-auto">
                 <h1 className="font-semibold">Props</h1>
-                <Table className="border border-neutral-700">
+                <Table className="border border-neutral-700 min-w-[700px]">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
-                      <TableHead className="w-[100px] text-white text-center">
+                      <TableHead className=" text-white text-center">
                         Prop
                       </TableHead>
                       <TableHead className="text-white text-center">
@@ -128,8 +130,8 @@ function Page() {
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Usage</h1>
                 <CodeBlock code='import Switch from "@/components/Switch";' />
-                <CodeBlock code='const [onOff, setOnOff] = useState(false);' />
-                <CodeBlock code='<Switch onOnOff={setOnOff} />' />
+                <CodeBlock code="const [onOff, setOnOff] = useState(false);" />
+                <CodeBlock code="<Switch onOnOff={setOnOff} />" />
               </div>
             </div>
           </div>
@@ -140,8 +142,3 @@ function Page() {
 }
 
 export default Page;
-
-
-
-
-

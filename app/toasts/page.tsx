@@ -37,20 +37,20 @@ function Page() {
               <Toaster position="top-center" />
               <div className="flex flex-wrap gap-2 items-center">
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
               <div className="bg-neutral-950 rounded border border-neutral-700 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-2">
                 <div className="flex gap-2 items-center">
@@ -63,20 +63,20 @@ function Page() {
                   </p>
                 </div>
                 <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+                  onClick={async (e) => {
+                    const el = e.currentTarget;
+                    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json",
                     );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                    el.innerText = "copied!";
+                    setTimeout(() => {
+                      el.innerText = "copy";
+                    }, 3000);
+                  }}
+                >
+                  copy
+                </button>
               </div>
             </div>
             <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
@@ -157,7 +157,10 @@ function Page() {
                 <p className="font-semibold">Description of toast function</p>
               </div>
               <div className="">
-                <p className="text-sm text-neutral-400">The toast function takes an object as an argument which has the following properties</p>
+                <p className="text-sm text-neutral-400">
+                  The toast function takes an object as an argument which has
+                  the following properties
+                </p>
               </div>
               <Table className="border border-neutral-700">
                 <TableHeader className="">
@@ -195,9 +198,7 @@ function Page() {
                     </TableCell>
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
-                        <p>
-                          The toast message that will be displayed
-                        </p>
+                        <p>The toast message that will be displayed</p>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -220,7 +221,8 @@ function Page() {
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
                         <p>
-                          The duration in milliseconds after which toast is dismissed; default is 3000ms
+                          The duration in milliseconds after which toast is
+                          dismissed; default is 3000ms
                         </p>
                       </div>
                     </TableCell>
@@ -244,7 +246,8 @@ function Page() {
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
                         <p>
-                          Tailwind CSS classes for custom styling of the toast like text-color, bg-color etc.
+                          Tailwind CSS classes for custom styling of the toast
+                          like text-color, bg-color etc.
                         </p>
                       </div>
                     </TableCell>
@@ -292,7 +295,8 @@ function Page() {
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
                         <p>
-                          Custom icon for toast messages - emojis of React components like lucide-react or tabler icons
+                          Custom icon for toast messages - emojis of React
+                          components like lucide-react or tabler icons
                         </p>
                       </div>
                     </TableCell>
@@ -316,7 +320,8 @@ function Page() {
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
                         <p>
-                          Adds a cross button to the toast to dismiss the toast immediately
+                          Adds a cross button to the toast to dismiss the toast
+                          immediately
                         </p>
                       </div>
                     </TableCell>
@@ -340,7 +345,9 @@ function Page() {
                     <TableCell className="text-right ">
                       <div className="flex items-center justify-center p-1 rounded">
                         <p>
-                          {'Has two values - "dark" or "default"; "dark" modifies the toast for dark themes'}
+                          {
+                            'Has two values - "dark" or "default"; "dark" modifies the toast for dark themes'
+                          }
                         </p>
                       </div>
                     </TableCell>
@@ -356,8 +363,3 @@ function Page() {
 }
 
 export default Page;
-
-
-
-
-
