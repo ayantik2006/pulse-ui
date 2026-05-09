@@ -1,5 +1,4 @@
-"use client";
-
+"use client";`r`n`r`nimport CopyButton from "@/pulseui-components/CopyButton/CopyButton";`r`n
 import ComponentNavbar from "@/components/ComponentNavbar";
 import {
   Table,
@@ -45,20 +44,20 @@ function Page() {
                     https://pulseui-henna.vercel.app/registry/Accordian1.json
                   </p>
                   <button
-                    className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                    onClick={async (e) => {
-                      const el = e.currentTarget;
-                      await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                         "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Accordian1.json",
                       );
-                      el.innerText = "copied!";
-                      setTimeout(() => {
-                        el.innerText = "copy";
-                      }, 3000);
-                    }}
-                  >
-                    copy
-                  </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
                 </div>
                 <div className="flex flex-col gap-3">
                   <h1 className="font-semibold">Props</h1>
@@ -156,20 +155,20 @@ function Page() {
                     https://pulseui-henna.vercel.app/registry/Accordian2.json
                   </p>
                   <button
-                    className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                    onClick={async (e) => {
-                      const el = e.currentTarget;
-                      await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                         "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Accordian2.json",
                       );
-                      el.innerText = "copied!";
-                      setTimeout(() => {
-                        el.innerText = "copy";
-                      }, 3000);
-                    }}
-                  >
-                    copy
-                  </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
                 </div>
                 <div className="flex flex-col gap-3">
                   <h1 className="font-semibold">Props</h1>
@@ -255,3 +254,5 @@ function Page() {
 }
 
 export default Page;
+
+

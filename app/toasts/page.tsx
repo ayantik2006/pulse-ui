@@ -1,5 +1,4 @@
 "use client";
-
 import ComponentNavbar from "@/components/ComponentNavbar";
 import {
   Table,
@@ -24,7 +23,7 @@ function Page() {
   return (
     <div className="bg-black text-white min-h-screen flex justify-center">
       <ComponentNavbar />
-      <div className="w-full h-full p-4 py-10 pl-15">
+      <div className="w-full h-full px-4 sm:px-6 md:px-8 py-8 md:py-10">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3 justify-self-start">
             <h1 className="text-4xl font-semibold">Toasts</h1>
@@ -38,148 +37,46 @@ function Page() {
               <Toaster position="top-center" />
               <div className="flex flex-wrap gap-2 items-center">
                 <button
-                  className="bg-green-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "This is a success message!",
-                      duration: 3000,
-                      type: "success",
-                    })
-                  }
-                >
-                  Get Success
-                </button>
-                <button
-                  className="bg-red-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "This is a failure message!",
-                      duration: 3000,
-                      type: "failure",
-                    })
-                  }
-                >
-                  Get Failure
-                </button>
-                <button
-                  className="bg-black px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer dark:bg-white dark:text-black"
-                  onClick={() =>
-                    toast({
-                      message: "This is a normal message!",
-                      duration: 3000,
-                    })
-                  }
-                >
-                  Get Default
-                </button>
-                <button
-                  className="bg-yellow-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "This is an icon message!",
-                      duration: 3000,
-                      type: "failure",
-                      icon: "😁",
-                    })
-                  }
-                >
-                  Get Icon
-                </button>
-                <button
-                  className="bg-orange-600 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "This is a CSS message!",
-                      duration: 3000,
-                      type: "failure",
-                      className: "bg-yellow-200 text-red-600",
-                    })
-                  }
-                >
-                  Get Custom CSS
-                </button>
-                <button
-                  className="bg-pink-700 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "Hi! I have a close button",
-                      duration: 3000,
-                      closeButton: true,
-                    })
-                  }
-                >
-                  With Close Button
-                </button>
-                <button
-                  className="bg-neutral-700 px-3 py-1 text-white rounded font-semibold hover:opacity-85 cursor-pointer"
-                  onClick={() =>
-                    toast({
-                      message: "Hi! I have a dark theme",
-                      duration: 3000,
-                      closeButton: true,
-                      theme: "dark",
-                    })
-                  }
-                >
-                  With Dark Theme
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
-              <div className="">
-                <p className="font-semibold">Installation</p>
-              </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <div className="flex gap-2 items-center">
-                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400">
-                    <p>1</p>
-                  </div>
-                  <p className="text-neutral-400 text-sm">
-                    npx shadcn@latest add
-                    https://pulseui-henna.vercel.app/registry/Toaster.json
-                  </p>
-                </div>
-                <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-                    await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json",
                     );
-                    el.innerText = "copied!";
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
               </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
+              <div className="bg-neutral-950 rounded border border-neutral-700 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-2">
                 <div className="flex gap-2 items-center">
                   <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400">
                     <p>2</p>
                   </div>
-                  <p className="text-neutral-400 text-sm">
+                  <p className="text-neutral-400 text-sm break-all">
                     npx shadcn@latest add
                     https://pulseui-henna.vercel.app/registry/toast.json
                   </p>
                 </div>
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-                    await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json",
                     );
-                    el.innerText = "copied!";
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
               </div>
             </div>
             <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700">
@@ -459,3 +356,8 @@ function Page() {
 }
 
 export default Page;
+
+
+
+
+

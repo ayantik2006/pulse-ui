@@ -1,5 +1,4 @@
-"use client";
-
+"use client";`r`n`r`nimport CopyButton from "@/pulseui-components/CopyButton/CopyButton";`r`n
 import ComponentNavbar from "@/components/ComponentNavbar";
 import { useState } from "react";
 import {
@@ -25,7 +24,7 @@ function Page() {
   return (
     <div className="bg-black text-white min-h-screen flex justify-center">
       <ComponentNavbar />
-      <div className="w-full h-full p-4 py-10 pl-15">
+      <div className="w-full h-full px-4 sm:px-6 md:px-8 py-8 md:py-10">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3 justify-self-start">
             <h1 className="text-4xl font-semibold">Password</h1>
@@ -38,33 +37,21 @@ function Page() {
               <h1 className="text-xl font-semibold text-neutral-200">Password1</h1>
               <div className="flex flex-col gap-2">
                 <Password1 onPasswordChange={setPassword} passwordValid={setIsPasswordValid1}/>
-                <button className={`bg-white text-black text-sm w-fit px-3 py-1 mt-2 font-semibold rounded ml-1 hover:opacity-90 cursor-pointer ${!isPasswordValid1?"pointer-events-none opacity-60":""}`}>
-                    Submit
-                </button>
-              </div>
-              <div className="mb-[-0.5rem]">
-                <p className="font-semibold">Installation</p>
-              </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <p className="text-neutral-400 text-sm">
-                  npx shadcn@latest add
-                  https://pulseui-henna.vercel.app/registry/Password1.json
-                </p>
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-                    await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Password1.json",
                     );
-                    el.innerText = "copied!";
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Props</h1>
@@ -147,33 +134,21 @@ function Page() {
               <h1 className="text-xl font-semibold text-neutral-200">Password2</h1>
               <div className="flex flex-col gap-2">
                 <Password2 onPasswordChange={setPassword} passwordValid={setIsPasswordValid2}/>
-                <button className={`bg-white text-black text-sm w-fit px-3 py-1 mt-2 font-semibold rounded ml-1 hover:opacity-90 cursor-pointer ${!isPasswordValid2?"pointer-events-none opacity-60":""}`}>
-                    Submit
-                </button>
-              </div>
-              <div className="mb-[-0.5rem]">
-                <p className="font-semibold">Installation</p>
-              </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <p className="text-neutral-400 text-sm">
-                  npx shadcn@latest add
-                  https://pulseui-henna.vercel.app/registry/Password2.json
-                </p>
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-                    await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Password2.json",
                     );
-                    el.innerText = "copied!";
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Props</h1>
@@ -258,5 +233,10 @@ function Page() {
 }
 
 export default Page;
+
+
+
+
+
 
 

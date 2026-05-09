@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/table";
 import CodeBlock from "@/components/CodeBlock";
 import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
-import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import OTPInput from "@/pulseui-components/OTPInput/OTPInput";
 
 function Page() {
@@ -22,7 +21,7 @@ function Page() {
   return (
     <div className="bg-black text-white min-h-screen flex justify-center">
       <ComponentNavbar />
-      <div className="w-full h-full p-4 py-10 pl-15">
+      <div className="w-full h-full px-4 sm:px-6 md:px-8 py-8 md:py-10">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3 justify-self-start">
             <h1 className="text-4xl font-semibold">OTP Input</h1>
@@ -39,26 +38,26 @@ function Page() {
               <div className="mb-[-0.5rem]">
                 <p className="font-semibold">Installation</p>
               </div>
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 justify-between px-2 py-2 pl-3">
-                <p className="text-neutral-400 text-sm">
+              <div className="bg-neutral-950 rounded border border-neutral-700 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-2">
+                <p className="text-neutral-400 text-sm break-all">
                   npx shadcn@latest add
                   https://pulseui-henna.vercel.app/registry/OTPInput.json
                 </p>
                 <button
-                  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-                    await navigator.clipboard.writeText(
+  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem] self-end sm:self-auto shrink-0"
+  onClick={async (e) => {
+    const el = e.currentTarget;
+    await navigator.clipboard.writeText(
                       "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/OTPInput.json",
                     );
-                    el.innerText = "copied!";
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+    el.innerText = "copied!";
+    setTimeout(() => {
+      el.innerText = "copy";
+    }, 3000);
+  }}
+>
+  copy
+</button>
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Props</h1>
@@ -142,3 +141,8 @@ function Page() {
 }
 
 export default Page;
+
+
+
+
+
