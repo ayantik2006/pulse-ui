@@ -50,6 +50,7 @@ import Card6 from "@/pulseui-components/Cards/Card6";
 // import Card3 from "@/pulseui-components/Cards/Card3";
 import Rating1 from "@/pulseui-components/Rating/Rating1";
 import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
+import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import TimePicker from "@/pulseui-components/TimePicker/TimePicker";
 import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
 import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
@@ -570,4 +571,3 @@ function Page() {
 }
 
 export default Page;
-

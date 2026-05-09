@@ -1,4 +1,5 @@
 "use client";
+
 import ComponentNavbar from "@/components/ComponentNavbar";
 import {
   Table,
@@ -43,27 +44,27 @@ function Page() {
                     https://pulseui-henna.vercel.app/registry/Avatar1.json
                   </p>
                   <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                    className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                    onClick={async (e) => {
+                      const el = e.currentTarget;
+                      await navigator.clipboard.writeText(
                         "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Avatar1.json",
                       );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                      el.innerText = "copied!";
+                      setTimeout(() => {
+                        el.innerText = "copy";
+                      }, 3000);
+                    }}
+                  >
+                    copy
+                  </button>
                 </div>
                 <div className="flex flex-col gap-3">
                   <h1 className="font-semibold">Props</h1>
-                  <Table className="border border-neutral-700">
+                  <Table className="border border-neutral-700 min-w-[700px]">
                     <TableHeader className="">
                       <TableRow className="hover:bg-neutral-900">
-                        <TableHead className="w-[100px] text-white text-center">
+                        <TableHead className="text-white text-center">
                           Prop
                         </TableHead>
                         <TableHead className="text-white text-center">
@@ -201,27 +202,27 @@ function Page() {
                     https://pulseui-henna.vercel.app/registry/Avatar2.json
                   </p>
                   <button
-  className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-  onClick={async (e) => {
-    const el = e.currentTarget;
-    await navigator.clipboard.writeText(
+                    className="text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
+                    onClick={async (e) => {
+                      const el = e.currentTarget;
+                      await navigator.clipboard.writeText(
                         "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Avatar2.json",
                       );
-    el.innerText = "copied!";
-    setTimeout(() => {
-      el.innerText = "copy";
-    }, 3000);
-  }}
->
-  copy
-</button>
+                      el.innerText = "copied!";
+                      setTimeout(() => {
+                        el.innerText = "copy";
+                      }, 3000);
+                    }}
+                  >
+                    copy
+                  </button>
                 </div>
                 <div className="flex flex-col gap-3">
                   <h1 className="font-semibold">Props</h1>
-                  <Table className="border border-neutral-700">
+                  <Table className="border border-neutral-700 min-w-[700px]">
                     <TableHeader className="">
                       <TableRow className="hover:bg-neutral-900">
-                        <TableHead className="w-[100px] text-white text-center">
+                        <TableHead className="text-white text-center">
                           Prop
                         </TableHead>
                         <TableHead className="text-white text-center">
@@ -369,5 +370,3 @@ function Page() {
 }
 
 export default Page;
-
-

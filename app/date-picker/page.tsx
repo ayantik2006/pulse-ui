@@ -74,10 +74,10 @@ function Page() {
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Props</h1>
-                <Table className="border border-neutral-700">
+                <Table className="border border-neutral-700 min-w-[700px]">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
-                      <TableHead className="w-[100px] text-white text-center">
+                      <TableHead className="text-white text-center">
                         Prop
                       </TableHead>
                       <TableHead className="text-white text-center">

@@ -52,42 +52,6 @@
   scrollbar-color: #47494b transparent;
 }
 
-/* Docs responsiveness across all component pages */
-@media (max-width: 1024px) {
-  .pl-15 {
-    padding-left: 1rem !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .bg-neutral-950.rounded.flex.border.border-neutral-700.justify-between {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-
-  .bg-neutral-950.rounded.flex.border.border-neutral-700.justify-between > p {
-    word-break: break-all;
-  }
-}
-
-/* Keep docs main content from overflowing beside the left navbar */
-.bg-black.text-white.min-h-screen.flex.justify-center > div.w-full.h-full {
-  min-width: 0;
-}
-
-/* Better wrapping inside props tables used across docs pages */
-[data-slot="table-cell"] pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-[data-slot="table-cell"] p,
-[data-slot="table-head"] p {
-  white-space: normal;
-  word-break: break-word;
-}
-
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";

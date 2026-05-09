@@ -91,10 +91,10 @@ function Page() {
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="font-semibold">Props</h1>
-                <Table className="border border-neutral-700">
+                <Table className="border border-neutral-700 min-w-[700px]">
                   <TableHeader className="">
                     <TableRow className="hover:bg-neutral-900">
-                      <TableHead className="w-[100px] text-white text-center">
+                      <TableHead className="text-white text-center">
                         Prop
                       </TableHead>
                       <TableHead className="text-white text-center">
@@ -125,7 +125,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>The minimum value of the slider</p>
                         </div>
@@ -147,7 +147,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>The maximum value of the slider</p>
                         </div>
@@ -169,7 +169,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>The minimum increment or decrement value of the slider</p>
                         </div>
@@ -191,7 +191,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>The default value of the slider</p>
                         </div>
@@ -213,7 +213,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>A label or name of the value selected</p>
                         </div>
@@ -235,7 +235,7 @@ function Page() {
                           <pre>false</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>The unit of the value selected</p>
                         </div>
@@ -257,7 +257,7 @@ function Page() {
                           <pre>true</pre>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right ">
+                      <TableCell className="text-center ">
                         <div className="flex items-center justify-center p-1 rounded">
                           <p>Sets the state of value</p>
                         </div>
