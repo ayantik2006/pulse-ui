@@ -118,7 +118,7 @@ function ComponentNavbar() {
       case "Hold To Confirm Button":
         router.push("/hold-to-confirm");
         break;
-      case "TextFlip":
+      case "Text Flip":
         router.push("/text-flip");
         break;
     }
