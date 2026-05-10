@@ -56,6 +56,7 @@ import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
 import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
 import OTPInput from "@/pulseui-components/OTPInput/OTPInput";
 import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
+import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -564,6 +565,13 @@ function Page() {
           <HoldToConfirm confirmationMessage={"Confirmed"} className="bg-green-600 px-4 py-2 text-lg cursor-pointer" onConfirmation={setIsConfirmed}>
             <p>Hold to Confirm</p>
           </HoldToConfirm>
+        </div>
+      </div>
+      {/* Text Flip */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">22) Text Flip</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <TextFlip words={["Hello","World","Devs"]} className="text-2xl" duration={2000}/>
         </div>
       </div>
     </div>

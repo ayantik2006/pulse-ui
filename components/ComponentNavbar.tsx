@@ -29,7 +29,8 @@ function ComponentNavbar() {
     "Elastic Slider",
     "Slide To Unlock",
     "OTP Input",
-    "Hold To Confirm Button"
+    "Hold To Confirm Button",
+    "Text Flip"
     // "Carousal",
     // "Badges",
   ];
@@ -116,6 +117,9 @@ function ComponentNavbar() {
         break;
       case "Hold To Confirm Button":
         router.push("/hold-to-confirm");
+        break;
+      case "TextFlip":
+        router.push("/text-flip");
         break;
     }
   }
