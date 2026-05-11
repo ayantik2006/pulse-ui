@@ -1,0 +1,11 @@
+{
+  "name": "MagneticButton",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/MagneticButton.tsx",
+      "content": "import { motion } from \"framer-motion\";\r\nimport { useState } from \"react\";\r\n\r\nfunction MagneticButton({\r\n  children,\r\n  className,\r\n}: {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}) {\r\n  const [x, setX] = useState(0);\r\n  const [y, setY] = useState(0);\r\n\r\n  return (\r\n    <motion.div\r\n      onMouseMove={(e) => {\r\n        const rect = e.currentTarget.getBoundingClientRect();\r\n\r\n        const distFromLeft = e.clientX - rect.x;\r\n        const distFromRight = rect.width - distFromLeft;\r\n\r\n        setX((distFromLeft - distFromRight) / 2);\r\n\r\n        const distFromTop = e.clientY - rect.y;\r\n        const distFromBottom = rect.height - distFromTop;\r\n\r\n        setY((distFromTop - distFromBottom) / 2);\r\n      }}\r\n      onMouseLeave={() => {\r\n        setX(0);\r\n        setY(0);\r\n      }}\r\n      style={{\r\n        x: x,\r\n        y: y,\r\n      }}\r\n      initial={{\r\n        x: 0,\r\n        y: 0,\r\n      }}\r\n      animate={{\r\n        x: x,\r\n        y: y,\r\n      }}\r\n      transition={{\r\n        duration: 0.3,\r\n        // type: \"spring\",\r\n        // stiffness: 50,\r\n      }}\r\n    >\r\n      <button className={className}>{children}</button>\r\n    </motion.div>\r\n  );\r\n}\r\n\r\nexport default MagneticButton;\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

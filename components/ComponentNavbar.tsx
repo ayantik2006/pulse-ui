@@ -30,7 +30,8 @@ function ComponentNavbar() {
     "Slide To Unlock",
     "OTP Input",
     "Hold To Confirm Button",
-    "Text Flip"
+    "Text Flip",
+    "Magnetic Button"
     // "Carousal",
     // "Badges",
   ];
@@ -120,6 +121,9 @@ function ComponentNavbar() {
         break;
       case "Text Flip":
         router.push("/text-flip");
+        break;
+      case "Magnetic Button":
+        router.push("/magnetic-button");
         break;
     }
   }
