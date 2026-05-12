@@ -28,6 +28,11 @@ function ComponentNavbar() {
     "Password",
     "Elastic Slider",
     "Cards",
+    "Slide To Unlock",
+    "OTP Input",
+    "Hold To Confirm Button",
+    "Text Flip",
+    "Magnetic Button"
     // "Carousal",
     // "Badges",
   ];
@@ -108,6 +113,21 @@ function ComponentNavbar() {
         break;
       case "Cards":
         router.push("/cards");
+        break;
+      case "Slide To Unlock":
+        router.push("/slide-to-unlock");
+        break;
+      case "OTP Input":
+        router.push("/otp-input");
+        break;
+      case "Hold To Confirm Button":
+        router.push("/hold-to-confirm");
+        break;
+      case "Text Flip":
+        router.push("/text-flip");
+        break;
+      case "Magnetic Button":
+        router.push("/magnetic-button");
         break;
     }
   }

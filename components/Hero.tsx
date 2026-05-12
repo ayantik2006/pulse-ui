@@ -33,10 +33,10 @@ function Hero() {
           Without the Headache
         </h2>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-5 mx-3">
+      <div className="flex flex-wrap items-center justify-center gap-5 mx-3 ">
         <div className="p-1 bg-yellow-500 rounded bg-linear-to-r from-pink-500 to-purple-500 flex items-center justify-center group">
           <button
-            className="px-20 text-sm py-[0.5rem] rounded bg-black text-white cursor-pointer font-semibold flex items-center gap-2"
+            className="px-20 [@media(max-width:793px)]:px-10 text-sm py-[0.5rem] rounded bg-black text-white cursor-pointer font-semibold flex items-center gap-2"
             onClick={() => {
               router.push("/buttons");
             }}
@@ -50,7 +50,7 @@ function Hero() {
           className="p-1 bg-white rounded group"
           target="_blank"
         >
-          <div className="bg-black rounded py-[0.4rem] px-20 text-sm bg-white text-black border-2 border-black flex gap-2 font-semibold">
+          <div className="bg-black rounded py-[0.4rem] px-20 [@media(max-width:793px)]:px-10 text-sm bg-white text-black border-2 border-black flex gap-2 font-semibold">
             <Image
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
               width={20}

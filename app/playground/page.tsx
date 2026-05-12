@@ -53,6 +53,12 @@ import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
 import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import TimePicker from "@/pulseui-components/TimePicker/TimePicker";
 import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
+import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
+import OTPInput from "@/pulseui-components/OTPInput/OTPInput";
+import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
+import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
+import { motion } from "framer-motion";
+import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -68,6 +74,9 @@ function Page() {
   const [min, setMin] = useState(10);
   const [amOrPm, setAmOrPm] = useState<"AM" | "PM">("AM");
   const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isLocked, setLocked] = useState(true);
+  const [otp, setOtp] = useState(0);
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -477,7 +486,9 @@ function Page() {
             passwordValid={setIsPasswordValid}
           />
         </div>
-        <button className={`mt-5 ml-1 bg-black dark:bg-white text-white dark:text-black text-sm p-2 px-3 font-semibold rounded-md cursor-pointer hover:opacity-90 duration-300 ${isPasswordValid?"":"pointer-events-none opacity-80"}`}>
+        <button
+          className={`mt-5 ml-1 bg-black dark:bg-white text-white dark:text-black text-sm p-2 px-3 font-semibold rounded-md cursor-pointer hover:opacity-90 duration-300 ${isPasswordValid ? "" : "pointer-events-none opacity-80"}`}
+        >
           Submit
         </button>
       </div>
@@ -536,6 +547,55 @@ function Page() {
           {/* <ElasticSlider min={1} max={5} step={0.01} label="Volume" defaultValue={4} unit="px"/> */}
         </div>
       </div>
+      {/* Slide To Unlock */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">19) Slide To Unlock</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <SlideToUnlock onUnlock={setLocked} />
+        </div>
+      </div>
+      {/* OTP Input */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">20) OTP Input</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <OTPInput digits={4} setOtp={setOtp} />
+          {otp}
+        </div>
+      </div>
+      {/* OTP Input */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">21) Hold To Confirm</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <HoldToConfirm
+            confirmationMessage={"Confirmed"}
+            className="bg-green-600 px-4 py-2 text-lg cursor-pointer"
+            onConfirmation={setIsConfirmed}
+          >
+            <p>Hold to Confirm</p>
+          </HoldToConfirm>
+        </div>
+      </div>
+      {/* Text Flip */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">22) Text Flip</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <TextFlip
+            words={["Hello", "World", "Devs"]}
+            className="text-2xl"
+            duration={2000}
+          />
+        </div>
+      </div>
+      {/* Magnetic Button */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">23) Magnetic Button</h1>
+        <div className="flex items-center gap-2 text-[0.9rem] font-semibold w-60">
+          <MagneticButton className="bg-blue-600 py-2 px-3 rounded-lg cursor-pointer">
+            <p>Magnetic Button</p>
+          </MagneticButton>
+        </div>
+      </div>
+      
     </div>
   );
 }
