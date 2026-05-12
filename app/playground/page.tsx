@@ -59,6 +59,7 @@ import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
 import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
 import { motion } from "framer-motion";
 import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
+
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -66,7 +67,6 @@ function Page() {
   const [month, setMonth] = useState<number>();
   const [year, setYear] = useState<number>();
   const [rating, setRating] = useState(0);
-  const { setType } = useMouseCursor();
   const [password, setPassword] = useState("");
   const [isOn, setIsOn] = useState(false);
   const [wheelValue, setWheelValue] = useState("");
@@ -77,6 +77,7 @@ function Page() {
   const [isLocked, setLocked] = useState(true);
   const [otp, setOtp] = useState(0);
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const { setType } = useMouseCursor();
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -341,7 +342,17 @@ function Page() {
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card1 - Normal Card
         </h2>
-        <Card1 />
+<Card1
+    Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
+    Name="Hitesh Chowdhury"
+    Designation="Guru Ji"
+    Tag="DESIGN"
+    Title="Chai Aur Code"
+    Description="Hanji to kaisi lagi Pulse UI?"
+    onLike={() => console.log("liked")}
+    onMessage={() => console.log("message")}
+    onExternalLink={() => window.open("https://chaicode.com")}
+/>        
 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card2 -- Job Card
@@ -365,7 +376,7 @@ function Page() {
 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card6 -- Shopping Card
-        </h2>
+   </h2>
         <Card6 />
         {/* 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card7 -- Fold Card</h2>
@@ -421,12 +432,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <SuccessBadge />
-          <FailureBadge />
-          <LightBadge />
-          <DarkBadge />
-          <OutlineBadge />
-          <NumberBadge number={10} />
+          <SuccessBadge  />
+          <FailureBadge  />
+          <LightBadge  />
+          <DarkBadge  />
+          <OutlineBadge  />
+          <NumberBadge number={10}  />
         </div>
       </div>
       {/* Cursors */}
@@ -596,6 +607,38 @@ function Page() {
         </div>
       </div>
       
+      {/* Cursors */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">10) Cursors</h1>
+        <div className="flex gap-3 items-center flex-wrap">
+          <div>
+            <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
+              Cursors
+            </h2>
+          <div className="flex gap-4">
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("default")}
+            >
+              Default
+            </button>
+
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("dot")}
+            >
+              Dot Cursor
+            </button>
+            <button
+              className="bg-black text-white px-4 py-2 rounded-xl"
+              onClick={() => setType("ring")}
+            >
+              Ring Cursor
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -123,7 +123,7 @@ export default function CardDocs() {
                                 <div className="flex flex-col gap-2">
                                     <p className="font-semibold text-lg">Usage</p>
                                     <CodeBlock code={`<Card1
-    Image="https://example.com/photo.jpg"
+    Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
     Name="Hitesh Chowdhury"
     Designation="Guru Ji"
     Tag="DESIGN"

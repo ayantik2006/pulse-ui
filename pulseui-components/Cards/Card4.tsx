@@ -7,7 +7,7 @@ import {
   CardDescription,
   CardFooter,
   CardTitle,
-} from "./CardStructure/Card"
+} from "@/pulseui-components/Cards/CardStructure/Card"
 
 export default function CardFace() {
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -86,9 +86,8 @@ export default function CardFace() {
               autoPlay
               playsInline
               muted
-              className={`h-[260px] w-full object-cover border-b-4 border-yellow-400 ${
-                !streamOn ? "hidden" : ""
-              }`}
+              className={`h-[260px] w-full object-cover border-b-4 border-yellow-400 ${!streamOn ? "hidden" : ""
+                }`}
             />
 
             {image && (
