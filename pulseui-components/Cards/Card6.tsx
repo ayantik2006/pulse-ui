@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent } from "./CardStructure/Card"
+import { Card, CardContent } from "@/pulseui-components/Cards/CardStructure/Card"
 import { ShoppingBag, Star } from "lucide-react"
 import { useState } from "react"
 import { motion } from "framer-motion"

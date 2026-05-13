@@ -1,5 +1,5 @@
 "use client"
-import { Card, CardContent, CardFooter, CardTitle, CardDescription } from "./CardStructure/Card"
+import { Card, CardContent, CardFooter, CardTitle, CardDescription } from "@/pulseui-components/Cards/CardStructure/Card"
 import { Twitter, Github, Linkedin, MapPin } from "lucide-react"
 
 export default function Card5() {

@@ -35,7 +35,7 @@ function Page() {
 
               <CopyButton text="Hello Developers!!" />
 
-              <div className="mb-[-0.5rem]">
+              <div className="mb-2">
                 <p className="font-semibold">Installation</p>
               </div>
 

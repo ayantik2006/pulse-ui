@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardFooter,
   CardTitle
-} from "./CardStructure/Card"
+} from "@/pulseui-components/Cards/CardStructure/Card"
 
 type CardProps = MotionProps & {
   Image?: string

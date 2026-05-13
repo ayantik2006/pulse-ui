@@ -1,10 +1,10 @@
 "use client"
-import { Card, CardContent, CardFooter, CardTitle, CardDescription } from "./CardStructure/Card"
+import { Card, CardContent, CardFooter, CardTitle, CardDescription } from "@/pulseui-components/Cards/CardStructure/Card"
 
 export default function Card2() {
   return (
     <Card className="w-[320px] rounded-2xl shadow-lg border border-neutral-100 bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="h-2 bg-gradient-to-r from-blue-500 to-cyan-400 w-full" />
+      <div className="h-2 bg-linear-to-r from-blue-500 to-cyan-400 w-full" />
       <CardContent className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div className="bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded-full text-xs">
