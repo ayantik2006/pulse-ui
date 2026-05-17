@@ -78,7 +78,6 @@ function Page() {
   const [isLocked, setLocked] = useState(true);
   const [otp, setOtp] = useState(0);
   const [isConfirmed, setIsConfirmed] = useState(false);
-<<<<<<< HEAD
   const links = [
     {
       title: "Home",
@@ -111,9 +110,7 @@ function Page() {
       href: "#",
     },
   ];
-=======
   const { setType } = useMouseCursor();
->>>>>>> efba435759562207ed5b518b5ebcdbfc4cebf6e6
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
