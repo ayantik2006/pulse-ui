@@ -1,0 +1,11 @@
+{
+    "name": "Card1",
+    "type": "registry:ui",
+    "files": [
+        {
+            "path": "ui/Card2.tsx",
+            "content": "\"use client\"\nimport { Card, CardContent, CardFooter, CardTitle, CardDescription } from \"@/pulseui-components/Cards/CardStructure/Card\"\n\nexport default function Card2() {\n  return (\n    <Card className=\"w-[320px] rounded-2xl shadow-lg border border-neutral-100 bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300\">\n      <div className=\"h-2 bg-linear-to-r from-blue-500 to-cyan-400 w-full\" />\n      <CardContent className=\"p-6\">\n        <div className=\"flex justify-between items-start mb-4\">\n          <div className=\"bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded-full text-xs\">Full-time</div>\n          <div className=\"text-gray-400 text-sm\">2d ago</div>\n        </div>\n        <CardTitle className=\"text-xl font-bold text-gray-800\">Senior Frontend Engineer</CardTitle>\n        <CardDescription className=\"mt-1 text-gray-500 text-sm font-medium\">\n          Tech Nova Inc. • San Francisco, CA (Remote)\n        </CardDescription>\n        <div className=\"mt-6 flex flex-wrap gap-2 text-xs text-gray-600 font-medium\">\n          <span className=\"bg-gray-100 px-2 py-1 rounded-md\">React</span>\n          <span className=\"bg-gray-100 px-2 py-1 rounded-md\">TypeScript</span>\n          <span className=\"bg-gray-100 px-2 py-1 rounded-md\">Tailwind</span>\n        </div>\n      </CardContent>\n      <div className=\"border-t border-gray-100 w-full\" />\n      <CardFooter className=\"p-6 flex justify-between items-center bg-gray-50/50\">\n        <span className=\"text-lg font-bold text-gray-800\">$120k <span className=\"text-sm font-medium text-gray-500\">/ yr</span></span>\n        <button className=\"bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2 rounded-xl transition-colors text-sm shadow-sm hover:shadow-md cursor-pointer\">\n          Apply Now\n        </button>\n      </CardFooter>\n    </Card>\n  )\n}\n",
+            "type": "registry:component"
+        }
+    ]
+}

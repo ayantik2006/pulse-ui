@@ -55,7 +55,12 @@ export default function RootLayout({
         <TooltipProvider>
           <MouseCursorProvider>
             <Cursor />
-            <ThemeContextProvider>{children}</ThemeContextProvider>
+            <ThemeContextProvider>
+          <MouseCursorProvider>
+            <Cursor />
+            {children}
+          </MouseCursorProvider>
+        </ThemeContextProvider>
           </MouseCursorProvider>
         </TooltipProvider>
         <Toaster />
