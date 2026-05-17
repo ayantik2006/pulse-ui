@@ -59,10 +59,7 @@ import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
 import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
 import { House, RefreshCcw, Terminal } from "lucide-react";
 import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
-<<<<<<< HEAD
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
-=======
->>>>>>> efba435759562207ed5b518b5ebcdbfc4cebf6e6
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
