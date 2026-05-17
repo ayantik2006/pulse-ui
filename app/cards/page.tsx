@@ -187,92 +187,12 @@ export default function CardDocs() {
                   </div>
                 </div>
 
-<<<<<<< HEAD
                 {/* Usage */}
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold text-lg">Usage</p>
                   <CodeBlock
                     code={`<Card1
     Image="https://example.com/photo.jpg"
-=======
-                            {/* Preview */}
-                            <div className="flex w-full items-center justify-center min-h-[420px] h-full bg-neutral-950 border border-neutral-800 rounded-xl p-6">
-                                <Card1
-                                    Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
-                                    Name="Hitesh Chowdhury"
-                                    Designation="Guru Ji"
-                                    Tag="DESIGN"
-                                    Title="Chai Aur Code"
-                                    Description="Hanji to kaisi lagi Pulse UI?"
-                                    onLike={() => console.log("liked")}
-                                    onMessage={() => console.log("message")}
-                                    onExternalLink={() => window.open("https://chaicode.com")}
-                                />
-                            </div>
-
-                            {/* Right: Installation + Props + Usage */}
-                            <div className="flex flex-col gap-6">
-
-                                {/* Installation */}
-                                <div className="flex flex-col gap-2">
-                                    <p className="font-semibold text-lg">Installation</p>
-                                    <div className="bg-neutral-950 rounded-lg flex border border-neutral-700 items-center justify-between px-3 py-2">
-                                        <p className="text-neutral-400 text-sm truncate px-2">
-                                            npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json
-                                        </p>
-                                        <CopyButton text="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json" />
-                                    </div>
-                                </div>
-
-                                {/* Props */}
-                                <div className="flex flex-col gap-2">
-                                    <p className="font-semibold text-lg">Props</p>
-                                    <div className="overflow-x-auto rounded-lg border border-neutral-700">
-                                        <Table>
-                                            <TableHeader>
-                                                <TableRow className="hover:bg-neutral-900 border-neutral-700">
-                                                    <TableHead className="text-white text-left w-[120px]">Prop</TableHead>
-                                                    <TableHead className="text-white text-left">Type</TableHead>
-                                                    <TableHead className="text-white text-center w-[100px]">Required</TableHead>
-                                                    <TableHead className="text-white text-left">Description</TableHead>
-                                                </TableRow>
-                                            </TableHeader>
-                                            <TableBody>
-                                                {card1Props.map((row) => (
-                                                    <TableRow key={row.prop} className="hover:bg-neutral-900 border-neutral-800">
-                                                        <TableCell>
-                                                            <div className="bg-neutral-800/50 border border-neutral-700/50 rounded inline-flex px-2 py-1">
-                                                                <code className="text-neutral-200 text-xs">{row.prop}</code>
-                                                            </div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className="bg-neutral-800/50 border border-neutral-700/50 rounded inline-flex px-2 py-1">
-                                                                <code className="text-neutral-400 text-xs">{row.type}</code>
-                                                            </div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className="flex justify-center">
-                                                                <span className={`text-xs ${row.required === "true" ? "text-red-400" : "text-neutral-500"}`}>
-                                                                    {row.required}
-                                                                </span>
-                                                            </div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <p className="text-neutral-300 text-sm">{row.description}</p>
-                                                        </TableCell>
-                                                    </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </div>
-                                </div>
-
-                                {/* Usage */}
-                                <div className="flex flex-col gap-2">
-                                    <p className="font-semibold text-lg">Usage</p>
-                                    <CodeBlock code={`<Card1
-    Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
->>>>>>> efba435759562207ed5b518b5ebcdbfc4cebf6e6
     Name="Hitesh Chowdhury"
     Designation="Guru Ji"
     Tag="DESIGN"
