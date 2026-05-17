@@ -57,8 +57,10 @@ import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
 import OTPInput from "@/pulseui-components/OTPInput/OTPInput";
 import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
 import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
-import { motion } from "framer-motion";
+import { House, RefreshCcw, Terminal } from "lucide-react";
 import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
+import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
+
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
   const [file, setFile] = useState<File>();
@@ -77,6 +79,38 @@ function Page() {
   const [isLocked, setLocked] = useState(true);
   const [otp, setOtp] = useState(0);
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <House
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Terminal",
+      icon: (
+        <Terminal
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Refresh",
+      icon: (
+        <RefreshCcw
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+  ];
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -594,6 +628,11 @@ function Page() {
             <p>Magnetic Button</p>
           </MagneticButton>
         </div>
+      </div>
+      {/* Floating Dock */}
+      <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">24) Floating Dock</h1>
+        <FloatingDock links={links}/>
       </div>
       
     </div>

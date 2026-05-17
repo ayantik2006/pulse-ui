@@ -32,9 +32,8 @@ function ComponentNavbar() {
     "OTP Input",
     "Hold To Confirm Button",
     "Text Flip",
-    "Magnetic Button"
-    // "Carousal",
-    // "Badges",
+    "Magnetic Button",
+    "Floating Dock"
   ];
   const [visibleComponents, setVisibleComponents] = useState(allComponents);
   const [width, setWidth] = useState<number>();
@@ -128,6 +127,9 @@ function ComponentNavbar() {
         break;
       case "Magnetic Button":
         router.push("/magnetic-button");
+        break;
+      case "Floating Dock":
+        router.push("/floating-dock");
         break;
     }
   }
