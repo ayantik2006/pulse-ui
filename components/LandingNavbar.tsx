@@ -19,89 +19,110 @@ function LandingNavbar() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [open, setOpen] = useState(false);
   const componentsList = [
-    {
-      name: "Buttons",
-      href: "/buttons",
-    },
+    // {
+    //   name: "Buttons",
+    //   href: "/buttons",
+    //   isPopular: false,
+    // },
     {
       name: "Loaders",
-      href: "/loaders",
+      href: "/components/loaders",
+      isPopular: false,
     },
     {
       name: "File Upload",
-      href: "/file-upload",
+      href: "/components/file-upload",
+      isPopular: false,
     },
     {
       name: "Toasts",
-      href: "/toasts",
+      href: "/components/toasts",
+      isPopular: false,
     },
     {
       name: "Accordian",
-      href: "/accordians",
+      href: "/components/accordians",
+      isPopular: false,
     },
     {
       name: "Typewriter Effect",
-      href: "/typewriter-effects",
+      href: "/components/typewriter-effects",
+      isPopular: false,
     },
     {
       name: "Rating",
-      href: "/ratings",
+      href: "/components/ratings",
+      isPopular: false,
     },
     {
       name: "Wheel Picker",
-      href: "/wheel-pickers",
+      href: "/components/wheel-pickers",
+      isPopular: true,
     },
     {
       name: "Copy Button",
-      href: "/copy-button",
+      href: "/components/copy-button",
+      isPopular: false,
     },
     {
       name: "Switch",
-      href: "/switch",
+      href: "/components/switch",
+      isPopular: false,
     },
     {
       name: "Date Picker",
-      href: "/date-picker",
+      href: "/components/date-picker",
+      isPopular: false,
     },
     {
       name: "Time Picker",
-      href: "/time-picker",
+      href: "/components/time-picker",
+      isPopular: false,
     },
     {
       name: "Password",
-      href: "/password",
+      href: "/components/password",
+      isPopular: false,
     },
     {
       name: "Elastic Slider",
-      href: "/elastic-slider",
+      href: "/components/elastic-slider",
+      isPopular: true,
     },
     {
       name: "Cards",
-      href: "/cards",
+      href: "/components/cards",
+      isPopular: false,
     },
     {
       name: "Slide To Unlock",
-      href: "/slide-to-unlock",
+      href: "/components/slide-to-unlock",
+      isPopular: true,
     },
     {
       name: "OTP Input",
-      href: "/otp-input",
+      href: "/components/otp-input",
+      isPopular: false,
     },
     {
       name: "Hold To Confirm Button",
-      href: "/hold-to-confirm",
+      href: "/components/hold-to-confirm",
+      isPopular: true,
     },
     {
       name: "Text Flip",
-      href: "/text-flip",
+      href: "/components/text-flip",
+      isPopular: false,
     },
     {
       name: "Magnetic Button",
-      href: "/magnetic-button",
+      href: "/components/magnetic-button",
+      isPopular: true,
     },
     {
       name: "Floating Dock",
-      href: "/floating-dock",
+      href: "/components/floating-dock",
+      isPopular: true,
     },
   ];
 
@@ -160,7 +181,7 @@ function LandingNavbar() {
                   </Link>
                 </CommandItem>
                 <CommandItem>
-                  <Link href={"/components"} target="_blank">
+                  <Link href={"/explore"} target="_blank">
                     Components
                   </Link>
                 </CommandItem>

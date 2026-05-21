@@ -69,67 +69,67 @@ function ComponentNavbar() {
       //   router.push("/buttons");
       //   break;
       case "Loaders":
-        router.push("/loaders");
+        router.push("/components/loaders");
         break;
       case "File Upload":
-        router.push("/file-upload");
+        router.push("/components/file-upload");
         break;
       case "Toasts":
-        router.push("/toasts");
+        router.push("/components/toasts");
         break;
       case "Accordian":
-        router.push("/accordians");
+        router.push("/components/accordians");
         break;
       case "Avatar":
-        router.push("/avatars");
+        router.push("/components/avatars");
         break;
       case "Typewriter Effect":
-        router.push("/typewriter-effects");
+        router.push("/components/typewriter-effects");
         break;
       case "Rating":
-        router.push("/ratings");
+        router.push("/components/ratings");
         break;
       case "Wheel Picker":
-        router.push("/wheel-pickers");
+        router.push("/components/wheel-pickers");
         break;
       case "Copy Button":
-        router.push("/copy-button");
+        router.push("/components/copy-button");
         break;
       case "Switch":
-        router.push("/switch");
+        router.push("/components/switch");
         break;
       case "Date Picker":
-        router.push("/date-picker");
+        router.push("/components/date-picker");
         break;
       case "Time Picker":
-        router.push("/time-picker");
+        router.push("/components/time-picker");
         break;
       case "Password":
-        router.push("/password");
+        router.push("/components/password");
         break;
       case "Elastic Slider":
-        router.push("/elastic-slider");
+        router.push("/components/elastic-slider");
         break;
       case "Cards":
-        router.push("/cards");
+        router.push("/components/cards");
         break;
       case "Slide To Unlock":
-        router.push("/slide-to-unlock");
+        router.push("/components/slide-to-unlock");
         break;
       case "OTP Input":
-        router.push("/otp-input");
+        router.push("/components/otp-input");
         break;
       case "Hold To Confirm Button":
-        router.push("/hold-to-confirm");
+        router.push("/components/hold-to-confirm");
         break;
       case "Text Flip":
-        router.push("/text-flip");
+        router.push("/components/text-flip");
         break;
       case "Magnetic Button":
-        router.push("/magnetic-button");
+        router.push("/components/magnetic-button");
         break;
       case "Floating Dock":
-        router.push("/floating-dock");
+        router.push("/components/floating-dock");
         break;
     }
   }

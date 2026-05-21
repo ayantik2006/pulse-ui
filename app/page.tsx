@@ -23,7 +23,7 @@ export default function Home() {
       <LandingNavbar />
       <Hero />
       <Link
-        href={"/components"}
+        href={"/explore"}
         className="flex gap-1 items-center mb-6 w-full pl-5 group"
       >
         <p className="text-neutral-300/40 tracking-tight font-semibold group-hover:text-neutral-300/60 duration-300">
