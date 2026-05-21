@@ -34,7 +34,7 @@ const testimonials = [
 
 function TestimonialSection() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 mt-10 w-full px-10 [@media(max-width:911px)]:flex-col">
+    <div className="flex flex-wrap items-center justify-center gap-2 mt-5 w-full px-5 [@media(max-width:911px)]:flex-col">
       {testimonials.map((testimonial, index) => {
         return (
           <TestimonialSpotlight key={index} className="flex-1 [@media(max-width:911px)]:w-full">

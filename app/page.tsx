@@ -20,16 +20,27 @@ const playfair = Playfair_Display({
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center bg-black min-h-screen">
-      <LandingNavbar/>
-      <Hero/>
-      <Link href={"/buttons"} className="flex gap-1 items-center mb-6 w-full pl-5 group">
-        <p className="text-neutral-300/40 tracking-tight  font-semibold group-hover:text-neutral-300/60 duration-300">Components</p>
-        <ArrowRight className="stroke-neutral-300/40 stroke-3 group-hover:stroke-neutral-300/60 duration-300" size={15}/>
+      <LandingNavbar />
+      <Hero />
+      <Link
+        href={"/components"}
+        className="flex gap-1 items-center mb-6 w-full pl-5 group"
+      >
+        <p className="text-neutral-300/40 tracking-tight font-semibold group-hover:text-neutral-300/60 duration-300">
+          Components
+        </p>
+        <ArrowRight
+          className="stroke-neutral-300/40 stroke-3 group-hover:stroke-neutral-300/60 duration-300"
+          size={15}
+        />
       </Link>
-      <Features/>
-      <TestimonialSection/>
-      <FluidGradientText text="Pulse UI"/>
-      <LandingFooter/>
+      <Features />
+      <p className="text-neutral-300/40 tracking-tight font-semibold group-hover:text-neutral-300/60 duration-300 w-full pl-5 mt-10">
+        Testimonials
+      </p>
+      <TestimonialSection />
+      <FluidGradientText text="Pulse UI" />
+      <LandingFooter />
     </div>
   );
 }

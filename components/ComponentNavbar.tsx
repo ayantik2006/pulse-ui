@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 function ComponentNavbar() {
   const [isCompressed, setIsCompressed] = useState(false);
   const allComponents = [
-    "Buttons",
+    // "Buttons",
     "Loaders",
     "File Upload",
     "Toasts",
@@ -65,9 +65,9 @@ function ComponentNavbar() {
 
   async function handleComponentLinkClick(componentName: string) {
     switch (componentName) {
-      case "Buttons":
-        router.push("/buttons");
-        break;
+      // case "Buttons":
+      //   router.push("/buttons");
+      //   break;
       case "Loaders":
         router.push("/loaders");
         break;

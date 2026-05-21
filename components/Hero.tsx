@@ -1,12 +1,7 @@
 "use client";
-import { ChevronRight, CirclePlay, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-import {
-  Tooltip,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { Inter } from "next/font/google";
 import MagneticButton from "@/components/MagneticButton";
 
@@ -14,7 +9,6 @@ import {
   Avatar,
   AvatarFallback,
   AvatarGroup,
-  AvatarGroupCount,
   AvatarImage,
 } from "./ui/avatar";
 
@@ -46,7 +40,7 @@ function Hero() {
       </div>
       <div className="flex [@media(max-width:581px)]:flex-col items-center w-full pl-20 gap-5 mx-3 [@media(max-width:581px)]:px-0 [@media(max-width:581px)]:mx-0">
         <Link
-          href={"/buttons"}
+          href={"/components"}
           className="h-fit p-1 border-blue-500 border-2 border-dashed cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%]"
         >
           <MagneticButton className="text-sm bg-linear-to-b from-blue-700 to-blue-500 py-2 cursor-pointer font-semibold rounded-sm w-45  [@media(max-width:581px)]:w-full">

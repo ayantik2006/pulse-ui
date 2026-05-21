@@ -48,7 +48,7 @@ function Features() {
   ];
 
   return (
-    <div className="w-[98%] h-fit p-2 border mx-4 flex flex-wrap gap-4">
+    <div className="w-[98%] h-fit p-2 border mx-4 flex flex-wrap gap-4 items-center justify-center">
       <div className="p-2 border rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
         <WheelPicker1
           options={[
