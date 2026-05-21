@@ -1,67 +1,132 @@
-import {
-  Bolt,
-  FilePenLine,
-  TabletSmartphone,
-  TvMinimalPlay,
-  Zap,
-} from "lucide-react";
+import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
+import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
+import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
+import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
+
+import { useState } from "react";
+import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
+import { House, Terminal, RefreshCcw } from "lucide-react";
+import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
+import TypewriterEffect1 from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
 
 function Features() {
+  const [option, setOption] = useState("");
+  const [isLocked, setIsLocked] = useState(true);
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [value, setValue] = useState(30);
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <House
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Terminal",
+      icon: (
+        <Terminal
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Refresh",
+      icon: (
+        <RefreshCcw
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+  ];
+
   return (
-    <div className="flex flex-wrap items-center justify-center text-white gap-4 mb-20 mx-10 max-w-[40rem]">
-      <div className="p-2 border-2 border-neutral-500 rounded-3xl bg-linear-to-r from-pink-500 to-purple-500">
-        <div className="flex flex-col gap-4 justify-center p-6 max-w-60 duration-200 bg-neutral-900 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
-          <div className="flex gap-3 items-center">
-            <Zap className="group-hover:scale-130 group-hover:rotate-360 duration-300 w-5 h-5 text-white/80" />
-            <h1 className="text-lg font-semibold">Lightning Fast</h1>
-          </div>
-          <p className="text-neutral-300 text-sm">
-            Optimized components with minimal bundle size.
-          </p>
+    <div className="w-[98%] h-fit p-2 border mx-4 flex flex-wrap gap-4">
+      <div className="p-2 border rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <WheelPicker1
+          options={[
+            "Java",
+            "C++",
+            "TypeScript",
+            "JavaScript",
+            "Rust",
+            "Ruby",
+            "Golang",
+          ]}
+          onChange={setOption}
+        />
+      </div>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-70 hover:border-neutral-500/40 duration-300">
+        <SlideToUnlock onUnlock={setIsLocked} />
+      </div>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <HoldToConfirm
+          confirmationMessage={"Confirmed"}
+          className="bg-green-600 px-4 py-2 text-lg cursor-pointer font-semibold"
+          onConfirmation={setIsConfirmed}
+        >
+          <p>Hold to Confirm</p>{" "}
+        </HoldToConfirm>
+      </div>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <div className="flex items-center gap-2 text-lg font-semibold">
+          <p className="">Hello</p>
+          <TextFlip
+            words={["Developers", "Designers", "Students"]}
+            duration={2000}
+            className="text-orange-600"
+          />
         </div>
       </div>
-      <div className="p-2 border-2 border-neutral-500 rounded-3xl bg-linear-to-r from-pink-500 to-purple-500">
-        <div className="flex flex-col gap-4 justify-center p-6 max-w-64 duration-200 bg-neutral-900 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
-          <div className="flex gap-3 items-center">
-            <FilePenLine className="group-hover:scale-130 group-hover:rotate-360 duration-300 w-5 h-5 text-white/80" />
-            <h1 className="text-lg font-semibold">Fully Customizable</h1>
-          </div>
-          <p className="text-neutral-300 text-sm">
-            Easily adapt styles using Tailwind and props.
-          </p>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <FloatingDock links={links} />
+      </div>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <div className="w-full flex flex-col gap-2 items-center justify-center">
+          <ElasticSlider
+            min={0}
+            max={100}
+            label="Volume"
+            step={1}
+            defaultValue={30}
+            unit="%"
+            onChange={setValue}
+          />
+
+          <ElasticSlider
+            min={0}
+            max={30}
+            label="Width"
+            step={1}
+            defaultValue={10}
+            unit="px"
+            onChange={setValue}
+          />
+
+          <ElasticSlider
+            min={0}
+            max={1}
+            label="Efficiency"
+            step={0.01}
+            defaultValue={0.95}
+            onChange={setValue}
+          />
         </div>
       </div>
-      <div className="p-2 border-2 border-neutral-500 rounded-3xl bg-linear-to-r from-pink-500 to-purple-500">
-        <div className="flex flex-col gap-4 justify-center p-6 max-w-64 duration-200 bg-neutral-900 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
-          <div className="flex gap-3 items-center">
-            <TvMinimalPlay className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
-            <h1 className="text-lg font-semibold">Plug & Play</h1>
-          </div>
-          <p className="text-neutral-300 text-sm">
-            Drop components into your project with zero setup.
-          </p>
-        </div>
-      </div>
-      <div className="p-2 border-2 border-neutral-500 rounded-3xl bg-linear-to-r from-pink-500 to-purple-500">
-        <div className="flex flex-col gap-4 justify-center p-6 max-w-73 h-34 duration-200 bg-neutral-900 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
-          <div className="flex gap-3 items-center">
-            <TabletSmartphone className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
-            <h1 className="text-lg font-semibold">Responsive by Default</h1>
-          </div>
-          <p className="text-neutral-300 text-sm">
-            Works seamlessly across devices.
-          </p>
-        </div>
-      </div>
-      <div className="p-2 border-2 border-neutral-500 rounded-3xl bg-linear-to-r from-pink-500 to-purple-500">
-        <div className="flex flex-col gap-4 justify-center p-6 max-w-73 duration-200 bg-neutral-900 shadow-lg rounded-2xl group bg-gradient-to-r from-white/5 via-white/10 to-white/5 ">
-          <div className="flex gap-3 items-center">
-            <Bolt className="group-hover:scale-130 duration-300 w-5 h-5 text-white/80 group-hover:rotate-360" />
-            <h1 className="text-lg font-semibold">Developer Friendly</h1>
-          </div>
-          <p className="text-neutral-300 text-sm">
-            Clean APIs, easy to extend, and well-structured.
-          </p>
+      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+        <div className="flex items-center gap-1">
+          <p className="font-semibold text-lg">Hello</p>
+          <TypewriterEffect1
+            words={["Designers", "Developers", "Students"]}
+            className="text-yellow-200 font-semibold text-lg"
+          />
         </div>
       </div>
     </div>

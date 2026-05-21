@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import { MouseCursorProvider } from "@/context/MouseCursorContext";
 import Cursor from "@/pulseui-components/mouse-cursor/mouseCursor/Cursor";

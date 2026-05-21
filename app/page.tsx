@@ -1,11 +1,15 @@
 "use client";
 
-import Examples from "@/components/Examples";
 import Features from "@/components/Features";
+import { FluidGradientText } from "@/components/fluid-gradient-text";
 import Hero from "@/components/Hero";
 import LandingFooter from "@/components/LandingFooter";
 import LandingNavbar from "@/components/LandingNavbar";
+import TestimonialSection from "@/components/TestimonialSection";
+import Testimonial from "@/components/TestimonialSection";
+import { ArrowRight } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
+import Link from "next/link";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,13 +22,13 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center bg-black min-h-screen">
       <LandingNavbar/>
       <Hero/>
-      <div className="w-full bg-neutral-950 h-1 mb-20"/>
+      <Link href={"/buttons"} className="flex gap-1 items-center mb-6 w-full pl-5 group">
+        <p className="text-neutral-300/40 tracking-tight  font-semibold group-hover:text-neutral-300/60 duration-300">Components</p>
+        <ArrowRight className="stroke-neutral-300/40 stroke-3 group-hover:stroke-neutral-300/60 duration-300" size={15}/>
+      </Link>
       <Features/>
-      <div className="w-full bg-neutral-950 h-1 mb-20"/>
-      {/* <Examples/> */}
-      <div>
-        <p className={`text-black text-center text-9xl text-shadow-[0_0_2px_white] my-[-2rem] font-bold tracking-[2rem] ${playfair.className} text-4xl sm:text-5xl md:text-6xl lg:text-9xl [@media(max-width:640px)]:text-3xl`}>PULSE UI</p>
-      </div>
+      <TestimonialSection/>
+      <FluidGradientText text="Pulse UI"/>
       <LandingFooter/>
     </div>
   );

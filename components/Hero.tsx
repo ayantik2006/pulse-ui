@@ -5,15 +5,21 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
   Tooltip,
-  TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
+import MagneticButton from "@/components/MagneticButton";
 
-const playfair = Playfair_Display({
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+  AvatarImage,
+} from "./ui/avatar";
+
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
 });
 
 function Hero() {
@@ -21,140 +27,94 @@ function Hero() {
 
   return (
     <div className="text-white w-full h-screen flex flex-col gap-10 items-center justify-center">
-      <div className="flex flex-col items-center gap-6 text-center">
+      <HorizontalScale className="absolute top-20 left-0 w-full h-8" />
+      <HorizontalScale className="absolute top-[92%] left-0 w-full h-8" />
+      <VerticalScale className="absolute top-20 left-0 w-8 h-[85%]" />
+      <VerticalScale className="absolute top-20 right-0 w-8 h-[85%]" />
+      <div className="flex flex-col w-full pl-20 pr-20 gap-6 [@media(max-width:565px)]:px-10 [@media(max-width:565px)]:items-center [@media(max-width:527px)]:mt-10">
         <div
-          className={`${playfair.className} text-6xl font-bold [@media(max-width:793px)]:text-4xl shine-text flex underline underline-offset-3`}
+          className={`text-6xl font-bold shine-text flex tracking-tight [@media(max-width:943px)_and_(min-width:789px)_and_(min-width:657px)]:text-5xl [@media(max-width:789px)_and_(min-width:653px)]:text-4xl [@media(max-width:653px)_and_(min-width:494px)]:text-3xl [@media(max-width:494px)_and_(min-width:403px)]:text-2xl [@media(max-width:403px)]:text-xl text-center`}
         >
-          <p>Ship Beautiful UIs Faster</p>
+          <p>Build interfaces that feel alive.</p>
         </div>
         <h2
-          className={`${playfair.className} text-3xl text-neutral-300 [@media(max-width:793px)]:text-2xl`}
+          className={`${inter.className} text-[1rem] text-neutral-200/80 w-full pl-1 pr-10 [@media(max-width:565px)]:text-center [@media(max-width:565px)]:pr-0 [@media(max-width:494px)]:text-xs`}
         >
-          Without the Headache
+          Production-ready animated UI components for React, Next.js and
+          Tailwind.
         </h2>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-5 mx-3 ">
-        <div className="p-1 bg-yellow-500 rounded bg-linear-to-r from-pink-500 to-purple-500 flex items-center justify-center group">
-          <button
-            className="px-20 [@media(max-width:793px)]:px-10 text-sm py-[0.5rem] rounded bg-black text-white cursor-pointer font-semibold flex items-center gap-2"
-            onClick={() => {
-              router.push("/buttons");
-            }}
-          >
-            <p>Browse Components</p>
-            <ChevronRight size={15} className="mt-[0.2rem] ml-3 group-hover:translate-x-2 duration-300" />
-          </button>
-        </div>
+      <div className="flex [@media(max-width:581px)]:flex-col items-center w-full pl-20 gap-5 mx-3 [@media(max-width:581px)]:px-0 [@media(max-width:581px)]:mx-0">
+        <Link
+          href={"/buttons"}
+          className="h-fit p-1 border-blue-500 border-2 border-dashed cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%]"
+        >
+          <MagneticButton className="text-sm bg-linear-to-b from-blue-700 to-blue-500 py-2 cursor-pointer font-semibold rounded-sm w-45  [@media(max-width:581px)]:w-full">
+            <p>Explore Components</p>
+          </MagneticButton>
+        </Link>
         <Link
           href={"https://github.com/ayantik2006/pulse-ui"}
-          className="p-1 bg-white rounded group"
           target="_blank"
+          className="bg-white group p-1 cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%]"
         >
-          <div className="bg-black rounded py-[0.4rem] px-20 [@media(max-width:793px)]:px-10 text-sm bg-white text-black border-2 border-black flex gap-2 font-semibold">
-            <Image
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-              width={20}
-              height={20}
-              alt="github-icon"
-            />
-            <p>View on Github</p>
-            <ChevronRight size={15} className="mt-[0.2rem] ml-3 group-hover:translate-x-2 duration-300" />
-          </div>
+          <button className="text-black text-sm py-2 border-2 border-neutral-600/40 rounded-md font-semibold cursor-pointer bg-neutral-400/10 group-hover:border-neutral-600/60 group-hover:bg-radial from-white to-neutral-400/25 duration-300 w-46  [@media(max-width:581px)]:w-full">
+            <p>View GitHub</p>
+          </button>
         </Link>
       </div>
-      {/* <Link href="/playground" target="_blank" className="flex gap-1 text-neutral-300 text-sm underline underline-offset-2 cursor-pointer">
-        <ExternalLink size={17} className="mt-[0.1rem] stroke-[2px]"/>
-        <p>Visit Playground</p>
-      </Link> */}
-      <div className="flex gap-4">
-        <Tooltip>
-          <TooltipTrigger>
-            <Image
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              height={35}
-              width={35}
-              alt="react"
-              className=""
-            />
-          </TooltipTrigger>
-          <TooltipContent className="bg-white font-semibold">
-            <p>React</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <Image
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              height={35}
-              width={35}
-              alt="ts"
-              className=""
-            />
-          </TooltipTrigger>
-          <TooltipContent className="bg-white font-semibold">
-            <p>Typescript</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <Image
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-              height={35}
-              width={35}
-              alt="ts"
-              className=""
-            />
-          </TooltipTrigger>
-          <TooltipContent className="bg-white font-semibold">
-            <p>Tailwind CSS</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <div className="p-[0.1rem] rounded bg-white ">
-              <Image
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg"
-                height={35}
-                width={35}
-                alt="motion"
-              />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent className="bg-white font-semibold">
-            <p>Motion</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <Image
-              src="https://ui.shadcn.com/apple-touch-icon.png"
-              height={35}
-              width={35}
-              alt="shadcn"
-              className=""
-            />
-          </TooltipTrigger>
-          <TooltipContent className="bg-white font-semibold">
-            <p>shadcn</p>
-          </TooltipContent>
-        </Tooltip>
+      <p className="w-full px-20 [@media(max-width:565px)]:text-center -mb-6 text-[1rem] text-neutral-200/80">
+        Trusted by 1000+ founders, developers and creators
+      </p>
+      <div className="w-full flex [@media(max-width:565px)]:flex-col [@media(max-width:565px)]:justify-center items-center gap-3">
+        <AvatarGroup className="pl-20 [@media(max-width:565px)]:pr-20">
+          <Avatar className="w-10 h-10">
+            <AvatarImage src="/av1.jpg" />
+            <AvatarFallback>JC</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarImage src="/av2.jpg" alt="@maxleiter" />
+            <AvatarFallback>LR</AvatarFallback>
+          </Avatar>
+          <Avatar className="w-10 h-10">
+            <AvatarImage src="/av3.jpg" alt="@evilrabbit" />
+            <AvatarFallback>ER</AvatarFallback>
+          </Avatar>
+          <Avatar className="w-10 h-10">
+            <AvatarImage src="/av4.jpg" alt="@evilrabbit" />
+            <AvatarFallback>ER</AvatarFallback>
+          </Avatar>
+          <Avatar className="w-10 h-10">
+            <AvatarImage src="/av5.jpg" alt="@evilrabbit" />
+            <AvatarFallback>ER</AvatarFallback>
+          </Avatar>
+        </AvatarGroup>
+        <div className="flex gap-1">
+          <Star size={20} className="fill-amber-400 stroke-amber-400" />
+          <Star size={20} className="fill-amber-400 stroke-amber-400" />
+          <Star size={20} className="fill-amber-400 stroke-amber-400" />
+          <Star size={20} className="fill-amber-400 stroke-amber-400" />
+          <Star size={20} className="fill-amber-400 stroke-amber-400" />
+        </div>
       </div>
-      {/* <div className="flex flex-wrap mx-5 items-center justify-center gap-3">
-        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
-          <University size={15} className="stroke-white" />
-          <p className="text-sm">Used by developers at NITs</p>
-        </div>
-        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
-          <Package size={15} className="stroke-white" />
-          <p className="text-sm">Open Source</p>
-        </div>
-        <div className="bg-neutral-800 px-3 py-1 pb-[0.3rem] rounded-[20px] border border-neutral-600 flex items-center gap-2">
-          <Code size={15} className="stroke-white" />
-          <p className="text-sm">Built for modern web apps</p>
-        </div>
-      </div> */}
     </div>
   );
 }
 
 export default Hero;
+
+const HorizontalScale = ({ className }: { className: string }) => {
+  return (
+    <div
+      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
+    ></div>
+  );
+};
+
+const VerticalScale = ({ className }: { className: string }) => {
+  return (
+    <div
+      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
+    ></div>
+  );
+};
