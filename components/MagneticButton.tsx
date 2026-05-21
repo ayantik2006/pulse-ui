@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+"use client";
+
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 function MagneticButton({
   children,
@@ -8,48 +9,46 @@ function MagneticButton({
   children: React.ReactNode;
   className?: string;
 }) {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const x = useSpring(mouseX, {
+    stiffness: 150,
+    damping: 15,
+  });
+
+  const y = useSpring(mouseY, {
+    stiffness: 150,
+    damping: 15,
+  });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLButtonElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const distanceX = e.clientX - centerX;
+    const distanceY = e.clientY - centerY;
+
+    mouseX.set(distanceX);
+    mouseY.set(distanceY);
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0);
+    mouseY.set(0);
+  }
 
   return (
-    <motion.div
-      onMouseMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-
-        const distFromLeft = e.clientX - rect.x;
-        const distFromRight = rect.width - distFromLeft;
-
-        setX((distFromLeft - distFromRight) / 2);
-
-        const distFromTop = e.clientY - rect.y;
-        const distFromBottom = rect.height - distFromTop;
-
-        setY((distFromTop - distFromBottom) / 2);
-      }}
-      onMouseLeave={() => {
-        setX(0);
-        setY(0);
-      }}
-      style={{
-        x: x,
-        y: y,
-      }}
-      initial={{
-        x: 0,
-        y: 0,
-      }}
-      animate={{
-        x: x,
-        y: y,
-      }}
-      transition={{
-        duration: 0.3,
-        // type: "spring",
-        // stiffness: 50,
-      }}
+    <motion.button
+      className={className}
+      style={{ x, y }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
-      <button className={className}>{children}</button>
-    </motion.div>
+      {children}
+    </motion.button>
   );
 }
 
