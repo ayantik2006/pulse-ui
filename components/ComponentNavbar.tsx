@@ -11,31 +11,109 @@ import { useRouter } from "next/navigation";
 
 function ComponentNavbar() {
   const [isCompressed, setIsCompressed] = useState(false);
-  const allComponents = [
-    // "Buttons",
-    "Loaders",
-    "File Upload",
-    "Toasts",
-    "Accordian",
-    "Avatar",
-    "Typewriter Effect",
-    "Rating",
-    "Wheel Picker",
-    "Copy Button",
-    "Switch",
-    "Date Picker",
-    "Time Picker",
-    "Password",
-    "Elastic Slider",
-    "Cards",
-    "Slide To Unlock",
-    "OTP Input",
-    "Hold To Confirm Button",
-    "Text Flip",
-    "Magnetic Button",
-    "Floating Dock"
-  ];
-  const [visibleComponents, setVisibleComponents] = useState(allComponents);
+  const componentsList = [
+    {
+      name: "Loaders",
+      href: "/components/loaders",
+      isPopular: false,
+    },
+    {
+      name: "File Upload",
+      href: "/components/file-upload",
+      isPopular: false,
+    },
+    {
+      name: "Toasts",
+      href: "/components/toasts",
+      isPopular: false,
+    },
+    {
+      name: "Accordian",
+      href: "/components/accordians",
+      isPopular: false,
+    },
+    {
+      name: "Typewriter Effect",
+      href: "/components/typewriter-effects",
+      isPopular: false,
+    },
+    {
+      name: "Rating",
+      href: "/components/ratings",
+      isPopular: false,
+    },
+    {
+      name: "Wheel Picker",
+      href: "/components/wheel-pickers",
+      isPopular: true,
+    },
+    {
+      name: "Copy Button",
+      href: "/components/copy-button",
+      isPopular: false,
+    },
+    {
+      name: "Switch",
+      href: "/components/switch",
+      isPopular: false,
+    },
+    {
+      name: "Date Picker",
+      href: "/components/date-picker",
+      isPopular: false,
+    },
+    {
+      name: "Time Picker",
+      href: "/components/time-picker",
+      isPopular: false,
+    },
+    {
+      name: "Password",
+      href: "/components/password",
+      isPopular: false,
+    },
+    {
+      name: "Elastic Slider",
+      href: "/components/elastic-slider",
+      isPopular: true,
+    },
+    {
+      name: "Cards",
+      href: "/components/cards",
+      isPopular: false,
+    },
+    {
+      name: "Slide To Unlock",
+      href: "/components/slide-to-unlock",
+      isPopular: true,
+    },
+    {
+      name: "OTP Input",
+      href: "/components/otp-input",
+      isPopular: false,
+    },
+    {
+      name: "Hold To Confirm Button",
+      href: "/components/hold-to-confirm",
+      isPopular: true,
+    },
+    {
+      name: "Text Flip",
+      href: "/components/text-flip",
+      isPopular: false,
+    },
+    {
+      name: "Magnetic Button",
+      href: "/components/magnetic-button",
+      isPopular: true,
+    },
+    {
+      name: "Floating Dock",
+      href: "/components/floating-dock",
+      isPopular: true,
+    },
+  ].reverse();
+  const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
   const [isComponentNavbarVisible, setIsComponentNavbarVisible] =
     useState<boolean>();
@@ -63,92 +141,21 @@ function ComponentNavbar() {
     };
   }, [width]);
 
-  async function handleComponentLinkClick(componentName: string) {
-    switch (componentName) {
-      // case "Buttons":
-      //   router.push("/buttons");
-      //   break;
-      case "Loaders":
-        router.push("/components/loaders");
-        break;
-      case "File Upload":
-        router.push("/components/file-upload");
-        break;
-      case "Toasts":
-        router.push("/components/toasts");
-        break;
-      case "Accordian":
-        router.push("/components/accordians");
-        break;
-      case "Avatar":
-        router.push("/components/avatars");
-        break;
-      case "Typewriter Effect":
-        router.push("/components/typewriter-effects");
-        break;
-      case "Rating":
-        router.push("/components/ratings");
-        break;
-      case "Wheel Picker":
-        router.push("/components/wheel-pickers");
-        break;
-      case "Copy Button":
-        router.push("/components/copy-button");
-        break;
-      case "Switch":
-        router.push("/components/switch");
-        break;
-      case "Date Picker":
-        router.push("/components/date-picker");
-        break;
-      case "Time Picker":
-        router.push("/components/time-picker");
-        break;
-      case "Password":
-        router.push("/components/password");
-        break;
-      case "Elastic Slider":
-        router.push("/components/elastic-slider");
-        break;
-      case "Cards":
-        router.push("/components/cards");
-        break;
-      case "Slide To Unlock":
-        router.push("/components/slide-to-unlock");
-        break;
-      case "OTP Input":
-        router.push("/components/otp-input");
-        break;
-      case "Hold To Confirm Button":
-        router.push("/components/hold-to-confirm");
-        break;
-      case "Text Flip":
-        router.push("/components/text-flip");
-        break;
-      case "Magnetic Button":
-        router.push("/components/magnetic-button");
-        break;
-      case "Floating Dock":
-        router.push("/components/floating-dock");
-        break;
-    }
-  }
-
   return (
     <div
       className={`z-80 ${isFloatingNavbarVisible && !isComponentNavbarVisible ? "fixed top-0 left-0 h-full" : ""} ${isComponentNavbarVisible ? "sticky top-0 bottom-0" : ""}`}
     >
       <div
-        className={`relative left-0 h-full p-4 pr-0 ${!isComponentNavbarVisible ? "hidden" : ""}`}
+        className={`relative left-0 h-full p4 pr-0 ${!isComponentNavbarVisible ? "hidden" : ""}`}
       >
         <div
-          className={`bg-neutral-900 w-65 h-fll border border-neutral-800 rounded p-4 flex flex-col sticky top-4`}
+          className={`bg-neutral900 w-65 h-fll borde border-neutral-800 rounded p-4 flex flex-col sticky top-0`}
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <h1 className="font-semibold text-neutral-400">COMPONENTS</h1>
+              {/* <h1 className="font-semibold text-neutral-400">COMPONENTS</h1> */}
               <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
-                <p>{visibleComponents.length}</p>
+                {/* <p>{visibleComponents.length}</p> */}
               </div>
             </div>
             <InputGroup className="max-w-xs">
@@ -158,11 +165,11 @@ function ComponentNavbar() {
                 onInput={(e) => {
                   const search = e.currentTarget.value.trim();
                   if (search === "") {
-                    setVisibleComponents(allComponents);
+                    setVisibleComponents(componentsList);
                   }
                   const compos = [];
-                  for (const compo of allComponents) {
-                    if (compo.toLowerCase().includes(search)) {
+                  for (const compo of componentsList) {
+                    if (compo.name.toLowerCase().includes(search)) {
                       compos.push(compo);
                     }
                   }
@@ -174,25 +181,23 @@ function ComponentNavbar() {
               </InputGroupAddon>
             </InputGroup>
           </div>
-          <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar">
+          <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800/0 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
             {visibleComponents.length == 0 && (
               <div>
                 <p className="text-sm text-neutral-500">No components</p>
               </div>
             )}
-            {visibleComponents.map((componentName, index) => (
-              <div
+            {visibleComponents.map((component, index) => (
+              <Link
+                href={component.href}
                 key={index}
-                className="text-sm cursor-pointer hover:text-neutral-400"
-                onClick={() => {
-                  handleComponentLinkClick(componentName);
-                }}
+                className="text-sm cursor-pointer hover:bg-neutral-600/50 p-2 rounded-md"
               >
-                <p>{componentName}</p>
-              </div>
+                <p>{component.name}</p>
+              </Link>
             ))}
           </div>
-          <div className="flex flex-col gap-3 p-4 mt-10 text-sm duration-300 rounded bg-neutral-950">
+          <div className="flex flex-col gap-3 p-4 mt-10 ml-2 text-sm duration-300 rounded bg-neutral-950/0">
             <Link
               href={"/"}
               className="text-neutral-500 hover:text-neutral-400"
@@ -207,11 +212,11 @@ function ComponentNavbar() {
             </Link>
             <Link
               href={"https://github.com/ayantik2006/pulse-ui"}
-              className="font-semibold text-neutral-400 text-[0.9rem] rounded flex items-center gap-2 duration-300"
+              className="text-neutral-500 text-[0.9rem] rounded flex items-center gap-2 duration-300 hover:text-neutral-400"
               target="_blank"
             >
-              <i className="devicon-github-original" />
-              <p className="text-[0.8rem] mt-[0.1rem]">GitHub</p>
+              {/* <i className="devicon-github-original" /> */}
+              <p className="text-[0.8rem mt-[0.1rem]">GitHub</p>
             </Link>
           </div>
         </div>
@@ -219,7 +224,7 @@ function ComponentNavbar() {
 
       {!isFloatingNavbarVisible && (
         <div
-          className={`fixed top-0 m-2 h-fit w-fit p-2 pr-0 bg-neutral-800 mx-2 rounded cursor-pointer hover:opacity-90 ${isComponentNavbarVisible ? "hidden" : ""}`}
+          className={`fixed top-0 m-2 h-fit w-fit p-2 pr-0 bg-neutral-800/40 mx-2 rounded cursor-pointer hover:opacity-90 ${isComponentNavbarVisible ? "hidden" : ""}`}
           onClick={() => {
             setIsFloatingNavbarVisible((prev) => !prev);
           }}
@@ -233,7 +238,7 @@ function ComponentNavbar() {
       <AnimatePresence>
         {isFloatingNavbarVisible && (
           <motion.div
-            className={`bg-neutral-900 w-65 h-full border border-neutral-800 p-4 flex flex-col absolute left-0 top-0 `}
+            className={`bg-black w-65 h-full border border-neutral-800 p-4 flex flex-col absolute left-0 top-0 `}
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
@@ -241,9 +246,9 @@ function ComponentNavbar() {
           >
             <div className="flex flex-col gap-3 ">
               <div className="flex items-center justify-between">
-                <h1 className="font-semibold text-neutral-400">COMPONENTS</h1>
+                {/* <h1 className="font-semibold text-neutral-400">COMPONENTS</h1> */}
                 <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
-                  <p>{visibleComponents.length}</p>
+                  {/* <p>{visibleComponents.length}</p> */}
                 </div>
                 <div
                   className="p-1 rounded cursor-pointer hover:bg-neutral-950"
@@ -257,15 +262,15 @@ function ComponentNavbar() {
               <InputGroup className="max-w-xs">
                 <InputGroupInput
                   placeholder="Search components"
-                  className="selection:bg-blue-600"
+                  className="selection:bg-blue-600 placeholder:text-sm"
                   onInput={(e) => {
                     const search = e.currentTarget.value.trim();
                     if (search === "") {
-                      setVisibleComponents(allComponents);
+                      setVisibleComponents(componentsList);
                     }
                     const compos = [];
-                    for (const compo of allComponents) {
-                      if (compo.toLowerCase().includes(search)) {
+                    for (const compo of componentsList) {
+                      if (compo.name.toLowerCase().includes(search)) {
                         compos.push(compo);
                       }
                     }
@@ -273,29 +278,27 @@ function ComponentNavbar() {
                   }}
                 />
                 <InputGroupAddon>
-                  <Search />
+                  <Search/>
                 </InputGroupAddon>
               </InputGroup>
             </div>
-            <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar">
+            <div className="p-4 flex flex-col gap-4 mt-4 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
               {visibleComponents.length == 0 && (
                 <div>
                   <p className="text-sm text-neutral-500">No components</p>
                 </div>
               )}
-              {visibleComponents.map((componentName, index) => (
-                <div
+              {visibleComponents.map((component, index) => (
+                <Link
+                  href={component.href}
                   key={index}
-                  className="text-sm cursor-pointer hover:text-neutral-400"
-                  onClick={() => {
-                    handleComponentLinkClick(componentName);
-                  }}
+                  className="text-sm cursor-pointer hover:bg-neutral-600/50 p-2 rounded-md"
                 >
-                  <p>{componentName}</p>
-                </div>
+                  <p>{component.name}</p>
+                </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-3 p-4 mt-10 text-sm rounded bg-neutral-950">
+            <div className="flex flex-col gap-3 p-4 mt-10 text-sm rounded bg-black">
               <Link
                 href={"/"}
                 className="text-neutral-500 hover:text-neutral-400"
@@ -310,11 +313,11 @@ function ComponentNavbar() {
               </Link>
               <Link
                 href={"https://github.com/ayantik2006/pulse-ui"}
-                className="font-semibold text-neutral-400 text-[0.9rem] rounded flex items-center gap-2 duration-300"
+                className=" text-sm text-neutral-500 hover:text-neutral-400 rounded flex items-center gap-2 duration-300"
                 target="_blank"
               >
-                <i className="devicon-github-original" />
-                <p className="text-[0.8rem] mt-[0.1rem]">GitHub</p>
+                {/* <i className="devicon-github-original" /> */}
+                <p className="mt-[0.1rem]">GitHub</p>
               </Link>
             </div>
           </motion.div>

@@ -19,11 +19,6 @@ function LandingNavbar() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [open, setOpen] = useState(false);
   const componentsList = [
-    // {
-    //   name: "Buttons",
-    //   href: "/buttons",
-    //   isPopular: false,
-    // },
     {
       name: "Loaders",
       href: "/components/loaders",
