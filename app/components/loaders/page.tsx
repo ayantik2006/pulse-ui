@@ -14,6 +14,7 @@ import Loader5 from "@/pulseui-components/Loaders/Loader5";
 import Loader2 from "@/pulseui-components/Loaders/Loader2";
 import Loader4 from "@/pulseui-components/Loaders/Loader4";
 import CodeBlock from "@/components/CodeBlock";
+import { CodeBlockCommand } from "@/components/code-block-command";
 import Loader6 from "@/pulseui-components/Loaders/Loader6";
 import Loader7 from "@/pulseui-components/Loaders/Loader7";
 import Loader8 from "@/pulseui-components/Loaders/Loader8";
@@ -46,30 +47,13 @@ function page() {
                 <p className="font-semibold">Installation</p>
               </div>
 
-              <div className="bg-neutral-950 rounded flex border border-neutral-700 items-center justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
-                <p className="text-neutral-400 text-sm truncate">
-                  npx shadcn@latest add
-                  https://pulseui-henna.vercel.app/registry/basic-loader.json
-                </p>
-
-                <button
-                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-
-                    await navigator.clipboard.writeText(
-                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json",
-                    );
-
-                    el.innerText = "copied!";
-
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+              <div className="w-full max-w-full">
+                <CodeBlockCommand
+                  pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json"
+                  yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json"
+                  npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json"
+                  bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/basic-loader.json"
+                />
               </div>
 
               <div className="flex flex-col gap-3">

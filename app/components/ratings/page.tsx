@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CodeBlock from "@/components/CodeBlock";
+import { CodeBlockCommand } from "@/components/code-block-command";
 
 function Page() {
   const [rating, setRating] = useState(4);
@@ -40,30 +41,13 @@ function Page() {
                 <p className="font-semibold">Installation</p>
               </div>
 
-              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
-                <p className="text-neutral-400 text-sm truncate">
-                  npx shadcn@latest add
-                  https://pulseui-henna.vercel.app/registry/Rating1.json
-                </p>
-
-                <button
-                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-
-                    await navigator.clipboard.writeText(
-                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Rating1.json",
-                    );
-
-                    el.innerText = "copied!";
-
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+              <div className="w-full max-w-full">
+                <CodeBlockCommand
+                  pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/Rating1.json"
+                  yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/Rating1.json"
+                  npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Rating1.json"
+                  bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/Rating1.json"
+                />
               </div>
 
               <div className="flex flex-col gap-3">

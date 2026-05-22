@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import CopyButton from "@/pulseui-components/CopyButton/CopyButton";
 import CodeBlock from "@/components/CodeBlock";
+import { CodeBlockCommand } from "@/components/code-block-command";
 import Card2 from "@/pulseui-components/Cards/Card2";
 
 const card1Props = [
@@ -114,12 +114,13 @@ export default function CardDocs() {
                 {/* Installation */}
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold text-lg">Installation</p>
-                  <div className="bg-neutral-950 rounded-lg flex border border-neutral-700 items-center justify-between px-3 py-2">
-                    <p className="text-neutral-400 text-sm truncate px-2">
-                      npx shadcn@latest add
-                      https://pulseui-henna.vercel.app/registry/Card1.json
-                    </p>
-                    <CopyButton text="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json" />
+                  <div className="w-full max-w-full">
+                    <CodeBlockCommand
+                      pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json"
+                      yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json"
+                      npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json"
+                      bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/Card1.json"
+                    />
                   </div>
                 </div>
 

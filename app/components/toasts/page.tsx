@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CodeBlock from "@/components/CodeBlock";
+import { CodeBlockCommand } from "@/components/code-block-command";
 import { toast } from "@/pulseui-components/Toast/toast";
 import { Toaster } from "@/pulseui-components/Toast/Toaster";
 
@@ -130,68 +131,22 @@ function Page() {
             <div className="flex flex-col gap-3 bg-neutral-900 rounded p-5 w-full h-fit border border-neutral-700 overflow-hidden">
               <p className="font-semibold">Installation</p>
 
-              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
-                <div className="flex gap-2 items-center min-w-0">
-                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400 shrink-0">
-                    <p>1</p>
-                  </div>
-
-                  <p className="text-neutral-400 text-sm truncate">
-                    npx shadcn@latest add
-                    https://pulseui-henna.vercel.app/registry/Toaster.json
-                  </p>
-                </div>
-
-                <button
-                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-
-                    await navigator.clipboard.writeText(
-                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json",
-                    );
-
-                    el.innerText = "copied!";
-
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+              <div className="w-full max-w-full">
+                <CodeBlockCommand
+                  pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json"
+                  yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json"
+                  npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json"
+                  bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/Toaster.json"
+                />
               </div>
 
-              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
-                <div className="flex gap-2 items-center min-w-0">
-                  <div className="text-[0.85rem] bg-neutral-700 p-3 rounded-full w-3 h-3 flex items-center justify-center text-neutral-400 shrink-0">
-                    <p>2</p>
-                  </div>
-
-                  <p className="text-neutral-400 text-sm truncate">
-                    npx shadcn@latest add
-                    https://pulseui-henna.vercel.app/registry/toast.json
-                  </p>
-                </div>
-
-                <button
-                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-
-                    await navigator.clipboard.writeText(
-                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json",
-                    );
-
-                    el.innerText = "copied!";
-
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+              <div className="w-full max-w-full">
+                <CodeBlockCommand
+                  pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json"
+                  yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json"
+                  npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json"
+                  bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/toast.json"
+                />
               </div>
             </div>
 

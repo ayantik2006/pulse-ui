@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -10,9 +9,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CodeBlock from "@/components/CodeBlock";
-import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
 import { House, Terminal, RefreshCcw } from "lucide-react";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
+import { CodeBlockCommand } from "@/components/code-block-command";
 
 function Page() {
   const links = [
@@ -50,14 +49,14 @@ function Page() {
 
   return (
     <div className="bg-black text-white min-h-screen flex">
-
       <div className="flex-1 min-w-0 p-4 py-10 pl-16">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <h1 className="text-4xl font-semibold">Floating Dock</h1>
 
             <h2 className="text-neutral-400">
-              Below is a beautiful ios style floating doc component that can be used as a navigation bar
+              Below is a beautiful ios style floating doc component that can be
+              used as a navigation bar
             </h2>
           </div>
 
@@ -75,30 +74,13 @@ function Page() {
                 <p className="font-semibold">Installation</p>
               </div>
 
-              <div className="bg-neutral-950 rounded flex items-center border border-neutral-700 justify-between gap-3 px-2 py-2 pl-3 overflow-hidden">
-                <p className="text-neutral-400 text-sm truncate">
-                  npx shadcn@latest add
-                  https://pulseui-henna.vercel.app/registry/FloatingDock.json
-                </p>
-
-                <button
-                  className="shrink-0 text-sm duration-300 hover:bg-neutral-800 px-2 rounded cursor-pointer text-neutral-400 pb-[0.1rem]"
-                  onClick={async (e) => {
-                    const el = e.currentTarget;
-
-                    await navigator.clipboard.writeText(
-                      "npx shadcn@latest add https://pulseui-henna.vercel.app/registry/FloatingDock.json",
-                    );
-
-                    el.innerText = "copied!";
-
-                    setTimeout(() => {
-                      el.innerText = "copy";
-                    }, 3000);
-                  }}
-                >
-                  copy
-                </button>
+              <div className="w-full max-w-full">
+                <CodeBlockCommand
+                  pnpm="pnpm dlx shadcn@latest add https://pulseui-henna.vercel.app/registry/FloatingDock.json"
+                  yarn="yarn shadcn@latest add https://pulseui-henna.vercel.app/registry/FloatingDock.json"
+                  npm="npx shadcn@latest add https://pulseui-henna.vercel.app/registry/FloatingDock.json"
+                  bun="bunx --bun shadcn@latest add https://pulseui-henna.vercel.app/registry/FloatingDock.json"
+                />
               </div>
 
               <div className="flex flex-col gap-3">
@@ -217,4 +199,3 @@ export default function NavBar(){
 }
 
 export default Page;
-
