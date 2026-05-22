@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import CodeBlock from "@/components/CodeBlock";
+import { CodeBlock } from "@/components/ui/code-block";
 import { House, Terminal, RefreshCcw } from "lucide-react";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
 import { CodeBlockCommand } from "@/components/code-block-command";
@@ -147,47 +147,12 @@ function Page() {
                 <h1 className="font-semibold">Usage</h1>
 
                 <CodeBlock
-                  code={`import FloatingDock from "@/components/FloatingDock";
-
-export default function NavBar(){
-    const links = [
-    {
-      title: "Home",
-      icon: (
-        <House
-          size={20}
-          className="h-full w-full text-neutral-500 dark:text-neutral-300"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Terminal",
-      icon: (
-        <Terminal
-          size={20}
-          className="h-full w-full text-neutral-500 dark:text-neutral-300"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Refresh",
-      icon: (
-        <RefreshCcw
-          size={20}
-          className="h-full w-full text-neutral-500 dark:text-neutral-300"
-        />
-      ),
-      href: "#",
-    },
- ];
-
-    return (
-        <FloatingDock links={links}/>
-    );
-}
-`}
+                  language="tsx"
+                  filename="Navbar.tsx"
+                  highlightLines={[37,2]}
+                  code={
+                    'import { House, Terminal, RefreshCcw } from "lucide-react";\nimport FloatingDock from \"@/components/FloatingDock\";\nexport default function NavBar(){    \nconst links = [    \n\t{\r\n      title: \"Home\",\r\n      icon: (\r\n        <House\r\n          size={20}\r\n          className=\"h-full w-full text-neutral-500 dark:text-neutral-300\"\r\n        />\r\n      ),\r\n      href: \"#\",\r\n    },\r\n    {\r\n      title: \"Terminal\",\r\n      icon: (\r\n        <Terminal\r\n          size={20}\r\n          className=\"h-full w-full text-neutral-500 dark:text-neutral-300\"\r\n        />\r\n      ),\r\n      href: \"#\",\r\n    },\r\n    {\r\n      title: \"Refresh\",\r\n      icon: (\r\n        <RefreshCcw\r\n          size={20}\r\n          className=\"h-full w-full text-neutral-500 dark:text-neutral-300\"\r\n        />\r\n      ),\r\n      href: \"#\",\r\n    },\r\n ];\r\n\r\n    return (\r\n        <FloatingDock links={links}/>\r\n    );\r\n}'
+                  }
                 />
               </div>
             </div>

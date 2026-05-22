@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import CodeBlock from "@/components/CodeBlock";
+import { CodeBlock } from "@/components/ui/code-block";
 import { CodeBlockCommand } from "@/components/code-block-command";
 import Card2 from "@/pulseui-components/Cards/Card2";
 
@@ -79,7 +79,6 @@ const card1Props = [
 export default function CardDocs() {
   return (
     <div className="bg-black text-white min-h-screen flex">
-
       <div className="flex-1 px-8 py-12 max-w-7xl">
         <div className="flex flex-col gap-10">
           {/* Page Header */}
@@ -190,18 +189,11 @@ export default function CardDocs() {
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold text-lg">Usage</p>
                   <CodeBlock
-                    code={`<Card1
-    Image="https://example.com/photo.jpg"
-    Name="Hitesh Chowdhury"
-    Designation="Guru Ji"
-    Tag="DESIGN"
-    Title="Chai Aur Code"
-    Description="Hanji to kaisi lagi Pulse UI?"
-    onLike={() => console.log("liked")}
-    onMessage={() => console.log("message")}
-    onExternalLink={() => window.open("https://chaicode.com")}
-/>`}
-                    lang="tsx"
+                    language="tsx"
+                    filename="Card component"
+                    code={
+                      "<Card1\r\n    Image=\"https://example.com/photo.jpg\"\r\n    Name=\"Hitesh Chowdhury\"\r\n    Designation=\"Guru Ji\"\r\n    Tag=\"DESIGN\"\r\n    Title=\"Chai Aur Code\"\r\n    Description=\"Hanji to kaisi lagi Pulse UI?\"\r\n    onLike={() => console.log(\"liked\")}\r\n    onMessage={() => console.log(\"message\")}\r\n    onExternalLink={() => window.open(\"https://chaicode.com\")}\r\n/>"
+                    }
                   />
                 </div>
               </div>
@@ -257,4 +249,3 @@ export default function CardDocs() {
     </div>
   );
 }
-
