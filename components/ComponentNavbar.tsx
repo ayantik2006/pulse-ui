@@ -112,6 +112,11 @@ function ComponentNavbar() {
       href: "/components/floating-dock",
       isPopular: true,
     },
+    {
+      name: "Tooltip",
+      href: "/components/tooltip",
+      isPopular: true,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();

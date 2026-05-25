@@ -1,0 +1,11 @@
+{
+  "name": "Tooltip",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/Tooltip.tsx",
+      "content": "import { AnimatePresence, motion } from \"framer-motion\";\r\nimport { useState } from \"react\";\r\n\r\nfunction Tooltip({\r\n  children,\r\n  text,\r\n  theme,\r\n  position,\r\n}: {\r\n  children: React.ReactNode;\r\n  text: string;\r\n  theme: \"dark\" | \"light\";\r\n  position: \"top\" | \"bottom\" | \"left\" | \"right\";\r\n}) {\r\n  const [isHovered, setIsHovered] = useState(false);\r\n\r\n  const positionClasses = {\r\n    top: \"bottom-full left-1/2 -translate-x-1/2 mb-2\",\r\n    bottom: \"top-full left-1/2 -translate-x-1/2 mt-2\",\r\n    left: \"right-full top-1/2 -translate-y-1/2 mr-2\",\r\n    right: \"left-full top-1/2 -translate-y-1/2 ml-2\",\r\n  };\r\n\r\n  return (\r\n    <div\r\n      className=\"relative w-fit\"\r\n      onMouseEnter={() => setIsHovered(true)}\r\n      onMouseLeave={() => setIsHovered(false)}\r\n    >\r\n      <AnimatePresence>\r\n        {isHovered && (\r\n          <motion.div\r\n            className={`\r\n              absolute whitespace-nowrap rounded-md border\r\n              px-2 py-1.5 text-sm font-semibold\r\n              pointer-events-none z-9999999999999\r\n              ${positionClasses[position]}\r\n            `}\r\n            style={{\r\n              backgroundColor: theme === \"dark\" ? \"#303030\" : \"white\",\r\n              color: theme === \"dark\" ? \"white\" : \"black\",\r\n              borderColor: \"#646668\",\r\n            }}\r\n            initial={{ opacity: 0, scale: 0.9 }}\r\n            animate={{ opacity: 1, scale: 1 }}\r\n            exit={{ opacity: 0, scale: 0.9 }}\r\n            transition={{\r\n              duration: 0.15,\r\n              ease: \"easeOut\",\r\n            }}\r\n          >\r\n            {text}\r\n          </motion.div>\r\n        )}\r\n      </AnimatePresence>\r\n\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Tooltip;",
+      "type": "registry:component"
+    }
+  ]
+}

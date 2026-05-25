@@ -60,6 +60,7 @@ import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
 import { House, RefreshCcw, Terminal } from "lucide-react";
 import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
+import Tooltip from "@/pulseui-components/Tooltip/Tooltip";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -645,36 +646,13 @@ function Page() {
         <FloatingDock links={links}/>
       </div>
       
-      {/* Cursors */}
+      {/* Tooltip */}
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
-        <h1 className="text-3xl font-bold mb-5">10) Cursors</h1>
-        <div className="flex gap-3 items-center flex-wrap">
-          <div>
-            <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
-              Cursors
-            </h2>
-          <div className="flex gap-4">
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("default")}
-            >
-              Default
-            </button>
-
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("dot")}
-            >
-              Dot Cursor
-            </button>
-            <button
-              className="bg-black text-white px-4 py-2 rounded-xl"
-              onClick={() => setType("ring")}
-            >
-              Ring Cursor
-            </button>
-          </div>
-          </div>
+        <h1 className="text-3xl font-bold mb-5">25) Tooltip</h1>
+        <div className="flex gap-3 items-center flex-wrap ml-20">
+          <Tooltip text="Hellooo" theme="dark" position="right">
+            <p>Hover me!</p>
+          </Tooltip>
         </div>
       </div>
     </div>

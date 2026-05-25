@@ -111,6 +111,11 @@ function page() {
       href: "/components/floating-dock",
       isPopular: true,
     },
+    {
+      name: "Tooltip",
+      href: "/components/tooltip",
+      isPopular: true,
+    },
   ];
 
   return (
