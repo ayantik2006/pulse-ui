@@ -61,6 +61,7 @@ import { House, RefreshCcw, Terminal } from "lucide-react";
 import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
 import Tooltip from "@/pulseui-components/Tooltip/Tooltip";
+import FilterSelector from "@/pulseui-components/FilterSelector/FilterSelector";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -111,6 +112,33 @@ function Page() {
       href: "#",
     },
   ];
+  const filterItems = [
+    {
+      id: "product",
+      label: "Product",
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+    },
+    {
+      id: "design",
+      label: "Design",
+    },
+    {
+      id: "development",
+      label: "Development",
+    },
+    {
+      id: "sales",
+      label: "Sales",
+    },
+    {
+      id: "stakeholder",
+      label: "Stakeholder",
+    },
+  ];
+  const [selectedList,setSelectedList]=useState<number[]>([]);
   const { setType } = useMouseCursor();
 
   return (
@@ -376,17 +404,17 @@ function Page() {
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card1 - Normal Card
         </h2>
-<Card1
-    Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
-    Name="Hitesh Chowdhury"
-    Designation="Guru Ji"
-    Tag="DESIGN"
-    Title="Chai Aur Code"
-    Description="Hanji to kaisi lagi Pulse UI?"
-    onLike={() => console.log("liked")}
-    onMessage={() => console.log("message")}
-    onExternalLink={() => window.open("https://chaicode.com")}
-/>        
+        <Card1
+          Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
+          Name="Hitesh Chowdhury"
+          Designation="Guru Ji"
+          Tag="DESIGN"
+          Title="Chai Aur Code"
+          Description="Hanji to kaisi lagi Pulse UI?"
+          onLike={() => console.log("liked")}
+          onMessage={() => console.log("message")}
+          onExternalLink={() => window.open("https://chaicode.com")}
+        />
 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card2 -- Job Card
@@ -410,7 +438,7 @@ function Page() {
 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">
           Card6 -- Shopping Card
-   </h2>
+        </h2>
         <Card6 />
         {/* 
         <h2 className="text-neutral-600 font-semibold mb-3 text-lg">Card7 -- Fold Card</h2>
@@ -466,12 +494,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">10) Badges</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <SuccessBadge  />
-          <FailureBadge  />
-          <LightBadge  />
-          <DarkBadge  />
-          <OutlineBadge  />
-          <NumberBadge number={10}  />
+          <SuccessBadge />
+          <FailureBadge />
+          <LightBadge />
+          <DarkBadge />
+          <OutlineBadge />
+          <NumberBadge number={10} />
         </div>
       </div>
       {/* Cursors */}
@@ -643,9 +671,9 @@ function Page() {
       {/* Floating Dock */}
       <div className="h-fit w-full border-2 border-black border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">24) Floating Dock</h1>
-        <FloatingDock links={links}/>
+        <FloatingDock links={links} />
       </div>
-      
+
       {/* Tooltip */}
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">25) Tooltip</h1>
@@ -653,6 +681,14 @@ function Page() {
           <Tooltip text="Hellooo" theme="dark" position="right">
             <p>Hover me!</p>
           </Tooltip>
+        </div>
+      </div>
+
+      {/* FilterSelector */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">26) FilterSelector</h1>
+        <div className="flex gap-3 items-center flex-wrap">
+          <FilterSelector items={filterItems} onSelection={setSelectedList}/>
         </div>
       </div>
     </div>

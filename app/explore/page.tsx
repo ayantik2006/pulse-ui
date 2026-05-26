@@ -116,6 +116,11 @@ function page() {
       href: "/components/tooltip",
       isPopular: true,
     },
+    {
+      name: "Filter Selector",
+      href: "/components/filter-selector",
+      isPopular: true,
+    },
   ];
 
   return (

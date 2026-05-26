@@ -117,6 +117,11 @@ function ComponentNavbar() {
       href: "/components/tooltip",
       isPopular: true,
     },
+    {
+      name: "Filter Selector",
+      href: "/components/filter-selector",
+      isPopular: true,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
