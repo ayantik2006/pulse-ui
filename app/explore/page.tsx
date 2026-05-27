@@ -121,6 +121,11 @@ function page() {
       href: "/components/filter-selector",
       isPopular: true,
     },
+    {
+      name: "Gooey Input",
+      href: "/components/gooey-input",
+      isPopular: true,
+    },
   ];
 
   return (
@@ -137,7 +142,8 @@ function page() {
             Explore premium Pulse UI components
           </h1>
           <p className="mt-3 max-w-2xl text-sm sm:text-base text-neutral-400">
-            Pick a component below to view interactive demos and implementation examples.
+            Pick a component below to view interactive demos and implementation
+            examples.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -153,10 +159,7 @@ function page() {
                       {component.name}
                     </p>
                     {component.isPopular && (
-                      <Sparkles
-                        size={16}
-                        className="shrink-0 text-amber-300"
-                      />
+                      <Sparkles size={16} className="shrink-0 text-amber-300" />
                     )}
                   </div>
                 </Link>

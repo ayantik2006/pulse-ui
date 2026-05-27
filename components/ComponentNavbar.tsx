@@ -122,6 +122,11 @@ function ComponentNavbar() {
       href: "/components/filter-selector",
       isPopular: true,
     },
+    {
+      name: "Gooey Input",
+      href: "/components/gooey-input",
+      isPopular: true,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();

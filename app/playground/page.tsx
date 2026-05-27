@@ -62,6 +62,8 @@ import MagneticButton from "@/pulseui-components/MagneticButton/MagneticButton";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
 import Tooltip from "@/pulseui-components/Tooltip/Tooltip";
 import FilterSelector from "@/pulseui-components/FilterSelector/FilterSelector";
+import GooeyFilter from "@/pulseui-components/GooeyInput/GooeyInput";
+import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -140,6 +142,7 @@ function Page() {
   ];
   const [selectedList,setSelectedList]=useState<number[]>([]);
   const { setType } = useMouseCursor();
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 p-10">
@@ -690,6 +693,12 @@ function Page() {
         <div className="flex gap-3 items-center flex-wrap">
           <FilterSelector items={filterItems} onSelection={setSelectedList}/>
         </div>
+      </div>
+
+      {/* Gooey Input */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">27) GooeyInput</h1>
+        <GooeyInput onChange={setInputValue}/>
       </div>
     </div>
   );
