@@ -127,6 +127,11 @@ function ComponentNavbar() {
       href: "/components/gooey-input",
       isPopular: true,
     },
+    {
+      name: "Team Cards",
+      href: "/components/team-cards",
+      isPopular: false,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();

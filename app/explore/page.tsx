@@ -126,6 +126,11 @@ function page() {
       href: "/components/gooey-input",
       isPopular: true,
     },
+    {
+      name: "Team Cards",
+      href: "/components/team-cards",
+      isPopular: false,
+    },
   ];
 
   return (
