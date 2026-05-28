@@ -136,6 +136,11 @@ function page() {
       href: "/components/opening-laptop",
       isPopular: false,
     },
+    {
+      name: "Blur Reveal Text",
+      href: "/components/blur-reveal-text",
+      isPopular: false,
+    },
   ];
 
   return (

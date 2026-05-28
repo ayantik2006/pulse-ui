@@ -64,6 +64,7 @@ import Tooltip from "@/pulseui-components/Tooltip/Tooltip";
 import FilterSelector from "@/pulseui-components/FilterSelector/FilterSelector";
 import GooeyFilter from "@/pulseui-components/GooeyInput/GooeyInput";
 import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
+import BlurRevealText from "@/pulseui-components/BlurRevealText/BlurRevealText";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -699,6 +700,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">27) GooeyInput</h1>
         <GooeyInput onChange={setInputValue}/>
+      </div>
+
+      {/* BlurRevealText */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">28) BlurRevealText</h1>
+        <BlurRevealText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sed tempore modi odit eos voluptatibus quia beatae explicabo ab? Laudantium odit sapiente reiciendis in." className="font-semibold max-w-100 text-xl"/>
       </div>
     </div>
   );

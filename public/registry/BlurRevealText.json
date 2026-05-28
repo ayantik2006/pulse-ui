@@ -1,0 +1,11 @@
+{
+  "name": "BlurRevealText",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/BlurRevealText.tsx",
+      "content": "import { motion } from \"framer-motion\";\r\n\r\nfunction BlurRevealText({\r\n  text,\r\n  className,\r\n  staggerValue\r\n}: {\r\n  text: string; \r\n  className?: string;\r\n  staggerValue?:number\r\n}) {\r\n  return (\r\n    <motion.div\r\n      className={className}\r\n      initial=\"hidden\"\r\n      animate=\"visible\"\r\n      variants={{\r\n        visible: {\r\n          transition: {\r\n            staggerChildren: staggerValue?staggerValue:0.04,\r\n          },\r\n        },\r\n      }}\r\n    >\r\n      {text.split(\"\").map((letter, index) => (\r\n        <motion.span\r\n          key={index}\r\n          variants={{\r\n            hidden: {\r\n              opacity: 0,\r\n              filter: \"blur(10px)\",\r\n              y: 10,\r\n            },\r\n            visible: {\r\n              opacity: 1,\r\n              filter: \"blur(0px)\",\r\n              y: 0,\r\n              transition: {\r\n                duration: 0.4,\r\n              },\r\n            },\r\n          }}\r\n          style={{ display: \"inline-block\" }}\r\n        >\r\n          {letter === \" \" ? \"\\u00A0\" : letter}\r\n        </motion.span>\r\n      ))}\r\n    </motion.div>\r\n  );\r\n}\r\n\r\nexport default BlurRevealText;",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -137,6 +137,11 @@ function ComponentNavbar() {
       href: "/components/opening-laptop",
       isPopular: false,
     },
+    {
+      name: "Blur Reveal Text",
+      href: "/components/blur-reveal-text",
+      isPopular: false,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
