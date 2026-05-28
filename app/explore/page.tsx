@@ -131,6 +131,11 @@ function page() {
       href: "/components/team-cards",
       isPopular: false,
     },
+    {
+      name: "Opening Laptop",
+      href: "/components/opening-laptop",
+      isPopular: false,
+    },
   ];
 
   return (

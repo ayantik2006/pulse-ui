@@ -132,6 +132,11 @@ function ComponentNavbar() {
       href: "/components/team-cards",
       isPopular: false,
     },
+    {
+      name: "Opening Laptop",
+      href: "/components/opening-laptop",
+      isPopular: false,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
