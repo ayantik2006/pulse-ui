@@ -6,11 +6,6 @@ import Link from "next/link";
 
 function page() {
   const componentsList = [
-    // {
-    //   name: "Buttons",
-    //   href: "/buttons",
-    //   isPopular: false,
-    // },
     {
       name: "Loaders",
       href: "/components/loaders",
@@ -157,29 +152,29 @@ function page() {
       <VerticalScale className="absolute top-20 right-0 w-6 h-[calc(100%-5rem)]" />
 
       <main className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32 pb-16 sm:px-10">
-        <section className="rounded-2xl border border-border bg-card/80 p-6 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-          <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight">
+        <section className="rounded-md border border-border bg-card/80 p-6 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+          <h1 className="text-xl font-semibold tracking-tight">
             Explore premium Pulse UI components
           </h1>
-          <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-md text-muted-foreground">
             Pick a component below to view interactive demos and implementation
             examples.
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 divide-x-2 divide-y-2 border-2 border-r-0">
             {componentsList.map((component, index) => {
               return (
                 <Link
                   href={component.href}
                   key={index}
-                  className="group rounded-lg border border-border bg-background/60 px-4 py-3 transition hover:border-muted-foreground/50 hover:bg-accent"
+                  className="px-6 py-4 hover:bg-neutral-700/50"
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <p className="text-sm sm:text-base text-muted-foreground group-hover:text-accent-foreground">
+                    <p className="">
                       {component.name}
                     </p>
                     {component.isPopular && (
-                      <Sparkles size={16} className="shrink-0 text-amber-300" />
+                      <Sparkles size={16} className="shrink-0 text-amber-400" />
                     )}
                   </div>
                 </Link>

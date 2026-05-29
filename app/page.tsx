@@ -7,6 +7,7 @@ import LandingFooter from "@/components/LandingFooter";
 import LandingNavbar from "@/components/LandingNavbar";
 import TestimonialSection from "@/components/TestimonialSection";
 import Testimonial from "@/components/TestimonialSection";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
@@ -29,14 +30,75 @@ export default function Home() {
         <p className="text-muted-foreground mb-2 text-sm font-semibold">[43]</p>
       </div>
       <Features />
-      <Link
-        href={"/explore"}
-        className="flex items-center gap-1 mt-4 text-sm bg-primary text-primary-foreground font-semibold px-3 py-1 rounded-md hover:opacity-88 duration-300"
+      <motion.div
+        whileHover="hover"
+        className="w-35"
+        initial={{
+          width: "125px",
+        }}
+        variants={{
+          hover: {
+            width: "137px",
+          },
+        }}
       >
-        <p className="mb-[1px]">All components</p>
-        <ArrowRight size={16} />
-      </Link>
-      <HorizontalScale className="w-full h-5 mt-5"/>
+        <Link
+          href={"/explore"}
+          className="flex items-center gap-1 mt-4 text-sm bg-primary text-primary-foreground font-semibold pl-3 py-1 rounded-md hover:opacity-88 duration-300 w-full"
+        >
+          <p className="mb-[1px]">All components</p>
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={16}
+            height={16}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{
+              display: "none",
+            }}
+            variants={{
+              hover: {
+                display: "flex",
+                transition: {
+                  delay: 0.3,
+                },
+              },
+            }}
+            transition={{
+              duration: 0.3,
+              delay: -0.3,
+            }}
+          >
+            <motion.path
+              variants={{
+                hover: { pathLength: 1, opacity: 1 },
+              }}
+              initial={{ pathLength: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              d="M5 12h14"
+            />
+            <motion.path
+              variants={{
+                hover: {
+                  pathLength: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.3,
+                  },
+                },
+              }}
+              initial={{ pathLength: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              d="m12 5 7 7-7 7"
+            />
+          </motion.svg>
+        </Link>
+      </motion.div>
+      <HorizontalScale className="w-full h-5 mt-5" />
       <TestimonialSection />
       <FluidGradientText text="Pulse UI" />
       <LandingFooter />
@@ -45,9 +107,5 @@ export default function Home() {
 }
 
 const HorizontalScale = ({ className }: { className: string }) => {
-  return (
-    <div
-      className={`scale-stripes ${className}`}
-    ></div>
-  );
+  return <div className={`scale-stripes ${className}`}></div>;
 };

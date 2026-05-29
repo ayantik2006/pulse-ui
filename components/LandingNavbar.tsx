@@ -137,14 +137,31 @@ function LandingNavbar() {
 
     return () => window.removeEventListener("keydown", down);
   }, []);
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   return (
     <div className="fixed top-0 z-80 flex h-20 w-full items-center justify-between border-b border-border bg-background/95 text-foreground backdrop-blur">
       <Link
         href={"/"}
         className="flex gap-1 items-center pl-20 [@media(max-width:780px)]:pl-10 "
       >
-        {theme==="dark" ? <Image src="/logo.png" height={38} width={38} alt="logo" /> : <Image src="/logo-light.png" height={38} width={38} alt="logo" className="rounded-full" />}
+        {theme === "dark" ? (
+          <Image src="/logo.png" height={38} width={38} alt="logo" />
+        ) : (
+          <Image
+            src="/logo-light.png"
+            height={38}
+            width={38}
+            alt="logo"
+            className="rounded-full"
+          />
+        )}
         <p className="italic font-semibold text-2xl">ulse</p>
         <p className="italic font-semibold text-2xl ml-1">UI</p>
       </Link>
