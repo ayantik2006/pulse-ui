@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Kbd } from "./ui/kbd";
-import ThemeToggle from "./ThemeToggle";
 import {
   Command,
   CommandDialog,
@@ -16,10 +15,13 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { ThemeSwitcher } from "./theme-switcher";
+import { useTheme } from "next-themes";
 
 function LandingNavbar() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+
   const componentsList = [
     {
       name: "Loaders",
@@ -142,7 +144,7 @@ function LandingNavbar() {
         href={"/"}
         className="flex gap-1 items-center pl-20 [@media(max-width:780px)]:pl-10 "
       >
-        <Image src="/logo.png" height={38} width={38} alt="logo" />
+        {theme==="dark" ? <Image src="/logo.png" height={38} width={38} alt="logo" /> : <Image src="/logo-light.png" height={38} width={38} alt="logo" className="rounded-full" />}
         <p className="italic font-semibold text-2xl">ulse</p>
         <p className="italic font-semibold text-2xl ml-1">UI</p>
       </Link>
