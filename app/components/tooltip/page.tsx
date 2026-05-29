@@ -18,7 +18,7 @@ function Page() {
   const [onOff, setOnOff] = useState(false);
 
   return (
-    <div className="bg-black text-white min-h-screen flex">
+    <div className="bg-background text-foreground min-h-screen flex">
       <div className="flex-1 min-w-0 p-4 py-10 pl-16">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
@@ -30,8 +30,8 @@ function Page() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="w-full bg-neutral-900 border border-neutral-700 py-6 px-6 rounded flex flex-col gap-5 overflow-hidden">
-              <h1 className="text-xl font-semibold text-neutral-200">
+            <div className="w-full bg-card border border-border py-6 px-6 rounded flex flex-col gap-5 overflow-hidden">
+              <h1 className="text-xl font-semibold text-neutral-400">
                 Tooltip
               </h1>
 
@@ -58,43 +58,43 @@ function Page() {
                 <h1 className="font-semibold">Props</h1>
 
                 <div className="overflow-x-auto">
-                  <Table className="border border-neutral-700 min-w-[700px]">
+                  <Table className="border border-border min-w-[700px]">
                     <TableHeader>
-                      <TableRow className="hover:bg-neutral-900">
-                        <TableHead className="text-white text-center">
+                      <TableRow className="hover:bg-muted/60">
+                        <TableHead className="text-foreground text-center">
                           Prop
                         </TableHead>
 
-                        <TableHead className="text-white text-center">
+                        <TableHead className="text-foreground text-center">
                           Type
                         </TableHead>
 
-                        <TableHead className="text-white text-center">
+                        <TableHead className="text-foreground text-center">
                           isCompulsory
                         </TableHead>
 
-                        <TableHead className="text-white text-center">
+                        <TableHead className="text-foreground text-center">
                           Description
                         </TableHead>
                       </TableRow>
                     </TableHeader>
 
                     <TableBody>
-                      <TableRow className="hover:bg-black">
+                      <TableRow className="hover:bg-muted/60">
                         <TableCell className="font-medium">
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>children</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>React.ReactNode</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>true</pre>
                           </div>
                         </TableCell>
@@ -106,21 +106,21 @@ function Page() {
                         </TableCell>
                       </TableRow>
 
-                      <TableRow className="hover:bg-black">
+                      <TableRow className="hover:bg-muted/60">
                         <TableCell className="font-medium">
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>text</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>string</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>true</pre>
                           </div>
                         </TableCell>
@@ -132,21 +132,21 @@ function Page() {
                         </TableCell>
                       </TableRow>
 
-                      <TableRow className="hover:bg-black">
+                      <TableRow className="hover:bg-muted/60">
                         <TableCell className="font-medium">
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>theme</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>{'"dark" | "light"'}</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>true</pre>
                           </div>
                         </TableCell>
@@ -158,21 +158,21 @@ function Page() {
                         </TableCell>
                       </TableRow>
                       
-                      <TableRow className="hover:bg-black">
+                      <TableRow className="hover:bg-muted/60">
                         <TableCell className="font-medium">
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>position</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>{'"top" | "bottom" | "left" | "right"'}</pre>
                           </div>
                         </TableCell>
 
                         <TableCell>
-                          <div className="bg-black flex items-center justify-center p-1 rounded">
+                          <div className="bg-muted flex items-center justify-center p-1 rounded">
                             <pre>true</pre>
                           </div>
                         </TableCell>
@@ -205,3 +205,5 @@ function Page() {
 }
 
 export default Page;
+
+

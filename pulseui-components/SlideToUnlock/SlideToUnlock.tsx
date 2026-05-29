@@ -83,11 +83,11 @@ function SlideToUnlock({ onUnlock }: { onUnlock: (val: boolean) => void }) {
 
   return (
     <div
-      className="w-60 h-12 bg-neutral-700/60 rounded-lg border p-1 flex items-center"
+      className="w-60 h-12 dark:bg-neutral-700/60 bg-neutral-200/50 rounded-lg border p-1 flex items-center"
       ref={mainDivRef}
     >
       <div
-        className={`bg-white absolute w-15 h-10 rounded-md flex items-center justify-center cursor-grab ${isGrabbed ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`bg-white absolute w-15 h-10 rounded-md flex items-center justify-center cursor-grab dark:shadow-none shadow-[0_1px_3px_gray] ${isGrabbed ? "cursor-grabbing" : "cursor-grab"}`}
         ref={lockDivRef}
         onMouseDown={(e) => {
           setIsGrabbed(true);
@@ -98,9 +98,9 @@ function SlideToUnlock({ onUnlock }: { onUnlock: (val: boolean) => void }) {
           translate: `${translateVal}px`,
         }}
       >
-        <ArrowBigRight className="fill-neutral-400" size={35} />
+        <ArrowBigRight className="fill-neutral-400 stroke-neutral-400" size={30} />
       </div>
-      <div className="ml-auto mr-7 text-lg text-neutral-300 select-none">
+      <div className="ml-auto mr-7 text-lg font-semibold text-neutral-500 dark:text-neutral-300 select-none">
         {!isGrabMoving && isLocked && <p>slide to unlock</p>}
       </div>
     </div>

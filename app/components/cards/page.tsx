@@ -78,23 +78,23 @@ const card1Props = [
 
 export default function CardDocs() {
   return (
-    <div className="bg-black text-white min-h-screen flex">
+    <div className="bg-background text-foreground min-h-screen flex">
       <div className="flex-1 px-8 py-12 max-w-7xl">
         <div className="flex flex-col gap-10">
           {/* Page Header */}
           <div className="flex flex-col gap-2">
             <h1 className="text-4xl font-semibold">Cards</h1>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Below is a collection of beautifull cards for showcasing content
             </p>
           </div>
           {/* Card 1 Docs */}
-          <div className="flex flex-col gap-6 bg-neutral-900 p-6 rounded-xl">
+          <div className="flex flex-col gap-6 rounded-xl bg-muted/40 p-6 dark:bg-neutral-900">
             <p className="font-semibold text-2xl">Basic Card 1</p>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start lg:items-stretch">
               {/* Preview */}
-              <div className="flex w-full items-center justify-center min-h-[420px] h-full bg-neutral-950 border border-neutral-800 rounded-xl p-6">
+              <div className="flex h-full min-h-[420px] w-full items-center justify-center rounded-xl border border-border bg-card p-6 dark:border-neutral-800 dark:bg-neutral-950">
                 <Card1
                   Image="https://res.cloudinary.com/dpju1wia5/image/upload/v1773058342/467120601_9484919178189518_6991019461191973247_n_bw0gmk.jpg"
                   Name="Hitesh Chowdhury"
@@ -126,20 +126,20 @@ export default function CardDocs() {
                 {/* Props */}
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold text-lg">Props</p>
-                  <div className="overflow-x-auto rounded-lg border border-neutral-700">
+                  <div className="overflow-x-auto rounded-lg border border-border">
                     <Table>
                       <TableHeader>
-                        <TableRow className="hover:bg-neutral-900 border-neutral-700">
-                          <TableHead className="text-white text-left w-[120px]">
+                        <TableRow className="hover:bg-muted/60 border-border">
+                          <TableHead className="text-foreground text-left w-[120px]">
                             Prop
                           </TableHead>
-                          <TableHead className="text-white text-left">
+                          <TableHead className="text-foreground text-left">
                             Type
                           </TableHead>
-                          <TableHead className="text-white text-center w-[100px]">
+                          <TableHead className="text-foreground text-center w-[100px]">
                             Required
                           </TableHead>
-                          <TableHead className="text-white text-left">
+                          <TableHead className="text-foreground text-left">
                             Description
                           </TableHead>
                         </TableRow>
@@ -148,18 +148,18 @@ export default function CardDocs() {
                         {card1Props.map((row) => (
                           <TableRow
                             key={row.prop}
-                            className="hover:bg-neutral-900 border-neutral-800"
+                            className="hover:bg-muted/60 border-border"
                           >
                             <TableCell>
-                              <div className="bg-neutral-800/50 border border-neutral-700/50 rounded inline-flex px-2 py-1">
-                                <code className="text-neutral-200 text-xs">
+                              <div className="inline-flex rounded border border-border bg-muted/70 px-2 py-1">
+                                <code className="text-foreground text-xs">
                                   {row.prop}
                                 </code>
                               </div>
                             </TableCell>
                             <TableCell>
-                              <div className="bg-neutral-800/50 border border-neutral-700/50 rounded inline-flex px-2 py-1">
-                                <code className="text-neutral-400 text-xs">
+                              <div className="inline-flex rounded border border-border bg-muted/70 px-2 py-1">
+                                <code className="text-muted-foreground text-xs">
                                   {row.type}
                                 </code>
                               </div>
@@ -167,14 +167,14 @@ export default function CardDocs() {
                             <TableCell>
                               <div className="flex justify-center">
                                 <span
-                                  className={`text-xs ${row.required === "true" ? "text-red-400" : "text-neutral-500"}`}
+                                  className={`text-xs ${row.required === "true" ? "text-red-500 dark:text-red-400" : "text-muted-foreground"}`}
                                 >
                                   {row.required}
                                 </span>
                               </div>
                             </TableCell>
                             <TableCell>
-                              <p className="text-neutral-300 text-sm">
+                              <p className="text-muted-foreground text-sm">
                                 {row.description}
                               </p>
                             </TableCell>
@@ -249,3 +249,4 @@ export default function CardDocs() {
     </div>
   );
 }
+

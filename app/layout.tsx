@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeContextProvider } from "@/context/ThemeContext";
 import { MouseCursorProvider } from "@/context/MouseCursorContext";
 import Cursor from "@/pulseui-components/mouse-cursor/mouseCursor/Cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +28,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
@@ -51,19 +50,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}
       >
-        <TooltipProvider>
-          <MouseCursorProvider>
-            <Cursor />
-            <ThemeContextProvider>
-          <MouseCursorProvider>
-            <Cursor />
-            {children}
-          </MouseCursorProvider>
-        </ThemeContextProvider>
-          </MouseCursorProvider>
-        </TooltipProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            <MouseCursorProvider>
+              <Cursor />
+              {children}
+            </MouseCursorProvider>
+          </TooltipProvider>
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>

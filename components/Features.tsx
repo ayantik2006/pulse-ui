@@ -8,6 +8,9 @@ import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
 import { House, Terminal, RefreshCcw } from "lucide-react";
 import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
 import TypewriterEffect1 from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
+import OpeningLaptop from "@/pulseui-components/OpeningLaptop/OpeningLaptop";
+import TeamCards from "@/pulseui-components/TeamCards/TeamCards";
+import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
 
 function Features() {
   const [option, setOption] = useState("");
@@ -48,8 +51,8 @@ function Features() {
   ];
 
   return (
-    <div className="w-[98%] h-fit p-2 border mx-4 flex flex-wrap gap-4 items-center justify-center">
-      <div className="p-2 border rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+    <div className="mx-4 grid w-[98%] h-fit grid-cols-1 gap-4 p-2 border border-border sm:grid-cols-2 xl:grid-cols-3">
+      <div className="p-2 border border-border bg-card rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <WheelPicker1
           options={[
             "Java",
@@ -63,19 +66,13 @@ function Features() {
           onChange={setOption}
         />
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-70 hover:border-neutral-500/40 duration-300">
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <SlideToUnlock onUnlock={setIsLocked} />
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
-        <HoldToConfirm
-          confirmationMessage={"Confirmed"}
-          className="bg-green-600 px-4 py-2 text-lg cursor-pointer font-semibold"
-          onConfirmation={setIsConfirmed}
-        >
-          <p>Hold to Confirm</p>{" "}
-        </HoldToConfirm>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <OpeningLaptop />
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <div className="flex items-center gap-2 text-lg font-semibold">
           <p className="">Hello</p>
           <TextFlip
@@ -85,10 +82,10 @@ function Features() {
           />
         </div>
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <FloatingDock links={links} />
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <div className="w-full flex flex-col gap-2 items-center justify-center">
           <ElasticSlider
             min={0}
@@ -120,14 +117,19 @@ function Features() {
           />
         </div>
       </div>
-      <div className="p-2 border flex items-center justify-center rounded-md w-full min-h-50 max-w-60 hover:border-neutral-500/40 duration-300">
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
         <div className="flex items-center gap-1">
           <p className="font-semibold text-lg">Hello</p>
           <TypewriterEffect1
             words={["Designers", "Developers", "Students"]}
-            className="text-yellow-200 font-semibold text-lg"
+            className="text-yellow-600 dark:text-yellow-200 font-semibold text-lg"
           />
         </div>
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <GooeyInput onChange={setOption} />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
       </div>
     </div>
   );

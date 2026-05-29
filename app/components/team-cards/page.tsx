@@ -8,7 +8,7 @@ import { CodeBlock } from "@/components/ui/code-block";
 
 function Page() {
   return (
-    <div className="bg-black text-white min-h-screen flex">
+    <div className="bg-background text-foreground min-h-screen flex">
       <div className="flex-1 min-w-0 p-4 py-10 pl-16">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
@@ -21,7 +21,7 @@ function Page() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="w-full bg-neutral-900 border border-neutral-700 py-6 px-6 rounded flex flex-col gap-5 overflow-hidden">
+            <div className="w-full bg-card border border-border py-6 px-6 rounded flex flex-col gap-5 overflow-hidden">
               <Tabs defaultValue="preview" className="w-full">
                 <TabsList>
                   <TabsTrigger

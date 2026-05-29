@@ -75,7 +75,7 @@ function OpeningLaptop() {
                   return (
                     <motion.p
                       key={index}
-                      className="font-semibold"
+                      className="font-semibold text-white"
                       variants={{
                         closed: {
                           opacity: 0,
@@ -129,9 +129,9 @@ function OpeningLaptop() {
                         duration:0.4
                     }}
                   >
-                    <Component size={12} />
+                    <Component size={12} className="stroke-white fill-white" />
                   </motion.div>
-                  <p className="text-xs">Components</p>
+                  <p className="text-xs text-white">Components</p>
                 </Link>
               </motion.div>
             )}

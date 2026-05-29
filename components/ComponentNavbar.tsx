@@ -8,6 +8,8 @@ import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
+import { ThemeSwitcher } from "./theme-switcher";
 
 function ComponentNavbar() {
   const [isCompressed, setIsCompressed] = useState(false);
@@ -142,6 +144,11 @@ function ComponentNavbar() {
       href: "/components/blur-reveal-text",
       isPopular: false,
     },
+    {
+      name: "Success State Button",
+      href: "/components/success-state-button",
+      isPopular: false,
+    },
   ].reverse();
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
@@ -173,21 +180,13 @@ function ComponentNavbar() {
 
   return (
     <div
-      className={`z-80 ${isFloatingNavbarVisible && !isComponentNavbarVisible ? "fixed top-0 left-0 h-full" : ""} ${isComponentNavbarVisible ? "sticky top-0 bottom-0" : ""}`}
+      className={`z-80 fixed top-0 ${isFloatingNavbarVisible && !isComponentNavbarVisible ? "fixed top-0 left-0 h-full" : ""} ${isComponentNavbarVisible ? "sticky top-0 bottom-0" : ""}`}
     >
       <div
         className={`relative left-0 h-full p4 pr-0 ${!isComponentNavbarVisible ? "hidden" : ""}`}
       >
-        <div
-          className={`bg-neutral900 w-65 h-fll borde border-neutral-800 rounded p-4 flex flex-col sticky top-0`}
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              {/* <h1 className="font-semibold text-neutral-400">COMPONENTS</h1> */}
-              <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
-                {/* <p>{visibleComponents.length}</p> */}
-              </div>
-            </div>
+        <div className="w-65 h-screen rounded border border-border bg-background p-4 flex flex-col sticky top-0">
+          <div className="flex flex-col gap-3 mt-6">
             <InputGroup className="max-w-xs">
               <InputGroupInput
                 placeholder="Search components"
@@ -211,7 +210,7 @@ function ComponentNavbar() {
               </InputGroupAddon>
             </InputGroup>
           </div>
-          <div className="p-4 flex flex-col gap-4 mt-4 bg-neutral-800/0 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <div className="p-4 flex flex-col gap-4 mt-4 rounded max-h-[25rem] overflow-auto component-list-scrollbar component-list-scrollbar mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
             {visibleComponents.length == 0 && (
               <div>
                 <p className="text-sm text-neutral-500">No components</p>
@@ -221,40 +220,44 @@ function ComponentNavbar() {
               <Link
                 href={component.href}
                 key={index}
-                className="text-sm cursor-pointer hover:bg-neutral-600/50 p-2 rounded-md"
+                className="text-sm cursor-pointer text-muted-foreground hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
               >
                 <p>{component.name}</p>
               </Link>
             ))}
           </div>
-          <div className="flex flex-col gap-3 p-4 mt-10 ml-2 text-sm duration-300 rounded bg-neutral-950/0">
+          <div className="flex flex-col gap-3 p-4 mt-10 ml-2 text-sm duration-300 rounded">
             <Link
               href={"/"}
-              className="text-neutral-500 hover:text-neutral-400"
+              className="text-muted-foreground hover:text-foreground"
             >
               Home
             </Link>
             <Link
               href={"/feedback"}
-              className="text-neutral-500 hover:text-neutral-400"
+              className="text-muted-foreground hover:text-foreground"
             >
               Feedback
             </Link>
             <Link
               href={"https://github.com/ayantik2006/pulse-ui"}
-              className="text-neutral-500 text-[0.9rem] rounded flex items-center gap-2 duration-300 hover:text-neutral-400"
+              className="text-muted-foreground text-[0.9rem] rounded flex items-center gap-2 duration-300 hover:text-foreground"
               target="_blank"
             >
               {/* <i className="devicon-github-original" /> */}
               <p className="text-[0.8rem mt-[0.1rem]">GitHub</p>
             </Link>
+            {/* <ThemeToggle /> */}
+            <div className="mt-10">
+              <ThemeSwitcher />
+            </div>
           </div>
         </div>
       </div>
 
       {!isFloatingNavbarVisible && (
         <div
-          className={`fixed top-0 m-2 h-fit w-fit p-2 pr-0 bg-neutral-800/40 mx-2 rounded cursor-pointer hover:opacity-90 ${isComponentNavbarVisible ? "hidden" : ""}`}
+          className={`fixed top-0 m-2 h-fit w-fit p-2 pr-0 bg-muted border border-border mx-2 rounded cursor-pointer hover:opacity-90 ${isComponentNavbarVisible ? "hidden" : ""}`}
           onClick={() => {
             setIsFloatingNavbarVisible((prev) => !prev);
           }}
@@ -268,7 +271,7 @@ function ComponentNavbar() {
       <AnimatePresence>
         {isFloatingNavbarVisible && (
           <motion.div
-            className={`bg-black w-65 h-full border border-neutral-800 p-4 flex flex-col absolute left-0 top-0 `}
+            className="bg-background w-65 h-full border border-border p-4 flex flex-col absolute left-0 top-0"
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
@@ -276,17 +279,13 @@ function ComponentNavbar() {
           >
             <div className="flex flex-col gap-3 ">
               <div className="flex items-center justify-between">
-                {/* <h1 className="font-semibold text-neutral-400">COMPONENTS</h1> */}
-                <div className="flex items-center justify-center px-2 py-1 text-sm rounded bg-neutral-950 text-neutral-400">
-                  {/* <p>{visibleComponents.length}</p> */}
-                </div>
                 <div
-                  className="p-1 rounded cursor-pointer hover:bg-neutral-950"
+                  className="p-1 rounded cursor-pointer hover:bg-accent ml-auto"
                   onClick={() => {
                     setIsFloatingNavbarVisible(false);
                   }}
                 >
-                  <X size={18} className="stroke-neutral-500" />
+                  <X size={18} className="stroke-muted-foreground" />
                 </div>
               </div>
               <InputGroup className="max-w-xs">
@@ -308,7 +307,7 @@ function ComponentNavbar() {
                   }}
                 />
                 <InputGroupAddon>
-                  <Search/>
+                  <Search />
                 </InputGroupAddon>
               </InputGroup>
             </div>
@@ -322,33 +321,35 @@ function ComponentNavbar() {
                 <Link
                   href={component.href}
                   key={index}
-                  className="text-sm cursor-pointer hover:bg-neutral-600/50 p-2 rounded-md"
+                  className="text-sm cursor-pointer text-muted-foreground hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
                 >
                   <p>{component.name}</p>
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-3 p-4 mt-10 text-sm rounded bg-black">
+            <div className="flex flex-col gap-3 p-4 mt-10 text-sm rounded bg-background">
               <Link
                 href={"/"}
-                className="text-neutral-500 hover:text-neutral-400"
+                className="text-muted-foreground hover:text-foreground"
               >
                 Home
               </Link>
               <Link
                 href={""}
-                className="text-neutral-500 hover:text-neutral-400"
+                className="text-muted-foreground hover:text-foreground"
               >
                 Feedback
               </Link>
               <Link
                 href={"https://github.com/ayantik2006/pulse-ui"}
-                className=" text-sm text-neutral-500 hover:text-neutral-400 rounded flex items-center gap-2 duration-300"
+                className=" text-sm text-muted-foreground hover:text-foreground rounded flex items-center gap-2 duration-300"
                 target="_blank"
               >
-                {/* <i className="devicon-github-original" /> */}
                 <p className="mt-[0.1rem]">GitHub</p>
               </Link>
+              <div className="mt-10">
+                <ThemeSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

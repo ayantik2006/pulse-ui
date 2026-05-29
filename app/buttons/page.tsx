@@ -5,12 +5,12 @@ import { Copy } from "lucide-react";
 
 function page() {
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center">
+    <div className="bg-background text-foreground min-h-screen flex items-center justify-center">
       <ComponentNavbar />
       <div className="w-full h-full p-4 py-10 pl-15">
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl font-semibold sticky">Buttons</h1>
-          <h2 className="text-neutral-400">
+          <h2 className="text-muted-foreground">
             Below is a collections of beautifully designed tailwind buttons.
             Just copy the code and use it.
           </h2>

@@ -19,28 +19,35 @@ const playfair = Playfair_Display({
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center bg-black min-h-screen">
+    <div className="flex flex-col items-center justify-center bg-background text-foreground min-h-screen">
       <LandingNavbar />
       <Hero />
-      <Link
-        href={"/explore"}
-        className="flex gap-1 items-center mb-6 w-full pl-5 group"
-      >
-        <p className="text-neutral-300/40 tracking-tight font-semibold group-hover:text-neutral-300/60 duration-300">
+      <div className="flex gap-1 items-center mb-6 w-full pl-5">
+        <p className="text-muted-foreground tracking-tight font-semibold duration-300 text-xl">
           Components
         </p>
-        <ArrowRight
-          className="stroke-neutral-300/40 stroke-3 group-hover:stroke-neutral-300/60 duration-300"
-          size={15}
-        />
-      </Link>
+        <p className="text-muted-foreground mb-2 text-sm font-semibold">[43]</p>
+      </div>
       <Features />
-      <p className="text-neutral-300/40 tracking-tight font-semibold group-hover:text-neutral-300/60 duration-300 w-full pl-5 mt-10">
-        Testimonials
-      </p>
+      <Link
+        href={"/explore"}
+        className="flex items-center gap-1 mt-4 text-sm bg-primary text-primary-foreground font-semibold px-3 py-1 rounded-md hover:opacity-88 duration-300"
+      >
+        <p className="mb-[1px]">All components</p>
+        <ArrowRight size={16} />
+      </Link>
+      <HorizontalScale className="w-full h-5 mt-5"/>
       <TestimonialSection />
       <FluidGradientText text="Pulse UI" />
       <LandingFooter />
     </div>
   );
 }
+
+const HorizontalScale = ({ className }: { className: string }) => {
+  return (
+    <div
+      className={`scale-stripes ${className}`}
+    ></div>
+  );
+};

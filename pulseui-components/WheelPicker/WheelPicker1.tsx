@@ -58,11 +58,11 @@ function WheelPicker1({
               childDivRefs.current[index] = el;
             }}
             className={`flex w-full items-center justify-center py-1 mx-1 rounded duration-300 ${
-              index === closestIndex ? "dark:bg-[#222121] bg-neutral-300 " : ""
+              index === closestIndex ? "dark:bg-neutral-800/60 bg-neutral-200/50 " : ""
             }`}
           >
             <p
-              className={`relative duration-300 cursor-default  ${index === closestIndex ? "dark:text-white text-neutral-500 text-[1.05rem]" : "dark:text-neutral-500"}`}
+              className={`relative duration-300 cursor-default  ${index === closestIndex ? "dark:text-white text-neutral-500 text-[1.2rem]" : "dark:text-neutral-400/90"}`}
             >
               {option}
             </p>

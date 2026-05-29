@@ -141,10 +141,15 @@ function page() {
       href: "/components/blur-reveal-text",
       isPopular: false,
     },
+    {
+      name: "Success State Button",
+      href: "/components/success-state-button",
+      isPopular: false,
+    },
   ];
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-background text-foreground overflow-hidden">
       <LandingNavbar />
       <HorizontalScale className="absolute top-20 left-0 w-full h-6" />
       <HorizontalScale className="absolute bottom-0 left-0 w-full h-6" />
@@ -152,11 +157,11 @@ function page() {
       <VerticalScale className="absolute top-20 right-0 w-6 h-[calc(100%-5rem)]" />
 
       <main className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32 pb-16 sm:px-10">
-        <section className="rounded-2xl border border-neutral-800 bg-black/80 p-6 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <section className="rounded-2xl border border-border bg-card/80 p-6 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
           <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight">
             Explore premium Pulse UI components
           </h1>
-          <p className="mt-3 max-w-2xl text-sm sm:text-base text-neutral-400">
+          <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted-foreground">
             Pick a component below to view interactive demos and implementation
             examples.
           </p>
@@ -167,10 +172,10 @@ function page() {
                 <Link
                   href={component.href}
                   key={index}
-                  className="group rounded-lg border border-neutral-800 bg-neutral-950/60 px-4 py-3 transition hover:border-neutral-600 hover:bg-neutral-900/80"
+                  className="group rounded-lg border border-border bg-background/60 px-4 py-3 transition hover:border-muted-foreground/50 hover:bg-accent"
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <p className="text-sm sm:text-base text-neutral-200 group-hover:text-white">
+                    <p className="text-sm sm:text-base text-muted-foreground group-hover:text-accent-foreground">
                       {component.name}
                     </p>
                     {component.isPopular && (
@@ -183,7 +188,7 @@ function page() {
           </div>
         </section>
       </main>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.06),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
     </div>
   );
 }
@@ -193,7 +198,7 @@ export default page;
 const HorizontalScale = ({ className }: { className: string }) => {
   return (
     <div
-      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
+      className={`scale-stripes ${className}`}
     ></div>
   );
 };
@@ -201,7 +206,7 @@ const HorizontalScale = ({ className }: { className: string }) => {
 const VerticalScale = ({ className }: { className: string }) => {
   return (
     <div
-      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
+      className={`scale-stripes ${className}`}
     ></div>
   );
 };

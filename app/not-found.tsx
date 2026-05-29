@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-6">
       <p className="text-5xl mb-2">
         🤔
       </p>
       <h1 className="text-7xl font-bold">404</h1>
 
-      <p className="text-zinc-400 mt-4 text-sm text-center">
+      <p className="text-muted-foreground mt-4 text-sm text-center">
         Looks like this page vanished into the void.
       </p>
 

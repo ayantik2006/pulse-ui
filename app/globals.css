@@ -1,11 +1,11 @@
 .shine-text {
   background: linear-gradient(
     120deg,
-    #ffffff 0%,
-    #b5adad 40%,
-    #979b9f 50%,
-    #ffffff 60%,
-    #ffffff 100%
+    var(--shine-strong) 0%,
+    var(--shine-soft) 40%,
+    var(--shine-mid) 50%,
+    var(--shine-strong) 60%,
+    var(--shine-strong) 100%
   );
   background-size: 200% auto;
 
@@ -13,6 +13,16 @@
   -webkit-text-fill-color: transparent;
 
   animation: shine 3s linear infinite;
+}
+
+.scale-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--stripe-start) 0px,
+    var(--stripe-mid) 10px,
+    var(--stripe-end) 10px,
+    var(--stripe-end) 12px
+  );
 }
 
 @keyframes shine {
@@ -140,6 +150,12 @@ body {
 ---break--- */
 :root {
     --radius: 0.625rem;
+    --shine-strong: #0f172a;
+    --shine-soft: #475569;
+    --shine-mid: #2563eb;
+    --stripe-start: #f8fafc;
+    --stripe-mid: #f1f5f9;
+    --stripe-end: #e2e8f0;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -177,6 +193,12 @@ body {
 /* 
 ---break--- */
 .dark {
+    --shine-strong: #ffffff;
+    --shine-soft: #b5adad;
+    --shine-mid: #979b9f;
+    --stripe-start: #000000;
+    --stripe-mid: #0a0a0a;
+    --stripe-end: #111111;
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);

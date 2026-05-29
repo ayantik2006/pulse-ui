@@ -4,13 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Inter } from "next/font/google";
 import MagneticButton from "@/components/MagneticButton";
-
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarGroup,
-  AvatarImage,
-} from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "./ui/avatar";
+import BlurRevealText from "@/pulseui-components/BlurRevealText/BlurRevealText";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,19 +15,18 @@ function Hero() {
   const router = useRouter();
 
   return (
-    <div className="text-white w-full h-screen flex flex-col gap-10 items-center justify-center">
+    <div className="text-foreground w-full h-screen flex flex-col gap-10 items-center justify-center">
       <HorizontalScale className="absolute top-20 left-0 w-full h-8" />
       <HorizontalScale className="absolute top-[92%] left-0 w-full h-8" />
       <VerticalScale className="absolute top-20 left-0 w-8 h-[85%]" />
       <VerticalScale className="absolute top-20 right-0 w-8 h-[85%]" />
       <div className="flex flex-col w-full pl-20 pr-20 gap-6 [@media(max-width:565px)]:px-10 [@media(max-width:565px)]:items-center [@media(max-width:527px)]:mt-10">
-        <div
-          className={`text-6xl font-bold shine-text flex tracking-tight [@media(max-width:943px)_and_(min-width:789px)_and_(min-width:657px)]:text-5xl [@media(max-width:789px)_and_(min-width:653px)]:text-4xl [@media(max-width:653px)_and_(min-width:494px)]:text-3xl [@media(max-width:494px)_and_(min-width:403px)]:text-2xl [@media(max-width:403px)]:text-xl text-center`}
-        >
-          <p>Build interfaces that feel alive.</p>
-        </div>
+        <BlurRevealText
+          text="Build interfaces that feel alive."
+          className="text-6xl text-foreground font-bold flex tracking-tight [@media(max-width:943px)_and_(min-width:789px)_and_(min-width:657px)]:text-5xl [@media(max-width:789px)_and_(min-width:653px)]:text-4xl [@media(max-width:653px)_and_(min-width:494px)]:text-3xl [@media(max-width:494px)_and_(min-width:403px)]:text-2xl [@media(max-width:403px)]:text-xl text-center"
+        />
         <h2
-          className={`${inter.className} text-[1rem] text-neutral-200/80 w-full pl-1 pr-10 [@media(max-width:565px)]:text-center [@media(max-width:565px)]:pr-0 [@media(max-width:494px)]:text-xs`}
+          className={`${inter.className} shine-text w-full pl-1 pr-10 text-[1rem] font-medium drop-shadow-[0_1px_0_rgba(255,255,255,0.7)] dark:drop-shadow-none [@media(max-width:565px)]:text-center [@media(max-width:565px)]:pr-0 [@media(max-width:494px)]:text-xs`}
         >
           Production-ready animated UI components for React, Next.js and
           Tailwind.
@@ -43,21 +37,21 @@ function Hero() {
           href={"/explore"}
           className="h-fit p-1 border-blue-500 border-2 border-dashed cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%]"
         >
-          <MagneticButton className="text-sm bg-linear-to-b from-blue-700 to-blue-500 py-2 cursor-pointer font-semibold rounded-sm w-45  [@media(max-width:581px)]:w-full">
+          <MagneticButton className="text-sm bg-linear-to-b from-blue-700 to-blue-500 py-2 cursor-pointer font-semibold rounded-sm w-45 text-background  [@media(max-width:581px)]:w-full">
             <p>Explore Components</p>
           </MagneticButton>
         </Link>
         <Link
           href={"https://github.com/ayantik2006/pulse-ui"}
           target="_blank"
-          className="bg-white group p-1 cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%]"
+          className="bg-primary group p-1 cursor-pointer rounded-md w-48 [@media(max-width:581px)]:w-[78%] duration-300"
         >
-          <button className="text-black text-sm py-2 border-2 border-neutral-600/40 rounded-md font-semibold cursor-pointer bg-neutral-400/10 group-hover:border-neutral-600/60 group-hover:bg-radial from-white to-neutral-400/25 duration-300 w-46  [@media(max-width:581px)]:w-full">
+          <button className="text-primary-foreground text-sm py-2 border-2 rounded-md font-semibold cursor-pointer dark:border dark:border-neutral-400 dark:hover:border-neutral-500 hover:bg-radial dark:hover:from-white dark:hover:to-neutral-400/55 border-neutral-700 hover:border-neutral-600 from-neutral-900 to-neutral-500/35 duration-300 w-46 [@media(max-width:581px)]:w-full">
             <p>View GitHub</p>
           </button>
         </Link>
       </div>
-      <p className="w-full px-20 [@media(max-width:565px)]:text-center -mb-6 text-[1rem] text-neutral-200/80">
+      <p className="w-full px-20 [@media(max-width:565px)]:text-center -mb-6 text-[1rem] text-muted-foreground">
         Trusted by 1000+ founders, developers and creators
       </p>
       <div className="w-full flex [@media(max-width:565px)]:flex-col [@media(max-width:565px)]:justify-center items-center gap-3">
@@ -98,17 +92,9 @@ function Hero() {
 export default Hero;
 
 const HorizontalScale = ({ className }: { className: string }) => {
-  return (
-    <div
-      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
-    ></div>
-  );
+  return <div className={`scale-stripes ${className}`}></div>;
 };
 
 const VerticalScale = ({ className }: { className: string }) => {
-  return (
-    <div
-      className={`bg-[repeating-linear-gradient(-45deg,#000_0px,#0a0a0a_10px,#111111_10px,#111111_12px)] ${className}`}
-    ></div>
-  );
+  return <div className={`scale-stripes ${className}`}></div>;
 };

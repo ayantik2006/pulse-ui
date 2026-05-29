@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
+import { useTheme } from "next-themes";
 import CopyButton from "./CopyButton";
 
 export default function CodeInline({
@@ -12,32 +13,39 @@ export default function CodeInline({
   lang?: string;
 }) {
   const [html, setHtml] = useState("");
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const load = async () => {
       const raw = await codeToHtml(code, {
         lang,
-        theme: "github-dark",
+        theme:
+          resolvedTheme === "dark"
+            ? "github-dark"
+            : "github-light",
       });
+
       setHtml(raw);
     };
 
     load();
-  }, [code, lang]);
+  }, [code, lang, resolvedTheme]);
 
   return (
-    <div className="flex items-center justify-between gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-white/[0.06] to-white/[0.02] border border-white/10 backdrop-blur-md">
-      <div className="flex items-center gap-4 overflow-x-auto">
-        {/* <span className="text-gray-500 text-sm select-none">1</span> */}
-
+    <div className="flex items-center justify-between gap-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 px-4 py-2">
+      <div className="overflow-x-auto flex-1">
         <div
-          className="text-sm font-mono whitespace-nowrap [&_code]:bg-transparent"
+          className="
+            text-sm font-mono whitespace-nowrap
+            [&_pre]:!bg-transparent
+            [&_pre]:!m-0
+            [&_code]:!bg-transparent
+          "
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-      <div className="mb-auto">
-        <CopyButton text={code} size={13} />
-      </div>
+
+      <CopyButton text={code} size={13} />
     </div>
   );
 }
