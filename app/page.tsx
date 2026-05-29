@@ -27,7 +27,7 @@ export default function Home() {
         <p className="text-muted-foreground tracking-tight font-semibold duration-300 text-xl">
           Components
         </p>
-        <p className="text-muted-foreground mb-2 text-sm font-semibold">[43]</p>
+        <p className="text-muted-foreground mb-2 text-sm font-semibold">[27]</p>
       </div>
       <Features />
       <motion.div
