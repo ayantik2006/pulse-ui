@@ -67,6 +67,7 @@ import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
 import BlurRevealText from "@/pulseui-components/BlurRevealText/BlurRevealText";
 import { motion } from "framer-motion";
 import AnimatedCheckbox from "@/pulseui-components/AnimatedCheckbox/AnimatedCheckbox";
+import FolderOpening from "@/pulseui-components/FolderOpening/FolderOpening";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -717,6 +718,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">29) AnimatedCheckbox</h1>
         <AnimatedCheckbox size={18} text="Selected" onChange={setIsOn}/>
+      </div>
+
+      {/* Folder Opening */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">30) Folder Opening</h1>
+        <FolderOpening/>
       </div>
     </div>
   );

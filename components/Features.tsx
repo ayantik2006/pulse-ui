@@ -11,6 +11,7 @@ import TypewriterEffect1 from "@/pulseui-components/Typewriter Effect/Typewriter
 import OpeningLaptop from "@/pulseui-components/OpeningLaptop/OpeningLaptop";
 import TeamCards from "@/pulseui-components/TeamCards/TeamCards";
 import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
+import FolderOpening from "@/pulseui-components/FolderOpening/FolderOpening";
 
 function Features() {
   const [option, setOption] = useState("");
@@ -130,6 +131,7 @@ function Features() {
         <GooeyInput onChange={setOption} />
       </div>
       <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+      <FolderOpening/>
       </div>
     </div>
   );

@@ -142,9 +142,14 @@ function page() {
       isPopular: false,
     },
     {
-      name: "AnimatedCheckbox",
+      name: "Animated Checkbox",
       href: "/components/animated-checkbox",
       isPopular: true,
+    },
+    {
+      name: "Folder Opening",
+      href: "/components/folder-opening",
+      isPopular: false,
     },
   ];
 
