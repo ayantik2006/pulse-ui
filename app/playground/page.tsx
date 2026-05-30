@@ -65,6 +65,8 @@ import FilterSelector from "@/pulseui-components/FilterSelector/FilterSelector";
 import GooeyFilter from "@/pulseui-components/GooeyInput/GooeyInput";
 import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
 import BlurRevealText from "@/pulseui-components/BlurRevealText/BlurRevealText";
+import { motion } from "framer-motion";
+import AnimatedCheckbox from "@/pulseui-components/AnimatedCheckbox/AnimatedCheckbox";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -141,7 +143,7 @@ function Page() {
       label: "Stakeholder",
     },
   ];
-  const [selectedList,setSelectedList]=useState<number[]>([]);
+  const [selectedList, setSelectedList] = useState<number[]>([]);
   const { setType } = useMouseCursor();
   const [inputValue, setInputValue] = useState("");
 
@@ -692,20 +694,29 @@ function Page() {
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">26) FilterSelector</h1>
         <div className="flex gap-3 items-center flex-wrap">
-          <FilterSelector items={filterItems} onSelection={setSelectedList}/>
+          <FilterSelector items={filterItems} onSelection={setSelectedList} />
         </div>
       </div>
 
       {/* Gooey Input */}
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">27) GooeyInput</h1>
-        <GooeyInput onChange={setInputValue}/>
+        <GooeyInput onChange={setInputValue} />
       </div>
 
       {/* BlurRevealText */}
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">28) BlurRevealText</h1>
-        <BlurRevealText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sed tempore modi odit eos voluptatibus quia beatae explicabo ab? Laudantium odit sapiente reiciendis in." className="font-semibold max-w-100 text-xl"/>
+        <BlurRevealText
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sed tempore modi odit eos voluptatibus quia beatae explicabo ab? Laudantium odit sapiente reiciendis in."
+          className="font-semibold max-w-100 text-xl"
+        />
+      </div>
+
+      {/* AnimatedCheckbox */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">29) AnimatedCheckbox</h1>
+        <AnimatedCheckbox size={18} text="Selected" onChange={setIsOn}/>
       </div>
     </div>
   );

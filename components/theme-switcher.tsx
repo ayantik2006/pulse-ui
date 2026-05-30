@@ -20,7 +20,7 @@ function ThemeOption({
   return (
     <button
       data-active={isActive}
-      className="relative flex size-8 items-center justify-center rounded-full text-muted-foreground transition-[color] hover:text-foreground data-[active=true]:text-foreground [&_svg]:size-4"
+      className="relative flex size-8 items-center justify-center rounded-md text-muted-foreground transition-[color] hover:text-foreground data-[active=true]:text-foreground [&_svg]:size-4"
       role="radio"
       aria-checked={isActive}
       aria-label={`Switch to ${value} theme`}
@@ -32,7 +32,7 @@ function ThemeOption({
         <motion.span
           layoutId="theme-option"
           transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-          className="absolute inset-0 rounded-full border"
+          className="absolute inset-0 rounded-md border"
         />
       )}
     </button>
@@ -82,7 +82,7 @@ function ThemeSwitcher() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="inline-flex items-center overflow-clip rounded-full bg-background inset-ring-1 inset-ring-border"
+      className="inline-flex items-center overflow-clip rounded-md bg-background inset-ring-1 inset-ring-border"
       role="radiogroup"
     >
       {THEME_OPTIONS.map((option) => (

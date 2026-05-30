@@ -149,7 +149,13 @@ function ComponentNavbar() {
       href: "/components/success-state-button",
       isPopular: false,
     },
+    {
+      name: "AnimatedCheckbox",
+      href: "/components/animated-checkbox",
+      isPopular: true,
+    },
   ].reverse();
+
   const [visibleComponents, setVisibleComponents] = useState(componentsList);
   const [width, setWidth] = useState<number>();
   const [isComponentNavbarVisible, setIsComponentNavbarVisible] =

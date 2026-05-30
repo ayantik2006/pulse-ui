@@ -141,6 +141,11 @@ function page() {
       href: "/components/success-state-button",
       isPopular: false,
     },
+    {
+      name: "AnimatedCheckbox",
+      href: "/components/animated-checkbox",
+      isPopular: true,
+    },
   ];
 
   return (
