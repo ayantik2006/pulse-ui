@@ -159,6 +159,11 @@ function ComponentNavbar() {
       href: "/components/folder-opening",
       isPopular: false,
     },
+    {
+      name: "Stack Cards",
+      href: "/components/stack-cards",
+      isPopular: false,
+    },
   ].reverse();
 
   const [visibleComponents, setVisibleComponents] = useState(componentsList);

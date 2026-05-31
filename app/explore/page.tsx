@@ -151,6 +151,11 @@ function page() {
       href: "/components/folder-opening",
       isPopular: false,
     },
+    {
+      name: "Stack Cards",
+      href: "/components/stack-cards",
+      isPopular: false,
+    },
   ];
 
   return (
@@ -177,12 +182,10 @@ function page() {
                 <Link
                   href={component.href}
                   key={index}
-                  className="px-6 py-4 hover:bg-neutral-700/50"
+                  className="px-6 py-4 dark:hover:bg-neutral-700/50 hover:bg-neutral-100"
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <p className="">
-                      {component.name}
-                    </p>
+                    <p className="">{component.name}</p>
                     {component.isPopular && (
                       <Sparkles size={16} className="shrink-0 text-amber-400" />
                     )}
@@ -201,17 +204,9 @@ function page() {
 export default page;
 
 const HorizontalScale = ({ className }: { className: string }) => {
-  return (
-    <div
-      className={`scale-stripes ${className}`}
-    ></div>
-  );
+  return <div className={`scale-stripes ${className}`}></div>;
 };
 
 const VerticalScale = ({ className }: { className: string }) => {
-  return (
-    <div
-      className={`scale-stripes ${className}`}
-    ></div>
-  );
+  return <div className={`scale-stripes ${className}`}></div>;
 };

@@ -50,7 +50,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased dark:selection:bg-white dark:selection:text-black selection:bg-black selection:text-white`}
       >
         <ThemeProvider>
           <TooltipProvider>

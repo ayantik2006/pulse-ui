@@ -131,7 +131,7 @@ function Features() {
         <GooeyInput onChange={setOption} />
       </div>
       <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
-      <FolderOpening/>
+        <FolderOpening />
       </div>
     </div>
   );
