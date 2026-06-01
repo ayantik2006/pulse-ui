@@ -58,10 +58,10 @@ function StackCards() {
                         damping: 30,
                       });
                     } else {
-                      animate(x,280,{
-                        duration:0.16,
-                        type:"spring"
-                      }) 
+                    //   animate(x,280,{
+                    //     duration:0.16,
+                    //     type:"spring"
+                    //   }) 
                       setImages((prev) => {
                         const temp = [...prev];
                         const last = temp.pop();
