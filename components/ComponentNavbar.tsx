@@ -164,6 +164,11 @@ function ComponentNavbar() {
       href: "/components/stack-cards",
       isPopular: false,
     },
+    {
+      name: "Contact Card",
+      href: "/components/contact-card",
+      isPopular: false,
+    },
   ].reverse();
 
   const [visibleComponents, setVisibleComponents] = useState(componentsList);

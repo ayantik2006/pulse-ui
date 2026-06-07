@@ -156,6 +156,11 @@ function page() {
       href: "/components/stack-cards",
       isPopular: false,
     },
+    {
+      name: "Contact Card",
+      href: "/components/contact-card",
+      isPopular: false,
+    },
   ];
 
   return (
