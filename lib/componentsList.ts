@@ -159,4 +159,9 @@ export const componentsList = [
     href: "/components/feedback-button",
     isPopular: false,
   },
+  {
+    name: "Timer",
+    href: "/components/timer",
+    isPopular: false,
+  },
 ].reverse();
