@@ -164,4 +164,9 @@ export const componentsList = [
     href: "/components/timer",
     isPopular: false,
   },
+  {
+    name: "Font Wave Animation",
+    href: "/components/font-wave-animation",
+    isPopular: true,
+  },
 ].reverse();

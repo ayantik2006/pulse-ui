@@ -1,0 +1,10 @@
+{
+  "name": "FontWaveAnimation",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "/components/ui/FontWaveAnimation.tsx",
+      "content": "import { useEffect, useState } from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\nfunction FontWaveAnimation({\r\n  text,\r\n  className,\r\n  infinite\r\n}: {\r\n  text: string;\r\n  className?: string;\r\n  infinite?: boolean\r\n}) {\r\n  const [char, setChar] = useState(0);\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      if (char + 1 === text.length && infinite) {\r\n        setChar(0);\r\n      } else {\r\n        setChar((prev) => prev + 1);\r\n      }\r\n    }, 70);\r\n\r\n    return () => {\r\n      clearInterval(interval);\r\n    };\r\n  }, [char, infinite, text.length]);\r\n\r\n  return (\r\n    <div className={className}>\r\n      <div className=\"flex\">\r\n        {[...text].map((letter, index) => (\r\n          <motion.span\r\n            key={index}\r\n            animate={{\r\n              y: index === char ? [0, -4] : [-4, 0],\r\n            }}\r\n            transition={{\r\n                ease:\"easeInOut\",\r\n            }}\r\n          >\r\n            {letter === \" \" ? \"\\u00A0\" : letter}\r\n          </motion.span>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default FontWaveAnimation;\r\n"
+    }
+  ]
+}

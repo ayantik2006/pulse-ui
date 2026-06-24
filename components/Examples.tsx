@@ -1,55 +1,137 @@
-import DatePicker1 from "@/pulseui-components/Date Picker/DatePicker1";
-import { useState } from "react";
-import { Playfair_Display } from "next/font/google";
-import Carousal1 from "@/pulseui-components/Carousel/Carousal1";
-import TypewriterEffect from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
-import Link from "next/link";
+import HoldToConfirm from "@/pulseui-components/HoldToConfirm/HoldToConfirm";
+import SlideToUnlock from "@/pulseui-components/SlideToUnlock/SlideToUnlock";
+import WheelPicker1 from "@/pulseui-components/WheelPicker/WheelPicker1";
+import TextFlip from "@/pulseui-components/TextFlip/TextFlip";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
-});
+import { useState } from "react";
+import ElasticSlider from "@/pulseui-components/ElasticSlider/ElasticSlider";
+import { House, Terminal, RefreshCcw } from "lucide-react";
+import FloatingDock from "@/pulseui-components/FloatingDock/FloatingDock";
+import TypewriterEffect1 from "@/pulseui-components/Typewriter Effect/TypewriterEffect1";
+import OpeningLaptop from "@/pulseui-components/OpeningLaptop/OpeningLaptop";
+import TeamCards from "@/pulseui-components/TeamCards/TeamCards";
+import GooeyInput from "@/pulseui-components/GooeyInput/GooeyInput";
+import FolderOpening from "@/pulseui-components/FolderOpening/FolderOpening";
 
 function Examples() {
-  const [date, setDate] = useState(0);
-  const [month, setMonth] = useState(0);
-  const [year, setYear] = useState(0);
-  return (
-    <div className="flex flex-col gap-10 mb-20 items-center w-full" id="examples">
-      <h1 className={`text-white ${playfair.className} text-3xl font-bold`}>
-        Some of our components
-      </h1>
-      <div className="flex flex-co items-center gap-10">
-        <h1 className="mb-[-2rem] font-semibold text-neutral-300">
-          Date Picker
-        </h1>
-        <div className="bg-white rounded">
-          <DatePicker1
-            selectedDate={setDate}
-            selectedMonth={setMonth}
-            selectedYear={setYear}
-          />
-        </div>
-        <h1 className="mb-[-2rem] font-semibold text-neutral-300">Carousal</h1>
-        <Carousal1
-          images={[
-            "https://blog.ipleaders.in/wp-content/uploads/2021/01/OIP.jpg",
-            "https://cdn.pixabay.com/photo/2020/03/10/04/48/animal-4917802_640.jpg",
-            "https://a-z-animals.com/media/tiger_laying_hero_background.jpg",
-          ]}
+  const [option, setOption] = useState("");
+  const [isLocked, setIsLocked] = useState(true);
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [value, setValue] = useState(30);
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <House
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
         />
-        <h1 className="mb-[-2rem] font-semibold text-neutral-300">
-          TypeWriter Effect
-        </h1>
-        <div className="min-h-13 h-fit bg-amber-50 p-2 rounded-lg shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),inset_0_-2px_6px_rgba(0,0,0,0.6)]">
-          <TypewriterEffect
-            words={["Hello", "Developers"]}
-            speed={200}
-            className={`text-orange-600 text-2xl font-semibold `}
+      ),
+      href: "#",
+    },
+    {
+      title: "Terminal",
+      icon: (
+        <Terminal
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Refresh",
+      icon: (
+        <RefreshCcw
+          size={20}
+          className="h-full w-full text-neutral-500 dark:text-neutral-300"
+        />
+      ),
+      href: "#",
+    },
+  ];
+
+  return (
+    <div className="mx-4 grid w-[98%] h-fit grid-cols-1 gap-4 p-2 border border-border sm:grid-cols-2 xl:grid-cols-3">
+      <div className="p-2 border border-border bg-card rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <WheelPicker1
+          options={[
+            "Java",
+            "C++",
+            "TypeScript",
+            "JavaScript",
+            "Rust",
+            "Ruby",
+            "Golang",
+          ]}
+          onChange={setOption}
+        />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <SlideToUnlock onUnlock={setIsLocked} />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <OpeningLaptop />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <div className="flex items-center gap-2 text-lg font-semibold">
+          <p className="">Hello</p>
+          <TextFlip
+            words={["Developers", "Designers", "Students"]}
+            duration={2000}
+            className="text-orange-600"
           />
         </div>
-        <Link href={"/buttons"} className="flex items-center gap-2 bg-neutral-900 text-white px-3 py-2 rounded shadow-[0_0_4px_gray] cursor-pointer font-semibold mt-10 hover:shadow-[0_0_10px_gray] duration-300">View more</Link>
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <FloatingDock links={links} />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <div className="w-full flex flex-col gap-2 items-center justify-center">
+          <ElasticSlider
+            min={0}
+            max={100}
+            label="Volume"
+            step={1}
+            defaultValue={30}
+            unit="%"
+            onChange={setValue}
+          />
+
+          <ElasticSlider
+            min={0}
+            max={30}
+            label="Width"
+            step={1}
+            defaultValue={10}
+            unit="px"
+            onChange={setValue}
+          />
+
+          <ElasticSlider
+            min={0}
+            max={1}
+            label="Efficiency"
+            step={0.01}
+            defaultValue={0.95}
+            onChange={setValue}
+          />
+        </div>
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <div className="flex items-center gap-1">
+          <p className="font-semibold text-lg">Hello</p>
+          <TypewriterEffect1
+            words={["Designers", "Developers", "Students"]}
+            className="text-yellow-600 dark:text-yellow-200 font-semibold text-lg"
+          />
+        </div>
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <GooeyInput onChange={setOption} />
+      </div>
+      <div className="p-2 border border-border bg-card flex items-center justify-center rounded-md w-full min-h-50 hover:border-muted-foreground/40 duration-300">
+        <FolderOpening />
       </div>
     </div>
   );

@@ -68,6 +68,7 @@ import BlurRevealText from "@/pulseui-components/BlurRevealText/BlurRevealText";
 import { motion } from "framer-motion";
 import AnimatedCheckbox from "@/pulseui-components/AnimatedCheckbox/AnimatedCheckbox";
 import FolderOpening from "@/pulseui-components/FolderOpening/FolderOpening";
+import FontWaveAnimation from "@/pulseui-components/FontWaveAnimation/FontWaveAnimation";
 
 function Page() {
   const [files, setFiles] = useState<File[]>([]);
@@ -724,6 +725,12 @@ function Page() {
       <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
         <h1 className="text-3xl font-bold mb-5">30) Folder Opening</h1>
         <FolderOpening/>
+      </div>
+
+      {/* FontWeightAnimation */}
+      <div className="h-fit w-full border-2 border-black  border-dashed p-5 justify-items-start rounded-md flex-col">
+        <h1 className="text-3xl font-bold mb-5">31) FontWeightAnimation</h1>
+        <FontWaveAnimation text="Hello Developers" className="text-2xl" infinite/>
       </div>
     </div>
   );

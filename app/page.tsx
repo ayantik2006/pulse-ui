@@ -1,6 +1,6 @@
 "use client";
 
-import Features from "@/components/Features";
+import Examples from "@/components/Examples";
 import { FluidGradientText } from "@/components/fluid-gradient-text";
 import Hero from "@/components/Hero";
 import LandingFooter from "@/components/LandingFooter";
@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
+import { componentsList } from "@/lib/componentsList";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,9 +28,9 @@ export default function Home() {
         <p className="text-muted-foreground tracking-tight font-semibold duration-300 text-xl">
           Components
         </p>
-        <p className="text-muted-foreground mb-2 text-sm font-semibold">[27]</p>
+        <p className="text-muted-foreground mb-2 text-sm font-semibold">[{componentsList.length}]</p>
       </div>
-      <Features />
+      <Examples />
       <motion.div
         whileHover="hover"
         className="w-35"
