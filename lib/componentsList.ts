@@ -169,4 +169,9 @@ export const componentsList = [
     href: "/components/font-wave-animation",
     isPopular: true,
   },
+  {
+    name: "Success Illustration",
+    href: "/components/success-illustration",
+    isPopular: true,
+  },
 ].reverse();
